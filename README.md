@@ -2,6 +2,9 @@
 
 > 我把政府公开宣布的招商项目逐个列出来，几年后再查一遍，看有多少留下了公众可以核对的建设证据。
 
+**在线地图：** https://wusullivan.github.io/unbuilt-atlas/  
+**公开仓库：** https://github.com/WuSullivan/unbuilt-atlas
+
 一场招商签约会结束以后，承诺去了哪里，等待它的人付出了什么代价？
 
 ## 结论

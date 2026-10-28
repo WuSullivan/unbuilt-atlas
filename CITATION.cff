@@ -8,4 +8,6 @@ authors:
   - name: "Unbuilt Atlas project author"
 abstract: "An auditable dataset and interactive map tracking public investment projects in Nanyang, Henan, from signing announcements to later physical milestones."
 license: MIT
+url: "https://wusullivan.github.io/unbuilt-atlas/"
+repository-code: "https://github.com/WuSullivan/unbuilt-atlas"
 
