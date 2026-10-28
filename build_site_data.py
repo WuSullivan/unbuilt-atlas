@@ -12,20 +12,17 @@ with (ROOT / "data/nanyang_projects.csv").open(encoding="utf-8", newline="") as 
 with (ROOT / "data/events.csv").open(encoding="utf-8", newline="") as file:
     events = list(csv.DictReader(file))
 summary = json.loads((ROOT / "outputs/analysis_summary.json").read_text(encoding="utf-8"))
+wayback_pairs = json.loads((ROOT / "data/wayback_pairs.json").read_text(encoding="utf-8"))
 
 payload = {
     "projects": projects,
     "events": events,
     "summary": summary,
+    "wayback_pairs": wayback_pairs,
     "imagery": {
-        "before": {
-            "label": "Esri Wayback release 2022-06-08",
-            "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/44710/{z}/{y}/{x}",
-        },
-        "after": {
-            "label": "Esri Wayback release 2025-12-18",
-            "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/13192/{z}/{y}/{x}",
-        },
+        "provider": "Esri World Imagery Wayback",
+        "cutoff_date": "2025-12-31",
+        "comparison_method": "Local Wayback tile history at each displayed coordinate and zoom, deduplicated by SHA-256 of tile bytes.",
     },
 }
 

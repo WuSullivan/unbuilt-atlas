@@ -25,7 +25,7 @@ no_later_trace_located和no_physical_milestone_located都不是“项目不存�
 
 ## 影像
 
-地图并排显示Esri World Imagery Wayback 2022-06-08和2025-12-18发布版本。日期是底图发布版本，不一定是当地影像拍摄日。坐标为县区、园区或乡镇指示点，不能用于宗地判断，也不参与状态编码。
+地图为80项项目分别配对Esri World Imagery Wayback的两个不同本地历史影像瓦片版本。配对根据实际采集日期、签约日期和2025-12-31截止线选择；中心瓦片经过SHA-256差异核验。Wayback发布版本日期与影像采集日期分开记录。坐标为县区、园区或乡镇指示点，不能用于宗地判断，也不参与状态编码。
 
 ## 文件关系
 
@@ -34,6 +34,7 @@ no_later_trace_located和no_physical_milestone_located都不是“项目不存�
 - followup_search_results.csv：自动检索产生的497条候选，不代表事实判定。
 - evidence_ledger.csv：80项乘5个证据阶段，共400条审计记录。
 - source_register.csv：项目主表中的50个去重来源。
+- wayback_pairs.json：80项各自的两个Wayback版本、采集元数据、指示点精度和中心瓦片SHA-256。
 - ../outputs/source_health.csv：来源链接的独立可访问性检查，不参与状态自动编码。
 - projects.csv：最初16行淅川pilot，保留用于复现深审队列来源。
 

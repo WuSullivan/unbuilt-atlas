@@ -34,9 +34,11 @@ def rows(path):
 
 events = rows('data/events.csv')
 projects = rows('data/nanyang_projects.csv')
+project_by_id = {row['project_id']: row for row in projects}
 search = rows('data/followup_search_results.csv')
 ledger = rows('data/evidence_ledger.csv')
 sources = rows('data/source_register.csv')
+wayback_pairs = json.loads((root / 'data/wayback_pairs.json').read_text(encoding='utf-8'))
 summary = json.loads((root / 'outputs/analysis_summary.json').read_text(encoding='utf-8'))
 
 assert len(events) == 24, len(events)
@@ -74,6 +76,28 @@ assert Counter(row['stage'] for row in ledger) == {
 }
 assert len(sources) >= 45, len(sources)
 assert len({row['source_url'] for row in sources}) == len(sources)
+assert len(wayback_pairs) == 80, len(wayback_pairs)
+pair_types = Counter(pair['comparison_type'] for pair in wayback_pairs.values())
+assert pair_types == Counter({
+    'acquisition_dates_bracket_signing': 62,
+    'latest_distinct_image_no_verified_post_sign_capture': 16,
+    'post_sign_capture_before_capture_unknown': 2,
+}), pair_types
+for project_id, pair in wayback_pairs.items():
+    assert pair['locally_distinct'] is True, project_id
+    assert pair['before']['tile_sha256'] != pair['after']['tile_sha256'], project_id
+    assert pair['before']['tile_url'] != pair['after']['tile_url'], project_id
+    if pair['before']['capture_date']:
+        assert pair['before']['capture_date'] != pair['after']['capture_date'], project_id
+    sign_date = project_by_id[project_id]['sign_date']
+    if pair['comparison_type'] == 'acquisition_dates_bracket_signing':
+        assert pair['before']['capture_date'] <= sign_date < pair['after']['capture_date'], project_id
+    elif pair['comparison_type'] == 'post_sign_capture_before_capture_unknown':
+        assert pair['after']['capture_date'] > sign_date, project_id
+        assert not pair['before']['capture_date'], project_id
+    else:
+        assert pair['comparison_type'] == 'latest_distinct_image_no_verified_post_sign_capture', project_id
+        assert not pair['after']['capture_date'] or pair['after']['capture_date'] <= sign_date, project_id
 
 assert summary['scope']['nonoverlapping_primary_events'] == 21
 assert summary['event_transparency']['announced_project_slots'] == 426
@@ -88,6 +112,7 @@ print('events:', len(events), 'primary:', len(primary), 'slots:', 426, 'named:',
 print('projects:', len(projects), 'broad:', 66, 'deep:', 14)
 print('status counts:', dict(counts))
 print('search candidates:', len(search), 'ledger rows:', len(ledger), 'sources:', len(sources))
+print('locally distinct imagery pairs:', len(wayback_pairs))
 PY
 
 echo "[3/4] Checking website and PDF"

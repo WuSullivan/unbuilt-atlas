@@ -140,7 +140,7 @@ for index, project in enumerate(PROJECTS, 1):
         "source_followup_secondary": "", "followup_reason": "", "evidence_grade": "",
         "reviewed_on": "", "source_environment": "", "environment_check": "not_systematically_verified",
         "source_registry": "", "registry_check": "not_systematically_verified",
-        "imagery_context": "esri_wayback_release_pair_2022-06-08_2025-12-18",
+        "imagery_context": "esri_wayback_local_distinct_project_pair",
         "lat": lat, "lon": lon,
         "geometry_precision": "indicative_county_centroid", "cohort_role": "nanyang_named_project",
     })
@@ -164,7 +164,7 @@ for row in xichuan:
         "reviewed_on": "2026-10-29", "source_environment": row["source_environment"],
         "environment_check": row["environment_check"], "source_registry": row["source_registry"],
         "registry_check": row["registry_check"],
-        "imagery_context": "esri_wayback_release_pair_2022-06-08_2025-12-18",
+        "imagery_context": "esri_wayback_local_distinct_project_pair",
         "lat": row["lat"], "lon": row["lon"],
         "geometry_precision": row["geometry_precision"], "cohort_role": "xichuan_deep_audit",
     })

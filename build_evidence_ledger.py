@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Build the 80-project evidence ledger and deduplicated source register."""
 import csv
+import json
 from collections import defaultdict
 from pathlib import Path
 
@@ -8,6 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 with (ROOT / "data/nanyang_projects.csv").open(encoding="utf-8", newline="") as file:
     projects = list(csv.DictReader(file))
+wayback_pairs = json.loads((ROOT / "data/wayback_pairs.json").read_text(encoding="utf-8"))
 
 ledger = []
 source_index = defaultdict(lambda: {"dates": set(), "roles": set(), "projects": set()})
@@ -72,14 +74,23 @@ for project in projects:
         })
         add_source(source, "", stage, pid)
 
+    pair = wayback_pairs[pid]
+    before = pair["before"]
+    after = pair["after"]
     ledger.append({
         "project_id": pid,
         "cohort_role": role,
         "stage": "imagery",
-        "finding": "release_pair_context_only",
-        "certainty": "public_tile_service_indicative_point",
+        "finding": pair["comparison_type"],
+        "certainty": f"distinct_center_tile_bytes_zoom_{pair['zoom']}",
         "source_url": "https://livingatlas.arcgis.com/wayback/",
-        "audit_note": "Same-coordinate 2022-06-08 and 2025-12-18 Wayback releases are shown as regional context only. Release date is not acquisition date; points are not parcel polygons; imagery does not determine status.",
+        "audit_note": (
+            f"Two non-identical center-tile files at the same indicator point and zoom {pair['zoom']} "
+            f"(SHA-256 {before['tile_sha256'][:12]} != {after['tile_sha256'][:12]}). "
+            f"Capture dates: {before['capture_date'] or 'not returned'} and {after['capture_date'] or 'not returned'}; "
+            f"Wayback release dates: {before['release_date']} and {after['release_date']}. "
+            "Coordinates are county/park/town indicators, not parcels; imagery does not determine project status."
+        ),
     })
 
 ledger_path = ROOT / "data/evidence_ledger.csv"

@@ -59,7 +59,7 @@
     .fact{padding:12px 8px 12px 0}.fact span{display:block;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}.fact b{display:block;font-size:13px;font-weight:500;margin-top:4px}
     .detail h4{font-size:13px;margin:24px 0 9px}.reason{font-size:13px;line-height:1.75;padding-left:13px;border-left:3px solid var(--physical)}
     .sources{display:grid;gap:7px}.sources a{font-size:12px;color:var(--physical);overflow-wrap:anywhere}
-    .sat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.sat-box{min-width:0}.sat-box span{display:block;font:400 10px "IBM Plex Mono",monospace;color:var(--muted);margin-bottom:5px}.sat{height:205px;border:1px solid var(--line);background:#d6ddd8}
+    .sat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.sat-box{min-width:0;border-top:3px solid var(--night);background:#ebe8df;padding:9px}.sat-box:last-child{border-color:var(--physical)}.sat-box>strong{display:block;font-size:12px;font-weight:600;line-height:1.5;min-height:36px}.sat-box>span{display:block;font:400 10px "IBM Plex Mono",monospace;color:var(--muted);margin:4px 0 7px}.sat{height:205px;border:1px solid var(--line);background:#d6ddd8}.sat-meta{font-size:10px;line-height:1.55;color:var(--muted);margin-top:7px;min-height:48px}.sat-pair-status{font-size:11px;line-height:1.6;margin:9px 0 0;padding:9px 11px;background:#e2ece7;border-left:3px solid var(--physical)}.sat-pair-status.gap{background:#f4e7d6;border-color:var(--admin)}
     .sat-note{font-size:11px;line-height:1.6;color:var(--muted);margin:8px 0 0}
     .findings{padding:70px 4vw 78px}.section-kicker{font:500 11px "IBM Plex Mono",monospace;letter-spacing:.11em;text-transform:uppercase;color:var(--physical)}
     .findings h2,.method-section h2{font-size:clamp(30px,4.5vw,56px);line-height:1.12;font-weight:500;margin:12px 0 42px;max-width:900px}
@@ -153,6 +153,7 @@
     <div class="downloads">
       <a href="../data/nanyang_projects.csv">下载80项数据集</a>
       <a href="../data/events.csv">下载事件表</a>
+      <a href="../data/wayback_pairs.json">下载80组影像配对</a>
       <a href="../data/followup_search_results.csv">查看497条搜索候选</a>
       <a href="../outputs/unbuilt-atlas-research-brief.pdf">研究简报 PDF</a>
       <a href="../README.md">方法与复现说明</a>
@@ -235,11 +236,19 @@
     applyFilters();
 
     let beforeMap = null, afterMap = null;
+    const precisionLabel = value => ({indicative_county_centroid:"县区中心指示点",indicative_houpo_zone:"园区指示点",indicative_industrial_zone:"园区指示点",indicative_rural_zone:"乡镇指示点"}[value] || "区域指示点");
+    const imageMetaText = image => {
+      const capture = image.capture_date ? `采集 ${image.capture_date}` : "采集日期未返回";
+      const provider = image.provider ? ` · ${image.provider}` : "";
+      const resolution = image.resolution_m ? ` · ${Number(image.resolution_m).toFixed(1)} 米/像素` : "";
+      return `${capture}${provider}${resolution}`;
+    };
     document.getElementById("close").addEventListener("click",() => document.getElementById("detail").classList.remove("open"));
     function showDetail(project){
       if(beforeMap){beforeMap.remove();beforeMap=null} if(afterMap){afterMap.remove();afterMap=null}
       const event = eventMap[project.event_id] || {};
       const meta = statusMeta[project.followup_status];
+      const imagePair = DATA.wayback_pairs[project.project_id];
       const amount = project.announced_investment_cny_100m ? project.announced_investment_cny_100m + "亿元" : "未公开可比金额";
       const cohort = project.cohort_role === "xichuan_deep_audit" ? "淅川深度核查" : "南阳广域追踪";
       const sourceLinks = [
@@ -260,17 +269,51 @@
           <div class="fact"><span>活动名称</span><b>${esc(event.event_title || project.event_id)}</b></div>
         </div>
         <h4>状态为什么这样判</h4><div class="reason">${esc(project.followup_reason)}</div>
-        <h4>签约前后区域影像上下文</h4>
-        <div class="sat-grid"><div class="sat-box"><span>${esc(DATA.imagery.before.label)}</span><div id="satBefore" class="sat"></div></div><div class="sat-box"><span>${esc(DATA.imagery.after.label)}</span><div id="satAfter" class="sat"></div></div></div>
-        <p class="sat-note">两幅图使用相同指示坐标。Wayback日期是底图发布版本，不一定等于当地影像拍摄日；广域项目坐标是县区中心，淅川项目也是园区或乡镇指示点，因此影像只提供区域上下文，不参与状态判定。</p>
+        <h4>同一地点，两期不同影像</h4>
+        <p class="sat-note">两幅图已锁定同一中心和比例尺，拖动或缩放任一幅会同步另一幅。</p>
+        <div class="sat-grid">
+          <div class="sat-box"><strong id="satBeforeTitle"></strong><span id="satBeforeRelease"></span><div id="satBefore" class="sat" aria-label="较早卫星影像"></div><div id="satBeforeMeta" class="sat-meta"></div></div>
+          <div class="sat-box"><strong id="satAfterTitle"></strong><span id="satAfterRelease"></span><div id="satAfter" class="sat" aria-label="较新卫星影像"></div><div id="satAfterMeta" class="sat-meta"></div></div>
+        </div>
+        <p id="satPairStatus" class="sat-pair-status"></p>
+        <p class="sat-note">两幅图使用同一指示坐标、同一缩放级别；中心瓦片文件经SHA-256核对确实不同。图中优先标注影像采集日期，Wayback日期仅表示存档发布版本。广域坐标是县区中心，淅川坐标是园区或乡镇指示点，不是项目宗地；影像不参与状态判定。</p>
         <h4>原始记录</h4><div class="sources">${sourceLinks || "没有可链接的后续来源"}</div>`;
       document.getElementById("detail").classList.add("open");
       requestAnimationFrame(() => {
-        const center=[Number(project.lat),Number(project.lon)], zoom=project.cohort_role==="xichuan_deep_audit"?14:11;
-        beforeMap=L.map("satBefore",{zoomControl:false,attributionControl:false,dragging:true,scrollWheelZoom:false}).setView(center,zoom);
+        const center=[Number(project.lat),Number(project.lon)], zoom=imagePair.zoom;
+        const beforeIsPre = Boolean(imagePair.before.capture_date && imagePair.before.capture_date <= project.sign_date);
+        const afterIsPost = Boolean(imagePair.after.capture_date && imagePair.after.capture_date > project.sign_date);
+        const beforeDate = imagePair.before.capture_date || "采集日期缺失";
+        const afterDate = imagePair.after.capture_date || "采集日期缺失";
+        document.getElementById("satBeforeTitle").textContent = `${beforeIsPre ? "签约前" : "较早影像"} · ${beforeDate}`;
+        document.getElementById("satAfterTitle").textContent = `${afterIsPost ? "签约后" : "较新影像"} · ${afterDate}`;
+        document.getElementById("satBeforeRelease").textContent = `Wayback ${imagePair.before.release_date}`;
+        document.getElementById("satAfterRelease").textContent = `Wayback ${imagePair.after.release_date}`;
+        document.getElementById("satBeforeMeta").textContent = imageMetaText(imagePair.before);
+        document.getElementById("satAfterMeta").textContent = imageMetaText(imagePair.after);
+        const pairStatus = document.getElementById("satPairStatus");
+        if (beforeIsPre && afterIsPost) {
+          pairStatus.textContent = `实际采集日期跨过签约日 ${project.sign_date}。地点精度：${precisionLabel(project.geometry_precision)}；这不是宗地级项目归因。`;
+        } else if (beforeIsPre) {
+          pairStatus.classList.add("gap");
+          pairStatus.textContent = `截至影像检索范围，没有定位到签约日 ${project.sign_date} 之后采集的影像。两图仍是不同影像版本，但不能称为签约前后变化。地点精度：${precisionLabel(project.geometry_precision)}。`;
+        } else {
+          pairStatus.classList.add("gap");
+          pairStatus.textContent = `影像采集日期未能完整跨越签约日 ${project.sign_date}；左图仅能确认其Wayback版本早于签约。地点精度：${precisionLabel(project.geometry_precision)}。`;
+        }
+        beforeMap=L.map("satBefore",{zoomControl:true,attributionControl:false,dragging:true,scrollWheelZoom:false,maxZoom:18}).setView(center,zoom);
         afterMap=L.map("satAfter",{zoomControl:false,attributionControl:false,dragging:true,scrollWheelZoom:false}).setView(center,zoom);
-        L.tileLayer(DATA.imagery.before.url,{maxZoom:18}).addTo(beforeMap);L.tileLayer(DATA.imagery.after.url,{maxZoom:18}).addTo(afterMap);
+        L.tileLayer(imagePair.before.tile_url,{maxZoom:18}).addTo(beforeMap);L.tileLayer(imagePair.after.tile_url,{maxZoom:18}).addTo(afterMap);
         [beforeMap,afterMap].forEach(m => L.circleMarker(center,{radius:5,color:"#edc65d",fillColor:"#edc65d",fillOpacity:1,weight:2}).addTo(m));
+        let synchronizing=false;
+        const syncView=(source,target)=>source.on("moveend zoomend",()=>{
+          if(synchronizing)return;
+          synchronizing=true;
+          target.setView(source.getCenter(),source.getZoom(),{animate:false});
+          synchronizing=false;
+        });
+        syncView(beforeMap,afterMap);
+        syncView(afterMap,beforeMap);
       });
     }
 

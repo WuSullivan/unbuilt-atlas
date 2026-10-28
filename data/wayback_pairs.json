@@ -1,0 +1,2322 @@
+{
+  "N001": {
+    "before": {
+      "release_num": 31026,
+      "release_date": "2017-02-27",
+      "capture_date": "",
+      "provider": "",
+      "source": "",
+      "resolution_m": null,
+      "accuracy_m": null,
+      "tile_sha256": "38ef945d41a62aa83b8e590fa63e32abc3e74c7389a8ffd270c36c3c84a1427e",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/31026/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 48925,
+      "release_date": "2025-06-26",
+      "capture_date": "2025-03-22",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.3,
+      "accuracy_m": 8.47,
+      "tile_sha256": "c4d1376f38f90d40780f7de6a60c8e8d706f1a86550e7e3ba46ebda2d11cff0c",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/48925/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "post_sign_capture_before_capture_unknown",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N002": {
+    "before": {
+      "release_num": 31026,
+      "release_date": "2017-02-27",
+      "capture_date": "",
+      "provider": "",
+      "source": "",
+      "resolution_m": null,
+      "accuracy_m": null,
+      "tile_sha256": "5be519c7abf4ac61d64cbe34afd8cfb2c73e9b266b3fe00b2d8e06bcea206aad",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/31026/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 48925,
+      "release_date": "2025-06-26",
+      "capture_date": "2025-03-22",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.3,
+      "accuracy_m": 8.47,
+      "tile_sha256": "7416afd850f27af6b574965585b5184be431a32c1e0f7698c27eba2664e77889",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/48925/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "post_sign_capture_before_capture_unknown",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N003": {
+    "before": {
+      "release_num": 31026,
+      "release_date": "2017-02-27",
+      "capture_date": "2014-10-03",
+      "provider": "DigitalGlobe",
+      "source": "WV02",
+      "resolution_m": 0.5,
+      "accuracy_m": 10.2,
+      "tile_sha256": "bc9d23b1a820c05fe2d9e6ce36e30eee6b0672d86f9960aeef00f47d406f129c",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/31026/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 48925,
+      "release_date": "2025-06-26",
+      "capture_date": "2025-02-16",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.3,
+      "accuracy_m": 8.47,
+      "tile_sha256": "d69f3406e82143810b5149fccdf738b8612f94c491c2d3491ece52fac7054a4a",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/48925/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N004": {
+    "before": {
+      "release_num": 15423,
+      "release_date": "2021-05-19",
+      "capture_date": "2020-06-04",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.5,
+      "accuracy_m": 5,
+      "tile_sha256": "e50ff5d9417b962b3d39ecc359b93e8bd303ddd364f37d3cbd6b404d986db061",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/15423/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 48925,
+      "release_date": "2025-06-26",
+      "capture_date": "2025-03-22",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.3,
+      "accuracy_m": 8.47,
+      "tile_sha256": "7396e2da0beee6d7d0dc6b2aa227d5dd68e1b0e57a4ae7c6ed6c866ac2d03c6e",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/48925/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N005": {
+    "before": {
+      "release_num": 15423,
+      "release_date": "2021-05-19",
+      "capture_date": "2020-06-04",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.5,
+      "accuracy_m": 5,
+      "tile_sha256": "e50ff5d9417b962b3d39ecc359b93e8bd303ddd364f37d3cbd6b404d986db061",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/15423/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 48925,
+      "release_date": "2025-06-26",
+      "capture_date": "2025-03-22",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.3,
+      "accuracy_m": 8.47,
+      "tile_sha256": "7396e2da0beee6d7d0dc6b2aa227d5dd68e1b0e57a4ae7c6ed6c866ac2d03c6e",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/48925/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N006": {
+    "before": {
+      "release_num": 9181,
+      "release_date": "2020-09-02",
+      "capture_date": "2019-11-08",
+      "provider": "Maxar",
+      "source": "GE01",
+      "resolution_m": 1.2,
+      "accuracy_m": 8.47,
+      "tile_sha256": "357daf1246e6a9ef4291ec0c6b33ed445d87be00412f271bdca490a963dcaf2f",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/9181/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 48925,
+      "release_date": "2025-06-26",
+      "capture_date": "2025-03-22",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.3,
+      "accuracy_m": 8.47,
+      "tile_sha256": "7416afd850f27af6b574965585b5184be431a32c1e0f7698c27eba2664e77889",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/48925/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N007": {
+    "before": {
+      "release_num": 30195,
+      "release_date": "2014-11-12",
+      "capture_date": "2008-05-17",
+      "provider": "DigitalGlobe",
+      "source": "WV01",
+      "resolution_m": 0.5,
+      "accuracy_m": 10.199999809265137,
+      "tile_sha256": "5ca647dac4e949a7ba9fde70ff77c47ff566192749c23aed12c33eeeb4c9d9e5",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/30195/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 27982,
+      "release_date": "2025-04-24",
+      "capture_date": "2020-11-06",
+      "provider": "Maxar",
+      "source": "GE01",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "495dd9d2d93a7c55ee9e7324c9e2f20d4a56b20f2917f68e0af296e2da87b231",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/27982/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "latest_distinct_image_no_verified_post_sign_capture",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N008": {
+    "before": {
+      "release_num": 47963,
+      "release_date": "2023-06-29",
+      "capture_date": "2021-11-15",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "00fbb748a9caf451e94def16b10e79a7a5650a6157065db5be1cb359f92bb909",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/47963/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 48925,
+      "release_date": "2025-06-26",
+      "capture_date": "2025-03-22",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.3,
+      "accuracy_m": 8.47,
+      "tile_sha256": "c4d1376f38f90d40780f7de6a60c8e8d706f1a86550e7e3ba46ebda2d11cff0c",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/48925/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N009": {
+    "before": {
+      "release_num": 13851,
+      "release_date": "2022-07-21",
+      "capture_date": "2021-11-19",
+      "provider": "Maxar",
+      "source": "GE01",
+      "resolution_m": 1.2,
+      "accuracy_m": 5,
+      "tile_sha256": "ca060bf9e9245b93f6c08e057d9cb92253df1b48cf16e22358de6fd7889a880b",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/13851/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 27982,
+      "release_date": "2025-04-24",
+      "capture_date": "2022-12-19",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "b1c9b0410636ab14ad3b55da184d7349eb7edd4b1927023a6c343d61b19289db",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/27982/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N010": {
+    "before": {
+      "release_num": 47963,
+      "release_date": "2023-06-29",
+      "capture_date": "2021-11-15",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "a0ba7fdf2a8aa4abe989e073ba137ee64612e0a1b52723e99a0326b722932719",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/47963/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 48925,
+      "release_date": "2025-06-26",
+      "capture_date": "2025-03-22",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.3,
+      "accuracy_m": 8.47,
+      "tile_sha256": "7416afd850f27af6b574965585b5184be431a32c1e0f7698c27eba2664e77889",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/48925/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N011": {
+    "before": {
+      "release_num": 47963,
+      "release_date": "2023-06-29",
+      "capture_date": "2021-11-15",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "a0ba7fdf2a8aa4abe989e073ba137ee64612e0a1b52723e99a0326b722932719",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/47963/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 48925,
+      "release_date": "2025-06-26",
+      "capture_date": "2025-03-22",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.3,
+      "accuracy_m": 8.47,
+      "tile_sha256": "7416afd850f27af6b574965585b5184be431a32c1e0f7698c27eba2664e77889",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/48925/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N012": {
+    "before": {
+      "release_num": 47963,
+      "release_date": "2023-06-29",
+      "capture_date": "2021-11-15",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "a0ba7fdf2a8aa4abe989e073ba137ee64612e0a1b52723e99a0326b722932719",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/47963/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 48925,
+      "release_date": "2025-06-26",
+      "capture_date": "2025-03-22",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.3,
+      "accuracy_m": 8.47,
+      "tile_sha256": "7416afd850f27af6b574965585b5184be431a32c1e0f7698c27eba2664e77889",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/48925/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N013": {
+    "before": {
+      "release_num": 47963,
+      "release_date": "2023-06-29",
+      "capture_date": "2021-11-15",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "a0ba7fdf2a8aa4abe989e073ba137ee64612e0a1b52723e99a0326b722932719",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/47963/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 48925,
+      "release_date": "2025-06-26",
+      "capture_date": "2025-03-22",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.3,
+      "accuracy_m": 8.47,
+      "tile_sha256": "7416afd850f27af6b574965585b5184be431a32c1e0f7698c27eba2664e77889",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/48925/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N014": {
+    "before": {
+      "release_num": 47963,
+      "release_date": "2023-06-29",
+      "capture_date": "2021-11-15",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "a0ba7fdf2a8aa4abe989e073ba137ee64612e0a1b52723e99a0326b722932719",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/47963/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 48925,
+      "release_date": "2025-06-26",
+      "capture_date": "2025-03-22",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.3,
+      "accuracy_m": 8.47,
+      "tile_sha256": "7416afd850f27af6b574965585b5184be431a32c1e0f7698c27eba2664e77889",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/48925/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N015": {
+    "before": {
+      "release_num": 47963,
+      "release_date": "2023-06-29",
+      "capture_date": "2021-11-15",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "a0ba7fdf2a8aa4abe989e073ba137ee64612e0a1b52723e99a0326b722932719",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/47963/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 48925,
+      "release_date": "2025-06-26",
+      "capture_date": "2025-03-22",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.3,
+      "accuracy_m": 8.47,
+      "tile_sha256": "7416afd850f27af6b574965585b5184be431a32c1e0f7698c27eba2664e77889",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/48925/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N016": {
+    "before": {
+      "release_num": 47963,
+      "release_date": "2023-06-29",
+      "capture_date": "2021-11-15",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "a0ba7fdf2a8aa4abe989e073ba137ee64612e0a1b52723e99a0326b722932719",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/47963/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 48925,
+      "release_date": "2025-06-26",
+      "capture_date": "2025-03-22",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.3,
+      "accuracy_m": 8.47,
+      "tile_sha256": "7416afd850f27af6b574965585b5184be431a32c1e0f7698c27eba2664e77889",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/48925/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N017": {
+    "before": {
+      "release_num": 47963,
+      "release_date": "2023-06-29",
+      "capture_date": "2021-11-15",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "a0ba7fdf2a8aa4abe989e073ba137ee64612e0a1b52723e99a0326b722932719",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/47963/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 48925,
+      "release_date": "2025-06-26",
+      "capture_date": "2025-03-22",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.3,
+      "accuracy_m": 8.47,
+      "tile_sha256": "7416afd850f27af6b574965585b5184be431a32c1e0f7698c27eba2664e77889",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/48925/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N018": {
+    "before": {
+      "release_num": 47963,
+      "release_date": "2023-06-29",
+      "capture_date": "2021-11-15",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "a0ba7fdf2a8aa4abe989e073ba137ee64612e0a1b52723e99a0326b722932719",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/47963/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 48925,
+      "release_date": "2025-06-26",
+      "capture_date": "2025-03-22",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.3,
+      "accuracy_m": 8.47,
+      "tile_sha256": "7416afd850f27af6b574965585b5184be431a32c1e0f7698c27eba2664e77889",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/48925/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N019": {
+    "before": {
+      "release_num": 47963,
+      "release_date": "2023-06-29",
+      "capture_date": "2021-11-15",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "a0ba7fdf2a8aa4abe989e073ba137ee64612e0a1b52723e99a0326b722932719",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/47963/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 48925,
+      "release_date": "2025-06-26",
+      "capture_date": "2025-03-22",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.3,
+      "accuracy_m": 8.47,
+      "tile_sha256": "7416afd850f27af6b574965585b5184be431a32c1e0f7698c27eba2664e77889",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/48925/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N020": {
+    "before": {
+      "release_num": 47963,
+      "release_date": "2023-06-29",
+      "capture_date": "2021-11-15",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "a0ba7fdf2a8aa4abe989e073ba137ee64612e0a1b52723e99a0326b722932719",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/47963/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 48925,
+      "release_date": "2025-06-26",
+      "capture_date": "2025-03-22",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.3,
+      "accuracy_m": 8.47,
+      "tile_sha256": "7416afd850f27af6b574965585b5184be431a32c1e0f7698c27eba2664e77889",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/48925/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N021": {
+    "before": {
+      "release_num": 13851,
+      "release_date": "2022-07-21",
+      "capture_date": "2021-11-19",
+      "provider": "Maxar",
+      "source": "GE01",
+      "resolution_m": 1.2,
+      "accuracy_m": 5,
+      "tile_sha256": "ca060bf9e9245b93f6c08e057d9cb92253df1b48cf16e22358de6fd7889a880b",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/13851/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 27982,
+      "release_date": "2025-04-24",
+      "capture_date": "2022-12-19",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "b1c9b0410636ab14ad3b55da184d7349eb7edd4b1927023a6c343d61b19289db",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/27982/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N022": {
+    "before": {
+      "release_num": 13851,
+      "release_date": "2022-07-21",
+      "capture_date": "2021-11-19",
+      "provider": "Maxar",
+      "source": "GE01",
+      "resolution_m": 1.2,
+      "accuracy_m": 5,
+      "tile_sha256": "ca060bf9e9245b93f6c08e057d9cb92253df1b48cf16e22358de6fd7889a880b",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/13851/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 27982,
+      "release_date": "2025-04-24",
+      "capture_date": "2022-12-19",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "b1c9b0410636ab14ad3b55da184d7349eb7edd4b1927023a6c343d61b19289db",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/27982/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N023": {
+    "before": {
+      "release_num": 13851,
+      "release_date": "2022-07-21",
+      "capture_date": "2021-11-19",
+      "provider": "Maxar",
+      "source": "GE01",
+      "resolution_m": 1.2,
+      "accuracy_m": 5,
+      "tile_sha256": "ca060bf9e9245b93f6c08e057d9cb92253df1b48cf16e22358de6fd7889a880b",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/13851/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 27982,
+      "release_date": "2025-04-24",
+      "capture_date": "2022-12-19",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "b1c9b0410636ab14ad3b55da184d7349eb7edd4b1927023a6c343d61b19289db",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/27982/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N024": {
+    "before": {
+      "release_num": 13851,
+      "release_date": "2022-07-21",
+      "capture_date": "2021-11-19",
+      "provider": "Maxar",
+      "source": "GE01",
+      "resolution_m": 1.2,
+      "accuracy_m": 5,
+      "tile_sha256": "ca060bf9e9245b93f6c08e057d9cb92253df1b48cf16e22358de6fd7889a880b",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/13851/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 27982,
+      "release_date": "2025-04-24",
+      "capture_date": "2022-12-19",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "b1c9b0410636ab14ad3b55da184d7349eb7edd4b1927023a6c343d61b19289db",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/27982/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N025": {
+    "before": {
+      "release_num": 13851,
+      "release_date": "2022-07-21",
+      "capture_date": "2021-11-19",
+      "provider": "Maxar",
+      "source": "GE01",
+      "resolution_m": 1.2,
+      "accuracy_m": 5,
+      "tile_sha256": "ca060bf9e9245b93f6c08e057d9cb92253df1b48cf16e22358de6fd7889a880b",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/13851/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 27982,
+      "release_date": "2025-04-24",
+      "capture_date": "2022-12-19",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "b1c9b0410636ab14ad3b55da184d7349eb7edd4b1927023a6c343d61b19289db",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/27982/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N026": {
+    "before": {
+      "release_num": 13851,
+      "release_date": "2022-07-21",
+      "capture_date": "2021-11-19",
+      "provider": "Maxar",
+      "source": "GE01",
+      "resolution_m": 1.2,
+      "accuracy_m": 5,
+      "tile_sha256": "ca060bf9e9245b93f6c08e057d9cb92253df1b48cf16e22358de6fd7889a880b",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/13851/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 27982,
+      "release_date": "2025-04-24",
+      "capture_date": "2022-12-19",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "b1c9b0410636ab14ad3b55da184d7349eb7edd4b1927023a6c343d61b19289db",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/27982/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N027": {
+    "before": {
+      "release_num": 30195,
+      "release_date": "2014-11-12",
+      "capture_date": "2009-12-27",
+      "provider": "DigitalGlobe",
+      "source": "WV01",
+      "resolution_m": 0.5,
+      "accuracy_m": 10.199999809265137,
+      "tile_sha256": "9165ec3619c57e2655c9082e10e10173049100ec16e6f9663243cd77005ba2f7",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/30195/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 16062,
+      "release_date": "2020-03-23",
+      "capture_date": "2019-06-14",
+      "provider": "Maxar",
+      "source": "WV03",
+      "resolution_m": 0.31,
+      "accuracy_m": 10.16,
+      "tile_sha256": "988c454c4fc53a5d1c188970a7ee07ff9646ad7d09b788e3a48d8cab2eb36e62",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/16062/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "latest_distinct_image_no_verified_post_sign_capture",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N028": {
+    "before": {
+      "release_num": 30195,
+      "release_date": "2014-11-12",
+      "capture_date": "2009-12-27",
+      "provider": "DigitalGlobe",
+      "source": "WV01",
+      "resolution_m": 0.5,
+      "accuracy_m": 10.199999809265137,
+      "tile_sha256": "9165ec3619c57e2655c9082e10e10173049100ec16e6f9663243cd77005ba2f7",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/30195/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 16062,
+      "release_date": "2020-03-23",
+      "capture_date": "2019-06-14",
+      "provider": "Maxar",
+      "source": "WV03",
+      "resolution_m": 0.31,
+      "accuracy_m": 10.16,
+      "tile_sha256": "988c454c4fc53a5d1c188970a7ee07ff9646ad7d09b788e3a48d8cab2eb36e62",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/16062/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "latest_distinct_image_no_verified_post_sign_capture",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N029": {
+    "before": {
+      "release_num": 30195,
+      "release_date": "2014-11-12",
+      "capture_date": "2009-12-27",
+      "provider": "DigitalGlobe",
+      "source": "WV01",
+      "resolution_m": 0.5,
+      "accuracy_m": 10.199999809265137,
+      "tile_sha256": "9165ec3619c57e2655c9082e10e10173049100ec16e6f9663243cd77005ba2f7",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/30195/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 16062,
+      "release_date": "2020-03-23",
+      "capture_date": "2019-06-14",
+      "provider": "Maxar",
+      "source": "WV03",
+      "resolution_m": 0.31,
+      "accuracy_m": 10.16,
+      "tile_sha256": "988c454c4fc53a5d1c188970a7ee07ff9646ad7d09b788e3a48d8cab2eb36e62",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/16062/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "latest_distinct_image_no_verified_post_sign_capture",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N030": {
+    "before": {
+      "release_num": 47963,
+      "release_date": "2023-06-29",
+      "capture_date": "2021-11-15",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "a0ba7fdf2a8aa4abe989e073ba137ee64612e0a1b52723e99a0326b722932719",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/47963/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 48925,
+      "release_date": "2025-06-26",
+      "capture_date": "2025-03-22",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.3,
+      "accuracy_m": 8.47,
+      "tile_sha256": "7416afd850f27af6b574965585b5184be431a32c1e0f7698c27eba2664e77889",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/48925/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N031": {
+    "before": {
+      "release_num": 47963,
+      "release_date": "2023-06-29",
+      "capture_date": "2021-11-15",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "a0ba7fdf2a8aa4abe989e073ba137ee64612e0a1b52723e99a0326b722932719",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/47963/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 48925,
+      "release_date": "2025-06-26",
+      "capture_date": "2025-03-22",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.3,
+      "accuracy_m": 8.47,
+      "tile_sha256": "7416afd850f27af6b574965585b5184be431a32c1e0f7698c27eba2664e77889",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/48925/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N032": {
+    "before": {
+      "release_num": 30195,
+      "release_date": "2014-11-12",
+      "capture_date": "2009-12-27",
+      "provider": "DigitalGlobe",
+      "source": "WV01",
+      "resolution_m": 0.5,
+      "accuracy_m": 10.199999809265137,
+      "tile_sha256": "9165ec3619c57e2655c9082e10e10173049100ec16e6f9663243cd77005ba2f7",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/30195/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 16062,
+      "release_date": "2020-03-23",
+      "capture_date": "2019-06-14",
+      "provider": "Maxar",
+      "source": "WV03",
+      "resolution_m": 0.31,
+      "accuracy_m": 10.16,
+      "tile_sha256": "988c454c4fc53a5d1c188970a7ee07ff9646ad7d09b788e3a48d8cab2eb36e62",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/16062/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "latest_distinct_image_no_verified_post_sign_capture",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N033": {
+    "before": {
+      "release_num": 30195,
+      "release_date": "2014-11-12",
+      "capture_date": "2009-12-27",
+      "provider": "DigitalGlobe",
+      "source": "WV01",
+      "resolution_m": 0.5,
+      "accuracy_m": 10.199999809265137,
+      "tile_sha256": "9165ec3619c57e2655c9082e10e10173049100ec16e6f9663243cd77005ba2f7",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/30195/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 16062,
+      "release_date": "2020-03-23",
+      "capture_date": "2019-06-14",
+      "provider": "Maxar",
+      "source": "WV03",
+      "resolution_m": 0.31,
+      "accuracy_m": 10.16,
+      "tile_sha256": "988c454c4fc53a5d1c188970a7ee07ff9646ad7d09b788e3a48d8cab2eb36e62",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/16062/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "latest_distinct_image_no_verified_post_sign_capture",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N034": {
+    "before": {
+      "release_num": 30195,
+      "release_date": "2014-11-12",
+      "capture_date": "2009-12-27",
+      "provider": "DigitalGlobe",
+      "source": "WV01",
+      "resolution_m": 0.5,
+      "accuracy_m": 10.199999809265137,
+      "tile_sha256": "9165ec3619c57e2655c9082e10e10173049100ec16e6f9663243cd77005ba2f7",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/30195/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 16062,
+      "release_date": "2020-03-23",
+      "capture_date": "2019-06-14",
+      "provider": "Maxar",
+      "source": "WV03",
+      "resolution_m": 0.31,
+      "accuracy_m": 10.16,
+      "tile_sha256": "988c454c4fc53a5d1c188970a7ee07ff9646ad7d09b788e3a48d8cab2eb36e62",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/16062/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "latest_distinct_image_no_verified_post_sign_capture",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N035": {
+    "before": {
+      "release_num": 30195,
+      "release_date": "2014-11-12",
+      "capture_date": "2009-12-27",
+      "provider": "DigitalGlobe",
+      "source": "WV01",
+      "resolution_m": 0.5,
+      "accuracy_m": 10.199999809265137,
+      "tile_sha256": "9165ec3619c57e2655c9082e10e10173049100ec16e6f9663243cd77005ba2f7",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/30195/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 16062,
+      "release_date": "2020-03-23",
+      "capture_date": "2019-06-14",
+      "provider": "Maxar",
+      "source": "WV03",
+      "resolution_m": 0.31,
+      "accuracy_m": 10.16,
+      "tile_sha256": "988c454c4fc53a5d1c188970a7ee07ff9646ad7d09b788e3a48d8cab2eb36e62",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/16062/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "latest_distinct_image_no_verified_post_sign_capture",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N036": {
+    "before": {
+      "release_num": 45441,
+      "release_date": "2022-08-31",
+      "capture_date": "2021-12-04",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "a93a6e2fb1cf6e24d0a64edcdc82fe5ea26462fe6ef415e9fefb339841aed576",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/45441/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 27982,
+      "release_date": "2025-04-24",
+      "capture_date": "2025-01-08",
+      "provider": "Maxar",
+      "source": "LG01",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "1cec47200e73ec625b7c62f4ea27170b1bfd073ee6968e4197f85670e5fd7e75",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/27982/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N037": {
+    "before": {
+      "release_num": 45441,
+      "release_date": "2022-08-31",
+      "capture_date": "2021-12-04",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "a93a6e2fb1cf6e24d0a64edcdc82fe5ea26462fe6ef415e9fefb339841aed576",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/45441/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 27982,
+      "release_date": "2025-04-24",
+      "capture_date": "2025-01-08",
+      "provider": "Maxar",
+      "source": "LG01",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "1cec47200e73ec625b7c62f4ea27170b1bfd073ee6968e4197f85670e5fd7e75",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/27982/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N038": {
+    "before": {
+      "release_num": 45441,
+      "release_date": "2022-08-31",
+      "capture_date": "2021-12-04",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "a93a6e2fb1cf6e24d0a64edcdc82fe5ea26462fe6ef415e9fefb339841aed576",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/45441/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 27982,
+      "release_date": "2025-04-24",
+      "capture_date": "2025-01-08",
+      "provider": "Maxar",
+      "source": "LG01",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "1cec47200e73ec625b7c62f4ea27170b1bfd073ee6968e4197f85670e5fd7e75",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/27982/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N039": {
+    "before": {
+      "release_num": 45441,
+      "release_date": "2022-08-31",
+      "capture_date": "2021-12-04",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "a93a6e2fb1cf6e24d0a64edcdc82fe5ea26462fe6ef415e9fefb339841aed576",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/45441/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 27982,
+      "release_date": "2025-04-24",
+      "capture_date": "2025-01-08",
+      "provider": "Maxar",
+      "source": "LG01",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "1cec47200e73ec625b7c62f4ea27170b1bfd073ee6968e4197f85670e5fd7e75",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/27982/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N040": {
+    "before": {
+      "release_num": 47963,
+      "release_date": "2023-06-29",
+      "capture_date": "2021-11-15",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "a0ba7fdf2a8aa4abe989e073ba137ee64612e0a1b52723e99a0326b722932719",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/47963/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 48925,
+      "release_date": "2025-06-26",
+      "capture_date": "2025-03-22",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.3,
+      "accuracy_m": 8.47,
+      "tile_sha256": "7416afd850f27af6b574965585b5184be431a32c1e0f7698c27eba2664e77889",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/48925/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N041": {
+    "before": {
+      "release_num": 47963,
+      "release_date": "2023-06-29",
+      "capture_date": "2021-11-15",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "a0ba7fdf2a8aa4abe989e073ba137ee64612e0a1b52723e99a0326b722932719",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/47963/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 48925,
+      "release_date": "2025-06-26",
+      "capture_date": "2025-03-22",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.3,
+      "accuracy_m": 8.47,
+      "tile_sha256": "7416afd850f27af6b574965585b5184be431a32c1e0f7698c27eba2664e77889",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/48925/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N042": {
+    "before": {
+      "release_num": 47963,
+      "release_date": "2023-06-29",
+      "capture_date": "2021-11-15",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "a0ba7fdf2a8aa4abe989e073ba137ee64612e0a1b52723e99a0326b722932719",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/47963/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 48925,
+      "release_date": "2025-06-26",
+      "capture_date": "2025-03-22",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.3,
+      "accuracy_m": 8.47,
+      "tile_sha256": "7416afd850f27af6b574965585b5184be431a32c1e0f7698c27eba2664e77889",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/48925/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N043": {
+    "before": {
+      "release_num": 12428,
+      "release_date": "2024-06-06",
+      "capture_date": "2022-04-22",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "50fef59afdcf2a1883f0f89824905b8cea2679647236c5e4bce982410c4212f9",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/12428/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 27982,
+      "release_date": "2025-04-24",
+      "capture_date": "2024-11-10",
+      "provider": "Maxar",
+      "source": "WV03",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "8d7fa9bc1585616d745c9f1e15f550d6e4913ffcd05cbce5bd568dd754d446bc",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/27982/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N044": {
+    "before": {
+      "release_num": 12428,
+      "release_date": "2024-06-06",
+      "capture_date": "2022-04-22",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "50fef59afdcf2a1883f0f89824905b8cea2679647236c5e4bce982410c4212f9",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/12428/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 27982,
+      "release_date": "2025-04-24",
+      "capture_date": "2024-11-10",
+      "provider": "Maxar",
+      "source": "WV03",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "8d7fa9bc1585616d745c9f1e15f550d6e4913ffcd05cbce5bd568dd754d446bc",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/27982/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N045": {
+    "before": {
+      "release_num": 12428,
+      "release_date": "2024-06-06",
+      "capture_date": "2022-04-22",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "50fef59afdcf2a1883f0f89824905b8cea2679647236c5e4bce982410c4212f9",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/12428/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 27982,
+      "release_date": "2025-04-24",
+      "capture_date": "2024-11-10",
+      "provider": "Maxar",
+      "source": "WV03",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "8d7fa9bc1585616d745c9f1e15f550d6e4913ffcd05cbce5bd568dd754d446bc",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/27982/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N046": {
+    "before": {
+      "release_num": 12428,
+      "release_date": "2024-06-06",
+      "capture_date": "2022-04-22",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "50fef59afdcf2a1883f0f89824905b8cea2679647236c5e4bce982410c4212f9",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/12428/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 27982,
+      "release_date": "2025-04-24",
+      "capture_date": "2024-11-10",
+      "provider": "Maxar",
+      "source": "WV03",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "8d7fa9bc1585616d745c9f1e15f550d6e4913ffcd05cbce5bd568dd754d446bc",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/27982/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N047": {
+    "before": {
+      "release_num": 12428,
+      "release_date": "2024-06-06",
+      "capture_date": "2022-04-22",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "50fef59afdcf2a1883f0f89824905b8cea2679647236c5e4bce982410c4212f9",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/12428/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 27982,
+      "release_date": "2025-04-24",
+      "capture_date": "2024-11-10",
+      "provider": "Maxar",
+      "source": "WV03",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "8d7fa9bc1585616d745c9f1e15f550d6e4913ffcd05cbce5bd568dd754d446bc",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/27982/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N048": {
+    "before": {
+      "release_num": 12428,
+      "release_date": "2024-06-06",
+      "capture_date": "2022-04-22",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "50fef59afdcf2a1883f0f89824905b8cea2679647236c5e4bce982410c4212f9",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/12428/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 27982,
+      "release_date": "2025-04-24",
+      "capture_date": "2024-11-10",
+      "provider": "Maxar",
+      "source": "WV03",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "8d7fa9bc1585616d745c9f1e15f550d6e4913ffcd05cbce5bd568dd754d446bc",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/27982/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N049": {
+    "before": {
+      "release_num": 12428,
+      "release_date": "2024-06-06",
+      "capture_date": "2022-04-22",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "50fef59afdcf2a1883f0f89824905b8cea2679647236c5e4bce982410c4212f9",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/12428/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 27982,
+      "release_date": "2025-04-24",
+      "capture_date": "2024-11-10",
+      "provider": "Maxar",
+      "source": "WV03",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "8d7fa9bc1585616d745c9f1e15f550d6e4913ffcd05cbce5bd568dd754d446bc",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/27982/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N050": {
+    "before": {
+      "release_num": 47963,
+      "release_date": "2023-06-29",
+      "capture_date": "2021-11-15",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "a0ba7fdf2a8aa4abe989e073ba137ee64612e0a1b52723e99a0326b722932719",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/47963/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 48925,
+      "release_date": "2025-06-26",
+      "capture_date": "2025-03-22",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.3,
+      "accuracy_m": 8.47,
+      "tile_sha256": "7416afd850f27af6b574965585b5184be431a32c1e0f7698c27eba2664e77889",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/48925/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N051": {
+    "before": {
+      "release_num": 47963,
+      "release_date": "2023-06-29",
+      "capture_date": "2021-11-15",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "a0ba7fdf2a8aa4abe989e073ba137ee64612e0a1b52723e99a0326b722932719",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/47963/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 48925,
+      "release_date": "2025-06-26",
+      "capture_date": "2025-03-22",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.3,
+      "accuracy_m": 8.47,
+      "tile_sha256": "7416afd850f27af6b574965585b5184be431a32c1e0f7698c27eba2664e77889",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/48925/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N052": {
+    "before": {
+      "release_num": 47963,
+      "release_date": "2023-06-29",
+      "capture_date": "2021-11-15",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "a0ba7fdf2a8aa4abe989e073ba137ee64612e0a1b52723e99a0326b722932719",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/47963/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 48925,
+      "release_date": "2025-06-26",
+      "capture_date": "2025-03-22",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.3,
+      "accuracy_m": 8.47,
+      "tile_sha256": "7416afd850f27af6b574965585b5184be431a32c1e0f7698c27eba2664e77889",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/48925/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N053": {
+    "before": {
+      "release_num": 47963,
+      "release_date": "2023-06-29",
+      "capture_date": "2021-11-15",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "a0ba7fdf2a8aa4abe989e073ba137ee64612e0a1b52723e99a0326b722932719",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/47963/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 48925,
+      "release_date": "2025-06-26",
+      "capture_date": "2025-03-22",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.3,
+      "accuracy_m": 8.47,
+      "tile_sha256": "7416afd850f27af6b574965585b5184be431a32c1e0f7698c27eba2664e77889",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/48925/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N054": {
+    "before": {
+      "release_num": 47963,
+      "release_date": "2023-06-29",
+      "capture_date": "2021-11-15",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "a0ba7fdf2a8aa4abe989e073ba137ee64612e0a1b52723e99a0326b722932719",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/47963/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 48925,
+      "release_date": "2025-06-26",
+      "capture_date": "2025-03-22",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.3,
+      "accuracy_m": 8.47,
+      "tile_sha256": "7416afd850f27af6b574965585b5184be431a32c1e0f7698c27eba2664e77889",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/48925/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N055": {
+    "before": {
+      "release_num": 47963,
+      "release_date": "2023-06-29",
+      "capture_date": "2021-11-15",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "a0ba7fdf2a8aa4abe989e073ba137ee64612e0a1b52723e99a0326b722932719",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/47963/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 48925,
+      "release_date": "2025-06-26",
+      "capture_date": "2025-03-22",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.3,
+      "accuracy_m": 8.47,
+      "tile_sha256": "7416afd850f27af6b574965585b5184be431a32c1e0f7698c27eba2664e77889",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/48925/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N056": {
+    "before": {
+      "release_num": 47963,
+      "release_date": "2023-06-29",
+      "capture_date": "2021-11-15",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "a0ba7fdf2a8aa4abe989e073ba137ee64612e0a1b52723e99a0326b722932719",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/47963/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 48925,
+      "release_date": "2025-06-26",
+      "capture_date": "2025-03-22",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.3,
+      "accuracy_m": 8.47,
+      "tile_sha256": "7416afd850f27af6b574965585b5184be431a32c1e0f7698c27eba2664e77889",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/48925/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N057": {
+    "before": {
+      "release_num": 47963,
+      "release_date": "2023-06-29",
+      "capture_date": "2021-11-15",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "a0ba7fdf2a8aa4abe989e073ba137ee64612e0a1b52723e99a0326b722932719",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/47963/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 48925,
+      "release_date": "2025-06-26",
+      "capture_date": "2025-03-22",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.3,
+      "accuracy_m": 8.47,
+      "tile_sha256": "7416afd850f27af6b574965585b5184be431a32c1e0f7698c27eba2664e77889",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/48925/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N058": {
+    "before": {
+      "release_num": 47963,
+      "release_date": "2023-06-29",
+      "capture_date": "2021-11-15",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "a0ba7fdf2a8aa4abe989e073ba137ee64612e0a1b52723e99a0326b722932719",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/47963/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 48925,
+      "release_date": "2025-06-26",
+      "capture_date": "2025-03-22",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.3,
+      "accuracy_m": 8.47,
+      "tile_sha256": "7416afd850f27af6b574965585b5184be431a32c1e0f7698c27eba2664e77889",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/48925/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N059": {
+    "before": {
+      "release_num": 47963,
+      "release_date": "2023-06-29",
+      "capture_date": "2021-11-15",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "a0ba7fdf2a8aa4abe989e073ba137ee64612e0a1b52723e99a0326b722932719",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/47963/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 48925,
+      "release_date": "2025-06-26",
+      "capture_date": "2025-03-22",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.3,
+      "accuracy_m": 8.47,
+      "tile_sha256": "7416afd850f27af6b574965585b5184be431a32c1e0f7698c27eba2664e77889",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/48925/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N060": {
+    "before": {
+      "release_num": 47963,
+      "release_date": "2023-06-29",
+      "capture_date": "2021-11-15",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "a0ba7fdf2a8aa4abe989e073ba137ee64612e0a1b52723e99a0326b722932719",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/47963/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 48925,
+      "release_date": "2025-06-26",
+      "capture_date": "2025-03-22",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.3,
+      "accuracy_m": 8.47,
+      "tile_sha256": "7416afd850f27af6b574965585b5184be431a32c1e0f7698c27eba2664e77889",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/48925/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N061": {
+    "before": {
+      "release_num": 47963,
+      "release_date": "2023-06-29",
+      "capture_date": "2021-11-15",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "a0ba7fdf2a8aa4abe989e073ba137ee64612e0a1b52723e99a0326b722932719",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/47963/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 48925,
+      "release_date": "2025-06-26",
+      "capture_date": "2025-03-22",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.3,
+      "accuracy_m": 8.47,
+      "tile_sha256": "7416afd850f27af6b574965585b5184be431a32c1e0f7698c27eba2664e77889",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/48925/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N062": {
+    "before": {
+      "release_num": 47963,
+      "release_date": "2023-06-29",
+      "capture_date": "2021-11-15",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "a0ba7fdf2a8aa4abe989e073ba137ee64612e0a1b52723e99a0326b722932719",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/47963/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 48925,
+      "release_date": "2025-06-26",
+      "capture_date": "2025-03-22",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.3,
+      "accuracy_m": 8.47,
+      "tile_sha256": "7416afd850f27af6b574965585b5184be431a32c1e0f7698c27eba2664e77889",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/48925/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N063": {
+    "before": {
+      "release_num": 47963,
+      "release_date": "2023-06-29",
+      "capture_date": "2021-11-15",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "a0ba7fdf2a8aa4abe989e073ba137ee64612e0a1b52723e99a0326b722932719",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/47963/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 48925,
+      "release_date": "2025-06-26",
+      "capture_date": "2025-03-22",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.3,
+      "accuracy_m": 8.47,
+      "tile_sha256": "7416afd850f27af6b574965585b5184be431a32c1e0f7698c27eba2664e77889",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/48925/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N064": {
+    "before": {
+      "release_num": 47963,
+      "release_date": "2023-06-29",
+      "capture_date": "2021-11-15",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "83d61ad048babcf8d133a8280bbc002b5352a97f18c1723a5985e06917971b50",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/47963/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 48925,
+      "release_date": "2025-06-26",
+      "capture_date": "2025-02-16",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.3,
+      "accuracy_m": 8.47,
+      "tile_sha256": "d69f3406e82143810b5149fccdf738b8612f94c491c2d3491ece52fac7054a4a",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/48925/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N065": {
+    "before": {
+      "release_num": 13851,
+      "release_date": "2022-07-21",
+      "capture_date": "2021-11-19",
+      "provider": "Maxar",
+      "source": "GE01",
+      "resolution_m": 1.2,
+      "accuracy_m": 5,
+      "tile_sha256": "ca060bf9e9245b93f6c08e057d9cb92253df1b48cf16e22358de6fd7889a880b",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/13851/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 27982,
+      "release_date": "2025-04-24",
+      "capture_date": "2022-12-19",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "b1c9b0410636ab14ad3b55da184d7349eb7edd4b1927023a6c343d61b19289db",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/27982/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "N066": {
+    "before": {
+      "release_num": 47963,
+      "release_date": "2023-06-29",
+      "capture_date": "2022-08-08",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "9c145e5a3dafead58639646652f81ab5efb1d6a3bc9dedd288e6f7438fded849",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/47963/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 27982,
+      "release_date": "2025-04-24",
+      "capture_date": "2024-11-10",
+      "provider": "Maxar",
+      "source": "WV03",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "8d7fa9bc1585616d745c9f1e15f550d6e4913ffcd05cbce5bd568dd754d446bc",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/27982/{z}/{y}/{x}"
+    },
+    "zoom": 16,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_county_centroid",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "X03": {
+    "before": {
+      "release_num": 31026,
+      "release_date": "2017-02-27",
+      "capture_date": "2013-08-05",
+      "provider": "DigitalGlobe",
+      "source": "WV02",
+      "resolution_m": 0.5,
+      "accuracy_m": 10.2,
+      "tile_sha256": "9442c6aab825fb4f3077455d4b9ec878dd0727519fbab8765ccaa3080701c2af",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/31026/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 27982,
+      "release_date": "2025-04-24",
+      "capture_date": "2022-04-22",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "0356d1e520e2fa063703f1d20fa3fd355b71fd35f93ce6a19d978c440d5bc064",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/27982/{z}/{y}/{x}"
+    },
+    "zoom": 17,
+    "comparison_type": "latest_distinct_image_no_verified_post_sign_capture",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_houpo_zone",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "X04": {
+    "before": {
+      "release_num": 13851,
+      "release_date": "2022-07-21",
+      "capture_date": "2021-12-22",
+      "provider": "Maxar",
+      "source": "GE01",
+      "resolution_m": 1.2,
+      "accuracy_m": 5,
+      "tile_sha256": "240cabe4a154999ee1830ecd9c60a4f31a8cd628e9a1df6594b97cdb4a2f12f5",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/13851/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 27982,
+      "release_date": "2025-04-24",
+      "capture_date": "2022-12-19",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "4400db7d8034fa2c61032373ff7912b8ce34ee0de8c12d60ff42f8aba77fdff6",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/27982/{z}/{y}/{x}"
+    },
+    "zoom": 17,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_industrial_zone",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "X05": {
+    "before": {
+      "release_num": 13851,
+      "release_date": "2022-07-21",
+      "capture_date": "2021-12-22",
+      "provider": "Maxar",
+      "source": "GE01",
+      "resolution_m": 1.2,
+      "accuracy_m": 5,
+      "tile_sha256": "240cabe4a154999ee1830ecd9c60a4f31a8cd628e9a1df6594b97cdb4a2f12f5",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/13851/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 27982,
+      "release_date": "2025-04-24",
+      "capture_date": "2022-12-19",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "4400db7d8034fa2c61032373ff7912b8ce34ee0de8c12d60ff42f8aba77fdff6",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/27982/{z}/{y}/{x}"
+    },
+    "zoom": 17,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_industrial_zone",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "X06": {
+    "before": {
+      "release_num": 31026,
+      "release_date": "2017-02-27",
+      "capture_date": "2013-08-05",
+      "provider": "DigitalGlobe",
+      "source": "WV02",
+      "resolution_m": 0.5,
+      "accuracy_m": 10.2,
+      "tile_sha256": "9442c6aab825fb4f3077455d4b9ec878dd0727519fbab8765ccaa3080701c2af",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/31026/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 27982,
+      "release_date": "2025-04-24",
+      "capture_date": "2022-04-22",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "0356d1e520e2fa063703f1d20fa3fd355b71fd35f93ce6a19d978c440d5bc064",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/27982/{z}/{y}/{x}"
+    },
+    "zoom": 17,
+    "comparison_type": "latest_distinct_image_no_verified_post_sign_capture",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_houpo_zone",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "X07": {
+    "before": {
+      "release_num": 31026,
+      "release_date": "2017-02-27",
+      "capture_date": "2013-08-05",
+      "provider": "DigitalGlobe",
+      "source": "WV02",
+      "resolution_m": 0.5,
+      "accuracy_m": 10.2,
+      "tile_sha256": "9442c6aab825fb4f3077455d4b9ec878dd0727519fbab8765ccaa3080701c2af",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/31026/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 27982,
+      "release_date": "2025-04-24",
+      "capture_date": "2022-04-22",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "0356d1e520e2fa063703f1d20fa3fd355b71fd35f93ce6a19d978c440d5bc064",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/27982/{z}/{y}/{x}"
+    },
+    "zoom": 17,
+    "comparison_type": "latest_distinct_image_no_verified_post_sign_capture",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_houpo_zone",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "X08": {
+    "before": {
+      "release_num": 13851,
+      "release_date": "2022-07-21",
+      "capture_date": "2021-12-22",
+      "provider": "Maxar",
+      "source": "GE01",
+      "resolution_m": 1.2,
+      "accuracy_m": 5,
+      "tile_sha256": "240cabe4a154999ee1830ecd9c60a4f31a8cd628e9a1df6594b97cdb4a2f12f5",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/13851/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 27982,
+      "release_date": "2025-04-24",
+      "capture_date": "2022-12-19",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "4400db7d8034fa2c61032373ff7912b8ce34ee0de8c12d60ff42f8aba77fdff6",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/27982/{z}/{y}/{x}"
+    },
+    "zoom": 17,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_industrial_zone",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "X09": {
+    "before": {
+      "release_num": 31026,
+      "release_date": "2017-02-27",
+      "capture_date": "2013-08-05",
+      "provider": "DigitalGlobe",
+      "source": "WV02",
+      "resolution_m": 0.5,
+      "accuracy_m": 10.2,
+      "tile_sha256": "9442c6aab825fb4f3077455d4b9ec878dd0727519fbab8765ccaa3080701c2af",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/31026/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 27982,
+      "release_date": "2025-04-24",
+      "capture_date": "2022-04-22",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "0356d1e520e2fa063703f1d20fa3fd355b71fd35f93ce6a19d978c440d5bc064",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/27982/{z}/{y}/{x}"
+    },
+    "zoom": 17,
+    "comparison_type": "latest_distinct_image_no_verified_post_sign_capture",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_houpo_zone",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "X10": {
+    "before": {
+      "release_num": 13851,
+      "release_date": "2022-07-21",
+      "capture_date": "2022-01-03",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 1.2,
+      "accuracy_m": 5,
+      "tile_sha256": "6369f0d7a19436ec51e7242fd9bf09ac17e4babb8337003d35f5f2a9fb946235",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/13851/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 27982,
+      "release_date": "2025-04-24",
+      "capture_date": "2022-12-19",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "618c60b3f7a9a7f00ffeb6b0512af5127491ee48cd86bc69128e2c483aad06b9",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/27982/{z}/{y}/{x}"
+    },
+    "zoom": 17,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_rural_zone",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "X11": {
+    "before": {
+      "release_num": 31026,
+      "release_date": "2017-02-27",
+      "capture_date": "2013-08-05",
+      "provider": "DigitalGlobe",
+      "source": "WV02",
+      "resolution_m": 0.5,
+      "accuracy_m": 10.2,
+      "tile_sha256": "9442c6aab825fb4f3077455d4b9ec878dd0727519fbab8765ccaa3080701c2af",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/31026/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 27982,
+      "release_date": "2025-04-24",
+      "capture_date": "2022-04-22",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "0356d1e520e2fa063703f1d20fa3fd355b71fd35f93ce6a19d978c440d5bc064",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/27982/{z}/{y}/{x}"
+    },
+    "zoom": 17,
+    "comparison_type": "latest_distinct_image_no_verified_post_sign_capture",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_houpo_zone",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "X12": {
+    "before": {
+      "release_num": 31026,
+      "release_date": "2017-02-27",
+      "capture_date": "2013-08-05",
+      "provider": "DigitalGlobe",
+      "source": "WV02",
+      "resolution_m": 0.5,
+      "accuracy_m": 10.2,
+      "tile_sha256": "9442c6aab825fb4f3077455d4b9ec878dd0727519fbab8765ccaa3080701c2af",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/31026/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 27982,
+      "release_date": "2025-04-24",
+      "capture_date": "2022-04-22",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "0356d1e520e2fa063703f1d20fa3fd355b71fd35f93ce6a19d978c440d5bc064",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/27982/{z}/{y}/{x}"
+    },
+    "zoom": 17,
+    "comparison_type": "latest_distinct_image_no_verified_post_sign_capture",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_houpo_zone",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "X13": {
+    "before": {
+      "release_num": 31026,
+      "release_date": "2017-02-27",
+      "capture_date": "2013-08-05",
+      "provider": "DigitalGlobe",
+      "source": "WV02",
+      "resolution_m": 0.5,
+      "accuracy_m": 10.2,
+      "tile_sha256": "9442c6aab825fb4f3077455d4b9ec878dd0727519fbab8765ccaa3080701c2af",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/31026/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 27982,
+      "release_date": "2025-04-24",
+      "capture_date": "2022-04-22",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "0356d1e520e2fa063703f1d20fa3fd355b71fd35f93ce6a19d978c440d5bc064",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/27982/{z}/{y}/{x}"
+    },
+    "zoom": 17,
+    "comparison_type": "latest_distinct_image_no_verified_post_sign_capture",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_houpo_zone",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "X14": {
+    "before": {
+      "release_num": 31026,
+      "release_date": "2017-02-27",
+      "capture_date": "2013-08-05",
+      "provider": "DigitalGlobe",
+      "source": "WV02",
+      "resolution_m": 0.5,
+      "accuracy_m": 10.2,
+      "tile_sha256": "9442c6aab825fb4f3077455d4b9ec878dd0727519fbab8765ccaa3080701c2af",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/31026/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 27982,
+      "release_date": "2025-04-24",
+      "capture_date": "2022-04-22",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "0356d1e520e2fa063703f1d20fa3fd355b71fd35f93ce6a19d978c440d5bc064",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/27982/{z}/{y}/{x}"
+    },
+    "zoom": 17,
+    "comparison_type": "latest_distinct_image_no_verified_post_sign_capture",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_houpo_zone",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "X15": {
+    "before": {
+      "release_num": 13851,
+      "release_date": "2022-07-21",
+      "capture_date": "2021-12-22",
+      "provider": "Maxar",
+      "source": "GE01",
+      "resolution_m": 1.2,
+      "accuracy_m": 5,
+      "tile_sha256": "240cabe4a154999ee1830ecd9c60a4f31a8cd628e9a1df6594b97cdb4a2f12f5",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/13851/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 27982,
+      "release_date": "2025-04-24",
+      "capture_date": "2022-12-19",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "4400db7d8034fa2c61032373ff7912b8ce34ee0de8c12d60ff42f8aba77fdff6",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/27982/{z}/{y}/{x}"
+    },
+    "zoom": 17,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_industrial_zone",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  },
+  "X16": {
+    "before": {
+      "release_num": 13851,
+      "release_date": "2022-07-21",
+      "capture_date": "2021-12-22",
+      "provider": "Maxar",
+      "source": "GE01",
+      "resolution_m": 1.2,
+      "accuracy_m": 5,
+      "tile_sha256": "240cabe4a154999ee1830ecd9c60a4f31a8cd628e9a1df6594b97cdb4a2f12f5",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/13851/{z}/{y}/{x}"
+    },
+    "after": {
+      "release_num": 27982,
+      "release_date": "2025-04-24",
+      "capture_date": "2022-12-19",
+      "provider": "Maxar",
+      "source": "WV02",
+      "resolution_m": 0.6,
+      "accuracy_m": 5,
+      "tile_sha256": "4400db7d8034fa2c61032373ff7912b8ce34ee0de8c12d60ff42f8aba77fdff6",
+      "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/27982/{z}/{y}/{x}"
+    },
+    "zoom": 17,
+    "comparison_type": "acquisition_dates_bracket_signing",
+    "locally_distinct": true,
+    "geometry_precision": "indicative_industrial_zone",
+    "note": "Two releases were selected only after the center tile bytes differed at the display zoom."
+  }
+}

@@ -44,7 +44,7 @@
 | environment_check | 环境/规划证据核查状态。 |
 | source_registry | 已捕获的本地注册或企业来源。 |
 | registry_check | 注册证据核查状态。 |
-| imagery_context | 地图影像上下文版本说明。 |
+| imagery_context | 项目详情双图的Wayback本地不同影像配对说明；具体版本、采集日期和瓦片哈希见wayback_pairs.json。 |
 | lat, lon | 指示坐标。 |
 | geometry_precision | 坐标精度；indicative_county_centroid等都不是宗地。 |
 | cohort_role | nanyang_named_project或xichuan_deep_audit。 |
@@ -52,6 +52,10 @@
 ## evidence_ledger.csv
 
 每个项目有五条记录：inclusion、post_signing_followup、environment、local_registry、imagery。finding记录该阶段发现，certainty记录证据强度，audit_note说明空白是否属于真正的负面结果。
+
+## wayback_pairs.json
+
+每个项目包含`before`和`after`两张本地影像；同一指示坐标、同一缩放级别的中心瓦片文件哈希不同。`release_date`是Wayback版本发布日期；`capture_date`是Esri元数据返回的影像采集日，二者不能互换。`provider`、`source`、`resolution_m`和`accuracy_m`来自影像元数据。`tile_sha256`记录中心瓦片文件哈希；两个哈希不同是进入前端配对的必要条件。`comparison_type`若为`latest_distinct_image_no_verified_post_sign_capture`，表示该点没有定位到签约后采集影像，不能把右图称作签约后影像；`post_sign_capture_before_capture_unknown`表示右图有签约后采集日期，但左图采集日期缺失。坐标精度仍由主项目表中的`geometry_precision`决定。
 
 ## followup_search_results.csv
 

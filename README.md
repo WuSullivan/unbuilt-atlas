@@ -27,6 +27,7 @@
 - [400条证据阶段账本](data/evidence_ledger.csv)
 - [497条搜索候选记录](data/followup_search_results.csv)
 - [去重来源表](data/source_register.csv)
+- [80项本地不同卫星影像配对元数据](data/wayback_pairs.json)
 - [来源链接健康审计](outputs/source_health.csv)
 - [三页政策简报](outputs/unbuilt-atlas-research-brief.pdf)
 - [申请叙事与延伸路线](outputs/application-story.md)
@@ -59,6 +60,7 @@
     python3 search_followups.py
     python3 curate_followups.py
     python3 analysis.py
+    python3 build_wayback_pairs.py
     python3 build_evidence_ledger.py
     python3 build_site_data.py
     python3 build_brief_pdf.py
@@ -72,7 +74,7 @@ audit_sources.py并发检查引用链接是否仍可访问，输出source_health
 
 ## 影像说明
 
-地图使用Esri World Imagery Wayback的2022-06-08与2025-12-18发布版本，在同一指示坐标并排显示。发布日期不一定等于当地影像拍摄日期。广域坐标是县区中心，淅川坐标也是园区或乡镇指示点，不是宗地红线。影像只提供区域上下文，不参与状态判定。
+地图为每项项目分别查询Esri Wayback的本地历史版本，并对同一中心瓦片做SHA-256去重，确保两张图实际调用的是不同影像文件。80组中，62组实际采集日期跨过签约日；16组没有定位到签约后的采集影像；另2组有签约后影像，但左图采集日期缺失。页面逐项标出日期、来源和分辨率，不把Wayback版本发布日期冒充拍摄日期。广域坐标是县区中心，淅川坐标是园区或乡镇指示点，不是宗地红线；影像不参与项目状态判定。
 
 ## 发布
 
