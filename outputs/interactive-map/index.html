@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="追踪南阳公开招商签约项目在数年后留下的建设证据。">
+  <title>签约之后 | Unbuilt Atlas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+SC:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
+  <style>
+    :root {
+      --paper:#f3f0e8; --ink:#152129; --muted:#5d696e; --line:#cdd1ca;
+      --night:#102934; --night-soft:#173844; --white:#fffdf7; --yellow:#edc65d;
+      --built:#237a5a; --physical:#1b7682; --admin:#b77d22; --mention:#647789;
+      --absent:#c8553d; --shadow:0 18px 54px rgba(16,41,52,.18);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:"IBM Plex Sans SC",system-ui,sans-serif}
+    a{color:inherit}
+    button,input,select{font:inherit}
+    .topnav{height:58px;display:flex;align-items:center;justify-content:space-between;padding:0 4vw;background:var(--night);color:#dfeae6;border-bottom:1px solid rgba(255,255,255,.16);position:sticky;top:0;z-index:1000}
+    .brand{font:500 12px "IBM Plex Mono",monospace;letter-spacing:.14em;text-transform:uppercase}
+    .toplinks{display:flex;gap:20px;font-size:12px}.toplinks a{text-decoration:none;color:#c4d3cf}.toplinks a:hover{color:#fff}
+    .hero{min-height:470px;background:var(--night);color:#f3f4ee;padding:64px 4vw 46px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;position:relative}
+    .hero:after{content:"";position:absolute;right:-7vw;bottom:-160px;width:520px;height:520px;border:1px solid rgba(237,198,93,.38);border-radius:50%;box-shadow:0 0 0 64px rgba(237,198,93,.04),0 0 0 128px rgba(237,198,93,.025);pointer-events:none}
+    .kicker{font:500 12px "IBM Plex Mono",monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--yellow)}
+    h1{font-size:clamp(42px,6vw,78px);line-height:.98;letter-spacing:0;font-weight:500;margin:16px 0 22px;max-width:1120px}
+    .hero-copy{max-width:760px;font-size:18px;line-height:1.8;color:#c9d6d2;margin:0}
+    .hero-copy strong{color:#fff;font-weight:500}
+    .hero-stats{display:flex;gap:clamp(26px,5vw,70px);flex-wrap:wrap;margin-top:40px;padding-top:22px;border-top:1px solid rgba(255,255,255,.18);max-width:1050px}
+    .hero-stat b{display:block;font:500 clamp(28px,4vw,48px) "IBM Plex Mono",monospace;color:var(--yellow)}
+    .hero-stat span{display:block;margin-top:5px;font-size:12px;color:#abc0b9}
+    .storyline{padding:18px 4vw;background:var(--yellow);color:#172126;font-weight:500;font-size:15px}
+    .map-section{display:grid;grid-template-columns:320px minmax(0,1fr);min-height:760px;border-bottom:1px solid var(--line)}
+    .controls{padding:28px 24px 34px 4vw;background:#ebe8df;border-right:1px solid var(--line);overflow:auto}
+    .controls h2{font-size:25px;font-weight:600;margin:0 0 8px}.controls .sub{font-size:12px;line-height:1.65;color:var(--muted);margin:0 0 22px}
+    .control{display:grid;gap:7px;margin:0 0 17px}.control label{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+    .control input,.control select{width:100%;padding:10px 11px;background:var(--white);border:1px solid var(--line);border-radius:0;color:var(--ink)}
+    .status-list{display:grid;gap:6px;margin:8px 0 20px}
+    .status-button{display:grid;grid-template-columns:12px 1fr auto;gap:9px;align-items:center;border:1px solid transparent;background:transparent;padding:8px 6px;text-align:left;color:var(--ink)}
+    .status-button:hover,.status-button.active{border-color:var(--line);background:var(--white)}
+    .status-button i{width:10px;height:10px;border-radius:50%}.status-button small{font:400 11px "IBM Plex Mono",monospace;color:var(--muted)}
+    .live-count{font:500 13px "IBM Plex Mono",monospace;padding-top:16px;border-top:1px solid var(--line)}
+    .map-wrap{position:relative;min-width:0}.map{height:760px;background:#d8dfda}
+    .map-caption{position:absolute;z-index:500;left:16px;bottom:17px;max-width:520px;background:rgba(255,253,247,.94);border:1px solid var(--line);padding:9px 11px;font-size:11px;line-height:1.55;color:var(--muted)}
+    .dot-icon{background:transparent;border:0}.dot-icon span{display:block;width:18px;height:18px;border:3px solid var(--white);border-radius:50%;box-shadow:0 2px 8px rgba(15,35,43,.28)}
+    .marker-cluster div{background:var(--night)!important;color:#fff!important;font:500 12px "IBM Plex Mono",monospace!important}.marker-cluster{background:rgba(16,41,52,.28)!important}
+    .detail{position:fixed;z-index:1300;top:58px;right:0;bottom:0;width:min(570px,100%);background:var(--white);box-shadow:var(--shadow);transform:translateX(102%);transition:transform .2s ease;overflow:auto}
+    .detail.open{transform:translateX(0)}.detail-inner{padding:28px 30px 46px}
+    .close{position:sticky;top:0;float:right;width:38px;height:38px;border:1px solid var(--line);background:var(--white);font-size:24px;line-height:1}
+    .eyebrow{font:500 11px "IBM Plex Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:15px}
+    .detail h3{font-size:27px;line-height:1.28;margin:10px 45px 5px 0}.company{color:var(--muted);font-size:13px}
+    .pills{display:flex;gap:7px;flex-wrap:wrap;margin:18px 0}.pill{border:1px solid var(--line);padding:5px 8px;font-size:11px}.pill.status{color:#fff;border-color:transparent}
+    .facts{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:18px 0}
+    .fact{padding:12px 8px 12px 0}.fact span{display:block;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}.fact b{display:block;font-size:13px;font-weight:500;margin-top:4px}
+    .detail h4{font-size:13px;margin:24px 0 9px}.reason{font-size:13px;line-height:1.75;padding-left:13px;border-left:3px solid var(--physical)}
+    .sources{display:grid;gap:7px}.sources a{font-size:12px;color:var(--physical);overflow-wrap:anywhere}
+    .sat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.sat-box{min-width:0}.sat-box span{display:block;font:400 10px "IBM Plex Mono",monospace;color:var(--muted);margin-bottom:5px}.sat{height:205px;border:1px solid var(--line);background:#d6ddd8}
+    .sat-note{font-size:11px;line-height:1.6;color:var(--muted);margin:8px 0 0}
+    .findings{padding:70px 4vw 78px}.section-kicker{font:500 11px "IBM Plex Mono",monospace;letter-spacing:.11em;text-transform:uppercase;color:var(--physical)}
+    .findings h2,.method-section h2{font-size:clamp(30px,4.5vw,56px);line-height:1.12;font-weight:500;margin:12px 0 42px;max-width:900px}
+    .finding-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .finding{padding:28px 28px 34px 0;min-height:280px}.finding+.finding{border-left:1px solid var(--line);padding-left:28px}.finding .num{font:500 42px "IBM Plex Mono",monospace;color:var(--absent)}.finding h3{font-size:20px;line-height:1.4;margin:16px 0 11px}.finding p{font-size:13px;line-height:1.75;color:var(--muted)}
+    .model-block{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(300px,.9fr);gap:50px;margin-top:62px;align-items:start}
+    .model-copy h3{font-size:27px;margin:0 0 13px}.model-copy p{font-size:14px;line-height:1.8;color:var(--muted);max-width:650px}
+    .odds{padding-top:8px}.odds-row{margin-bottom:26px}.odds-label{display:flex;justify-content:space-between;gap:14px;font-size:12px;margin-bottom:8px}.odds-label b{font:500 12px "IBM Plex Mono",monospace}
+    .odds-track{position:relative;height:22px;border-bottom:1px solid var(--line)}.odds-track:before{content:"";position:absolute;left:50%;top:0;bottom:-1px;border-left:1px solid var(--ink)}
+    .odds-ci{position:absolute;top:10px;height:3px;background:var(--mention)}.odds-point{position:absolute;top:5px;width:12px;height:12px;border-radius:50%;background:var(--absent);transform:translateX(-50%)}
+    .axis{display:flex;justify-content:space-between;font:400 10px "IBM Plex Mono",monospace;color:var(--muted);margin-top:4px}
+    .human{background:#cf5b43;color:#fff8ef;padding:60px 4vw}.human p{font-size:clamp(25px,4vw,48px);line-height:1.3;max-width:1100px;margin:0;font-weight:500}.human small{display:block;margin-top:24px;max-width:770px;font-size:13px;line-height:1.75;color:#f7d8ce}
+    .method-section{padding:68px 4vw 80px}.method-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}.method-step{padding:23px 24px 20px 0}.method-step+.method-step{border-left:1px solid var(--line);padding-left:24px}.method-step b{font:500 12px "IBM Plex Mono",monospace;color:var(--physical)}.method-step h3{font-size:16px;margin:10px 0}.method-step p{font-size:12px;line-height:1.7;color:var(--muted)}
+    .downloads{display:flex;gap:10px;flex-wrap:wrap;margin-top:34px}.downloads a{padding:10px 12px;border:1px solid var(--ink);text-decoration:none;font-size:12px}.downloads a:first-child{background:var(--ink);color:#fff}
+    footer{padding:24px 4vw;background:var(--night);color:#aebfba;font-size:11px;line-height:1.6}
+    @media(max-width:980px){.map-section{grid-template-columns:1fr}.controls{padding:22px 4vw;border-right:0;border-bottom:1px solid var(--line)}.status-list{grid-template-columns:repeat(2,1fr)}.map,.map-section{min-height:650px}.map{height:650px}.finding-grid{grid-template-columns:1fr}.finding+.finding{border-left:0;border-top:1px solid var(--line);padding-left:0}.finding{min-height:auto}.model-block{grid-template-columns:1fr}.method-grid{grid-template-columns:1fr 1fr}.method-step:nth-child(3){border-left:0}.method-step:nth-child(n+3){border-top:1px solid var(--line)}}
+    @media(max-width:620px){.toplinks{display:none}.hero{min-height:520px;padding-top:45px}.hero-copy{font-size:16px}.status-list{grid-template-columns:1fr}.sat-grid,.facts{grid-template-columns:1fr}.sat{height:230px}.detail-inner{padding:20px 18px 36px}.method-grid{grid-template-columns:1fr}.method-step+.method-step{border-left:0;border-top:1px solid var(--line);padding-left:0}.map-caption{right:12px;left:12px}.finding{padding-right:0}}
+  </style>
+</head>
+<body>
+  <nav class="topnav">
+    <div class="brand">Unbuilt Atlas / 签约之后</div>
+    <div class="toplinks"><a href="#atlas">地图</a><a href="#findings">发现</a><a href="#method">方法</a><a href="../data/nanyang_projects.csv">数据</a></div>
+  </nav>
+
+  <header class="hero">
+    <div class="kicker">河南南阳 · 2019-2022签约 · 追踪至2025年底</div>
+    <h1>签约之后，项目去了哪里？</h1>
+    <p class="hero-copy">我把政府公开宣布的招商项目逐个列出来，几年后再查一遍。<strong>不是统计掌声，而是统计还能被公众核对的厂房、施工和投产记录。</strong></p>
+    <div class="hero-stats">
+      <div class="hero-stat"><b id="heroSlots">426</b><span>官方报道宣布的项目名额</span></div>
+      <div class="hero-stat"><b id="heroNamed">14.6%</b><span>同篇报道明确点名率</span></div>
+      <div class="hero-stat"><b id="heroProjects">80</b><span>逐项追踪项目</span></div>
+      <div class="hero-stat"><b id="heroStrong">17.5%</b><span>留下强物理里程碑</span></div>
+    </div>
+  </header>
+  <div class="storyline">一场签约会结束以后，承诺去了哪里，等待它的人付出了什么代价？</div>
+
+  <section id="atlas" class="map-section">
+    <aside class="controls">
+      <h2>项目兑现地图</h2>
+      <p class="sub">每个点是一项明确点名项目。颜色表示截至2025-12-31找到的最强公开后续证据。</p>
+      <div class="control"><label for="search">搜索项目或企业</label><input id="search" type="search" placeholder="例如：东方雨虹、光学、卧龙区"></div>
+      <div class="control"><label for="county">地区</label><select id="county"><option value="all">全部地区</option></select></div>
+      <div class="control"><label for="cohort">核查层级</label><select id="cohort"><option value="all">全部80项</option><option value="nanyang_named_project">南阳广域追踪66项</option><option value="xichuan_deep_audit">淅川深度核查14项</option></select></div>
+      <div class="control"><label>最强后续证据</label><div id="statusList" class="status-list"></div></div>
+      <div id="liveCount" class="live-count" aria-live="polite">显示 80 / 80 项</div>
+    </aside>
+    <div class="map-wrap">
+      <div id="map" class="map" aria-label="南阳招商项目公开证据地图"></div>
+      <div class="map-caption">广域队列使用县区中心指示点，淅川深审使用园区或乡镇指示点。重合点会自动聚合并在点击后展开。坐标不是宗地红线。</div>
+    </div>
+  </section>
+
+  <article id="detail" class="detail" aria-live="polite">
+    <div class="detail-inner"><button id="close" class="close" aria-label="关闭">×</button><div id="detailContent"></div></div>
+  </article>
+
+  <section id="findings" class="findings">
+    <div class="section-kicker">What the record says</div>
+    <h2>项目先在报道里消失，然后才可能在土地上消失。</h2>
+    <div class="finding-grid">
+      <article class="finding"><div class="num">14.6%</div><h3>多数“项目”连名字都没有公开。</h3><p>21篇不重复的主要签约报道共宣布426个项目名额，只有62个在同一篇报道里被明确点名。公众往往从第一天就无法建立后续追踪清单。</p></article>
+      <article class="finding"><div class="num">17.5%</div><h3>80项明确项目中，14项留下强物理里程碑。</h3><p>5项有投产或试产记录，9项有开工、主体建成或明确投产调度。另有58项在既定公开检索中没有定位到项目专属后续里程碑。</p></article>
+      <article class="finding"><div class="num">21.4%</div><h3>淅川深审没有推翻广域结果。</h3><p>在统一的14项深度队列中，1项建成、2项部分建成，建成或部分建成率为3/14。更深的核查没有把签约名单变成高兑现名单。</p></article>
+    </div>
+    <div class="model-block">
+      <div class="model-copy">
+        <h3>名气和大场面没有预测兑现。</h3>
+        <p>在核查方法一致的66项广域队列中，带有上市公司、央企或全国品牌信号的项目，强物理里程碑率为18.2%；其他或未披露企业为16.4%。简单逻辑回归同时放入企业名气信号和活动公布项目规模，两者的置信区间都跨过1。</p>
+        <p>这不是“名企不会落地”。结论更直接：签约时最醒目的两个表面信号，没有提供可依赖的兑现预测。单项目金额只有11/66项可比，因此没有强行拟合金额模型。</p>
+      </div>
+      <div id="oddsPlot" class="odds" aria-label="逻辑回归优势比"></div>
+    </div>
+  </section>
+
+  <section class="human">
+    <p>消失的不是一座抽象工厂。它可能是一块被预留的土地、一笔被许诺的就业、一套围绕项目安排的人生计划。</p>
+    <small>地图只写公开记录能证明的事，不把“没查到”写成“没有建”。但公共承诺如果无法被逐项核对，本身就是治理问题。</small>
+  </section>
+
+  <section id="method" class="method-section">
+    <div class="section-kicker">Reproducible by design</div>
+    <h2>把一次漂亮的签约，改造成一条必须继续更新的证据链。</h2>
+    <div class="method-grid">
+      <article class="method-step"><b>01</b><h3>预先锁定范围</h3><p>南阳官方政府与招商报道，签约窗口2019-2022年，追踪截止2025-12-31。重复报道和子活动按事件角色去重。</p></article>
+      <article class="method-step"><b>02</b><h3>逐项建立身份</h3><p>记录项目名、企业、地区、行业、活动形式、活动规模、企业信号和公开投资额。名称不明的项目不进入80项队列。</p></article>
+      <article class="method-step"><b>03</b><h3>分层审定证据</h3><p>投产或试产为建成；开工、主体建成或明确生产调度为物理进度；规划备案单列；没有把搜索空白改写成烂尾。</p></article>
+      <article class="method-step"><b>04</b><h3>保留原始链接</h3><p>搜索候选、人工审定、状态理由、来源链接和可复现脚本全部公开。任何人都能回到原始报道并挑战判断。</p></article>
+    </div>
+    <div class="downloads">
+      <a href="../data/nanyang_projects.csv">下载80项数据集</a>
+      <a href="../data/events.csv">下载事件表</a>
+      <a href="../data/followup_search_results.csv">查看497条搜索候选</a>
+      <a href="../outputs/unbuilt-atlas-research-brief.pdf">研究简报 PDF</a>
+      <a href="../README.md">方法与复现说明</a>
+    </div>
+  </section>
+  <footer>Unbuilt Atlas · 数据状态审定于2026-10-29 · 影像为Esri World Imagery Wayback发布版本，仅作指示点周边上下文，不用于单独判定项目状态。</footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+  <script src="atlas-data.js"></script>
+  <script>
+    const DATA = window.UNBUILT_ATLAS;
+    const projects = DATA.projects;
+    const eventMap = Object.fromEntries(DATA.events.map(event => [event.event_id, event]));
+    const statusMeta = {
+      built:{label:"建成 / 试产",color:"#237a5a"},
+      physical_progress:{label:"物理建设进度",color:"#1b7682"},
+      administrative_only:{label:"仅手续进度",color:"#b77d22"},
+      later_mention_only:{label:"仅后续提及",color:"#647789"},
+      no_later_trace_located:{label:"未定位后续里程碑",color:"#c8553d"},
+      no_physical_milestone_located:{label:"深审未定位物理里程碑",color:"#9e3f32"}
+    };
+    const esc = value => String(value ?? "").replace(/[&<>"']/g, char => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
+    const pct = value => (100 * Number(value)).toFixed(1) + "%";
+    document.getElementById("heroSlots").textContent = DATA.summary.event_transparency.announced_project_slots;
+    document.getElementById("heroNamed").textContent = pct(DATA.summary.event_transparency.same_article_naming_rate);
+    document.getElementById("heroProjects").textContent = DATA.summary.scope.projects_total;
+    document.getElementById("heroStrong").textContent = pct(DATA.summary.outcomes.strong_physical_milestone_rate);
+
+    const countySelect = document.getElementById("county");
+    [...new Set(projects.map(p => p.county))].sort((a,b) => a.localeCompare(b,"zh-CN")).forEach(county => {
+      countySelect.insertAdjacentHTML("beforeend", `<option value="${esc(county)}">${esc(county)}</option>`);
+    });
+    const statusList = document.getElementById("statusList");
+    Object.entries(statusMeta).forEach(([key, meta]) => {
+      const count = projects.filter(p => p.followup_status === key).length;
+      statusList.insertAdjacentHTML("beforeend", `<button class="status-button" data-status="${key}"><i style="background:${meta.color}"></i><span>${meta.label}</span><small>${count}</small></button>`);
+    });
+
+    const map = L.map("map",{zoomControl:true,minZoom:7}).setView([33.05,112.35],8);
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{
+      attribution:"© OpenStreetMap contributors",maxZoom:18,opacity:.56
+    }).addTo(map);
+    const cluster = L.markerClusterGroup({
+      showCoverageOnHover:false,spiderfyOnMaxZoom:true,maxClusterRadius:42,
+      iconCreateFunction:c => L.divIcon({html:`<div><span>${c.getChildCount()}</span></div>`,className:"marker-cluster marker-cluster-small",iconSize:L.point(40,40)})
+    });
+    map.addLayer(cluster);
+    const markers = [];
+    projects.forEach(project => {
+      const color = statusMeta[project.followup_status].color;
+      const icon = L.divIcon({className:"dot-icon",html:`<span style="background:${color}"></span>`,iconSize:[18,18],iconAnchor:[9,9]});
+      const marker = L.marker([Number(project.lat),Number(project.lon)],{icon,title:project.project_name});
+      marker.bindTooltip(esc(project.project_name),{direction:"top"});
+      marker.on("click",() => showDetail(project));
+      marker.project = project;
+      markers.push(marker);
+    });
+
+    let selectedStatus = "all";
+    const filters = {search:"",county:"all",cohort:"all"};
+    const matches = p => {
+      const hay = [p.project_name,p.company_name,p.industry,p.county].join(" ").toLowerCase();
+      return (!filters.search || hay.includes(filters.search))
+        && (filters.county === "all" || p.county === filters.county)
+        && (filters.cohort === "all" || p.cohort_role === filters.cohort)
+        && (selectedStatus === "all" || p.followup_status === selectedStatus);
+    };
+    function applyFilters(){
+      cluster.clearLayers();
+      const visible = markers.filter(marker => matches(marker.project));
+      cluster.addLayers(visible);
+      document.getElementById("liveCount").textContent = `显示 ${visible.length} / ${projects.length} 项`;
+      document.querySelectorAll(".status-button").forEach(button => button.classList.toggle("active",button.dataset.status === selectedStatus));
+    }
+    document.getElementById("search").addEventListener("input",event => {filters.search=event.target.value.trim().toLowerCase();applyFilters()});
+    countySelect.addEventListener("change",event => {filters.county=event.target.value;applyFilters()});
+    document.getElementById("cohort").addEventListener("change",event => {filters.cohort=event.target.value;applyFilters()});
+    document.querySelectorAll(".status-button").forEach(button => button.addEventListener("click",() => {selectedStatus=selectedStatus===button.dataset.status?"all":button.dataset.status;applyFilters()}));
+    applyFilters();
+
+    let beforeMap = null, afterMap = null;
+    document.getElementById("close").addEventListener("click",() => document.getElementById("detail").classList.remove("open"));
+    function showDetail(project){
+      if(beforeMap){beforeMap.remove();beforeMap=null} if(afterMap){afterMap.remove();afterMap=null}
+      const event = eventMap[project.event_id] || {};
+      const meta = statusMeta[project.followup_status];
+      const amount = project.announced_investment_cny_100m ? project.announced_investment_cny_100m + "亿元" : "未公开可比金额";
+      const cohort = project.cohort_role === "xichuan_deep_audit" ? "淅川深度核查" : "南阳广域追踪";
+      const sourceLinks = [
+        project.source_sign ? `<a href="${esc(project.source_sign)}" target="_blank" rel="noreferrer">纳入项目的原始官方报道 ↗</a>` : "",
+        project.source_followup ? `<a href="${esc(project.source_followup)}" target="_blank" rel="noreferrer">主要后续证据 ↗</a>` : "",
+        project.source_followup_secondary ? `<a href="${esc(project.source_followup_secondary)}" target="_blank" rel="noreferrer">交叉核对来源 ↗</a>` : ""
+      ].filter(Boolean).join("");
+      document.getElementById("detailContent").innerHTML = `
+        <div class="eyebrow">${esc(project.project_id)} · ${esc(cohort)} · 证据等级 ${esc(project.evidence_grade)}</div>
+        <h3>${esc(project.project_name)}</h3><div class="company">${esc(project.company_name || "签约报道未披露企业名")}</div>
+        <div class="pills"><span class="pill status" style="background:${meta.color}">${meta.label}</span><span class="pill">${esc(project.county)}</span><span class="pill">${esc(project.industry)}</span></div>
+        <div class="facts">
+          <div class="fact"><span>签约 / 纳入日期</span><b>${esc(project.sign_date)}</b></div>
+          <div class="fact"><span>公开投资额</span><b>${esc(amount)}</b></div>
+          <div class="fact"><span>活动公布规模</span><b>${esc(project.event_announced_project_slots)}个项目名额</b></div>
+          <div class="fact"><span>企业信号</span><b>${esc(project.company_signal)}</b></div>
+          <div class="fact"><span>后续日期</span><b>${esc(project.followup_date || "未定位")}</b></div>
+          <div class="fact"><span>活动名称</span><b>${esc(event.event_title || project.event_id)}</b></div>
+        </div>
+        <h4>状态为什么这样判</h4><div class="reason">${esc(project.followup_reason)}</div>
+        <h4>签约前后区域影像上下文</h4>
+        <div class="sat-grid"><div class="sat-box"><span>${esc(DATA.imagery.before.label)}</span><div id="satBefore" class="sat"></div></div><div class="sat-box"><span>${esc(DATA.imagery.after.label)}</span><div id="satAfter" class="sat"></div></div></div>
+        <p class="sat-note">两幅图使用相同指示坐标。Wayback日期是底图发布版本，不一定等于当地影像拍摄日；广域项目坐标是县区中心，淅川项目也是园区或乡镇指示点，因此影像只提供区域上下文，不参与状态判定。</p>
+        <h4>原始记录</h4><div class="sources">${sourceLinks || "没有可链接的后续来源"}</div>`;
+      document.getElementById("detail").classList.add("open");
+      requestAnimationFrame(() => {
+        const center=[Number(project.lat),Number(project.lon)], zoom=project.cohort_role==="xichuan_deep_audit"?14:11;
+        beforeMap=L.map("satBefore",{zoomControl:false,attributionControl:false,dragging:true,scrollWheelZoom:false}).setView(center,zoom);
+        afterMap=L.map("satAfter",{zoomControl:false,attributionControl:false,dragging:true,scrollWheelZoom:false}).setView(center,zoom);
+        L.tileLayer(DATA.imagery.before.url,{maxZoom:18}).addTo(beforeMap);L.tileLayer(DATA.imagery.after.url,{maxZoom:18}).addTo(afterMap);
+        [beforeMap,afterMap].forEach(m => L.circleMarker(center,{radius:5,color:"#edc65d",fillColor:"#edc65d",fillOpacity:1,weight:2}).addTo(m));
+      });
+    }
+
+    function renderOdds(){
+      const rows=DATA.summary.surface_signals.model, plot=document.getElementById("oddsPlot");
+      const min=-2.1,max=2.1,pos=x=>100*(Math.log(x)-min)/(max-min);
+      rows.forEach(row => {
+        plot.insertAdjacentHTML("beforeend",`<div class="odds-row"><div class="odds-label"><span>${esc(row.label)}</span><b>OR ${row.odds_ratio.toFixed(2)} [${row.ci95_low.toFixed(2)}, ${row.ci95_high.toFixed(2)}]</b></div><div class="odds-track"><div class="odds-ci" style="left:${Math.max(0,pos(row.ci95_low))}%;right:${Math.max(0,100-pos(row.ci95_high))}%"></div><div class="odds-point" style="left:${pos(row.odds_ratio)}%"></div></div></div>`);
+      });
+      plot.insertAdjacentHTML("beforeend",'<div class="axis"><span>OR 0.12</span><span>OR 1</span><span>OR 8.2</span></div>');
+    }
+    renderOdds();
+  </script>
+</body>
+</html>

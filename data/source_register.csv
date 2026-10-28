@@ -1,0 +1,51 @@
+source_id,source_date,source_url,source_role,projects_or_scope
+S001,2024-04-11,http://c.m.163.com/news/a/IVH52T1U0552ADWT.html,primary follow-up,N021
+S002,2022-08-14,http://m.163.com/dy/article/HEO296EH0550BXTE.html,primary follow-up,N011
+S003,2022-01-17,http://www.nanyang.gov.cn/2022/01-24/279472.html,cohort inclusion,N007
+S004,2022-04-15,https://4g.dahe.cn/city/202304041214894,secondary corroboration,N020
+S005,2024-08-09,https://hnjs.henan.gov.cn/2024/08-09/3033866.html,primary follow-up,N002
+S006,2023-01-31,https://m.henan.gov.cn/2023/01-31/2681311.html,primary follow-up,N009
+S007,2022-04-06,https://m.sohu.com/a/535817390_120326960/,primary follow-up,N017
+S008,2023-08-11,https://m.sohu.com/a/710937378_121123800/,primary follow-up,N007
+S009,2024-08-29,https://nygtzy.nanyang.gov.cn/2024/08-29/611259.html,primary follow-up,N053
+S010,2023-11-21,https://oss.nanyang.gov.cn/wcm.files/upload/CMSnygx/202311/202311211101010.pdf,primary follow-up,N010
+S011,2025-03-04,https://rensheju.nanyang.gov.cn/2025/03-04/944522.html,primary follow-up,N004
+S012,2022-04-15,https://toutiao.com/group/7086621262742782467/,primary follow-up,N020
+S013,2022-08-17,https://toutiao.com/group/7132763198117773854/,primary follow-up,N024
+S014,2022-09-29,https://toutiao.com/group/7148645485812040207/,primary follow-up,N012
+S015,2022-10-12,https://toutiao.com/group/7153477018905281058/,primary follow-up,N039
+S016,2024-04-11,https://toutiao.com/group/7347496670827823657/,secondary corroboration,N021
+S017,2024-07-26,https://toutiao.com/group/7395803481875038731/,primary follow-up,N037
+S018,2022-04-06,https://wap.01ny.cn/html/news/2023/05/19/show-370662.html,secondary corroboration,N017
+S019,2023-08-11,https://www.fangcheng.gov.cn/2024/11-15/801999.html,secondary corroboration,N007
+S020,2019-10-29,https://www.nanyang.gov.cn/2019/10-30/306759.html,cohort inclusion,N001;N002;N003
+S021,2020-05-09,https://www.nanyang.gov.cn/2020/05-12/306455.html,cohort inclusion,N006
+S022,2020-07-24,https://www.nanyang.gov.cn/2020/07-27/307871.html,cohort inclusion,N004;N005
+S023,2022-03-28,https://www.nanyang.gov.cn/2022/03-29/25208.html,cohort inclusion,N008;N009
+S024,2022-03-28,https://www.nanyang.gov.cn/2022/03-30/269931.html,cohort inclusion,N010;N011;N012;N013;N014;N015;N016;N017;N018;N019;N020
+S025,2022-04-28,https://www.nanyang.gov.cn/2022/05-05/287057.html,cohort inclusion,N021;N022;N023;N024;N025;N026
+S026,2022-05-10,https://www.nanyang.gov.cn/2022/05-17/281604.html,cohort inclusion,N027;N028;N029
+S027,2022-05-17,https://www.nanyang.gov.cn/2022/05-20/269961.html,cohort inclusion,N030;N031
+S028,2022-06-02,https://www.nanyang.gov.cn/2022/06-06/281610.html,cohort inclusion,N032;N033;N034;N035
+S029,2022-06-20,https://www.nanyang.gov.cn/2022/06-23/284956.html,cohort inclusion,N036;N037;N038;N039
+S030,2022-06-30,https://www.nanyang.gov.cn/2022/07-01/269988.html,cohort inclusion,N040;N041;N042
+S031,2022-07-06,https://www.nanyang.gov.cn/2022/07-08/289387.html,cohort inclusion,N043;N044;N045;N046;N047;N048;N049
+S032,2022-08-05,https://www.nanyang.gov.cn/2022/08-11/234613.html,cohort inclusion,N050
+S033,2022-08-26,https://www.nanyang.gov.cn/2022/08-29/270028.html,cohort inclusion,N051;N052;N053;N054;N055;N056;N057;N058;N059;N060;N061;N062;N063
+S034,2022-08-26,https://www.nanyang.gov.cn/2022/08-30/206274.html,cohort inclusion,N064
+S035,2022-09-28,https://www.nanyang.gov.cn/2022/10-08/287143.html,cohort inclusion,N065
+S036,2022-12-09,https://www.nanyang.gov.cn/2022/12-13/289469.html,cohort inclusion,N066
+S037,2024-03-07,https://www.nanzhao.gov.cn/2024/03-07/806195.html,primary follow-up,N038
+S038,2024-03-08,https://www.nanzhao.gov.cn/2024/06-17/805847.html,primary follow-up,N036
+S039,2023-03-03,https://www.wolong.gov.cn/2023/03-03/911625.html,primary follow-up,N030;N051
+S040,2025-05-16,https://www.wolong.gov.cn/2025/05-16/1040024.html,primary follow-up,N055
+S041,2022-06-15,https://www.xichuan.gov.cn/2022/06-15/1283248.html,cohort inclusion,X04;X05;X06;X08;X10;X11;X13;X16
+S042,,https://www.xichuan.gov.cn/2022/07-12/1308263.html,primary follow-up,X12
+S043,2022-06-15,https://www.xichuan.gov.cn/2022/08-24/1283286.html,cohort inclusion,X09;X15
+S044,2022-06-15,https://www.xichuan.gov.cn/2022/11-02/1317842.html,cohort inclusion; primary follow-up,X03;X04;X07;X09;X10;X11;X12;X14;X15;X16
+S045,,https://www.xichuan.gov.cn/2023/03-30/1292718.html,primary follow-up,X07;X13;X14
+S046,,https://www.xichuan.gov.cn/2023/07-21/1278281.html,primary follow-up,X05
+S047,,https://www.xichuan.gov.cn/2023/11-22/1308412.html,environment,X08
+S048,,https://www.xichuan.gov.cn/2024/05-29/1296901.html,environment,X06
+S049,,https://www.xichuan.gov.cn/2024/07-09/1274039.html,primary follow-up,X06
+S050,,https://www.xichuan.gov.cn/2025/12-01/1356506.html,primary follow-up,X08

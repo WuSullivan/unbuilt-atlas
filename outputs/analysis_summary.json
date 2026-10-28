@@ -1,0 +1,65 @@
+{
+  "scope": {
+    "region": "Nanyang, Henan, with a Xichuan deep-audit cohort",
+    "signing_window": "2019-01-01 to 2022-12-31",
+    "followup_cutoff": "2025-12-31",
+    "event_articles": 24,
+    "nonoverlapping_primary_events": 21,
+    "projects_total": 80,
+    "broad_named_projects": 66,
+    "xichuan_deep_audit_projects": 14
+  },
+  "event_transparency": {
+    "announced_project_slots": 426,
+    "named_projects_in_same_article": 62,
+    "same_article_naming_rate": 0.14553990610328638,
+    "definition": "article-level project slots, not deduplicated physical projects"
+  },
+  "outcomes": {
+    "status_counts": {
+      "built": 5,
+      "physical_progress": 9,
+      "administrative_only": 3,
+      "later_mention_only": 5,
+      "no_later_trace_located": 47,
+      "no_physical_milestone_located": 11
+    },
+    "strong_physical_milestone_count": 14,
+    "strong_physical_milestone_rate": 0.175,
+    "strong_physical_milestone_ci95": [
+      0.10720636440977928,
+      0.27257541978831334
+    ],
+    "no_project_specific_milestone_count": 58,
+    "xichuan_strong_count": 3,
+    "xichuan_strong_rate": 0.21428571428571427
+  },
+  "surface_signals": {
+    "recognizable_company_n": 11,
+    "recognizable_company_strong_rate": 0.18181818181818182,
+    "other_company_n": 55,
+    "other_company_strong_rate": 0.16363636363636364,
+    "project_amount_available_n": 11,
+    "project_amount_total_n": 66,
+    "model_n": 66,
+    "model_positive_outcomes": 11,
+    "model": [
+      {
+        "term": "recognizable_company",
+        "label": "Recognizable company signal",
+        "odds_ratio": 1.2138167939339304,
+        "ci95_low": 0.21848644821117588,
+        "ci95_high": 6.743444370572553,
+        "p_value": 0.8247243227738364
+      },
+      {
+        "term": "log_event_slots_z",
+        "label": "Event size (per 1 SD in log slots)",
+        "odds_ratio": 1.1577122107889422,
+        "ci95_low": 0.6161762633083268,
+        "ci95_high": 2.175185320858671,
+        "p_value": 0.6490241588123387
+      }
+    ]
+  }
+}
