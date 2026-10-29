@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate the three-page Unbuilt Atlas policy brief."""
+"""Generate The Promised Atlas three-page policy brief."""
 import json
 import math
 from pathlib import Path
@@ -12,7 +12,7 @@ from reportlab.pdfgen import canvas
 
 
 ROOT = Path(__file__).resolve().parent
-OUT = ROOT / "outputs/unbuilt-atlas-research-brief.pdf"
+OUT = ROOT / "outputs/the-promised-atlas-research-brief.pdf"
 summary = json.loads((ROOT / "outputs/analysis_summary.json").read_text(encoding="utf-8"))
 
 W, H = A4
@@ -88,7 +88,7 @@ def footer(c, page):
     c.setStrokeColor(LINE)
     c.line(M, 27, W - M, 27)
     set_font(c, 7.2, False, MUTED)
-    c.drawString(M, 15, "Unbuilt Atlas / 签约之后 · 数据截止 2025-12-31 · 状态审定 2026-10-29")
+    c.drawString(M, 15, "The Promised Atlas / 签约之后 · 数据截止 2025-12-31 · 状态审定 2026-10-29")
     c.drawRightString(W - M, 15, f"{page} / 3")
 
 
@@ -100,8 +100,8 @@ def metric(c, x, y, value, label, color=YELLOW):
 
 
 c = canvas.Canvas(str(OUT), pagesize=A4)
-c.setTitle("签约之后：南阳招商项目兑现地图")
-c.setAuthor("Unbuilt Atlas")
+c.setTitle("The Promised Atlas：南阳招商项目兑现地图")
+c.setAuthor("The Promised Atlas")
 
 # Page 1: question, scale, and research design.
 c.setFillColor(NIGHT)
@@ -111,7 +111,7 @@ c.setLineWidth(0.7)
 for radius in (150, 195, 240):
     c.circle(W - 48, H - 260, radius, fill=0, stroke=1)
 set_font(c, 8.5, True, YELLOW)
-c.drawString(M, H - 58, "UNBUILT ATLAS / 签约之后")
+c.drawString(M, H - 58, "THE PROMISED ATLAS / 签约之后")
 set_font(c, 31, True, WHITE)
 c.drawString(M, H - 112, "签约之后，项目去了哪里？")
 y = paragraph(

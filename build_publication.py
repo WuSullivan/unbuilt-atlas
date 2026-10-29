@@ -73,33 +73,33 @@ def main() -> None:
     shutil.copy2(ROOT / "site/index.html", SITE_DIR / "index.html")
     shutil.copy2(ROOT / "site/atlas-data.js", SITE_DIR / "atlas-data.js")
 
-    dataset_zip = OUTPUTS / "unbuilt-atlas-dataset.zip"
+    dataset_zip = OUTPUTS / "the-promised-atlas-dataset.zip"
     with zipfile.ZipFile(dataset_zip, "w") as archive:
         for path in sorted(DATASET_DIR.rglob("*")):
             if path.is_file():
-                add_file(archive, path, f"unbuilt-atlas-dataset/{path.relative_to(DATASET_DIR)}")
+                add_file(archive, path, f"the-promised-atlas-dataset/{path.relative_to(DATASET_DIR)}")
 
-    publication_zip = OUTPUTS / "unbuilt-atlas-publication.zip"
+    publication_zip = OUTPUTS / "the-promised-atlas-publication.zip"
     with zipfile.ZipFile(publication_zip, "w") as archive:
         for name in PUBLIC_ROOT_FILES:
-            add_file(archive, ROOT / name, f"unbuilt-atlas/{name}")
+            add_file(archive, ROOT / name, f"the-promised-atlas/{name}")
         for path in sorted((ROOT / ".github").rglob("*")):
             if path.is_file():
-                add_file(archive, path, f"unbuilt-atlas/{path.relative_to(ROOT)}")
+                add_file(archive, path, f"the-promised-atlas/{path.relative_to(ROOT)}")
         for folder in ("brief", "data", "site"):
             for path in sorted((ROOT / folder).rglob("*")):
                 if path.is_file():
-                    add_file(archive, path, f"unbuilt-atlas/{path.relative_to(ROOT)}")
+                    add_file(archive, path, f"the-promised-atlas/{path.relative_to(ROOT)}")
         for name in (
             "analysis_summary.json",
             "model_results.csv",
             "project_status_counts.csv",
             "source_health.csv",
-            "unbuilt-atlas-research-brief.pdf",
+            "the-promised-atlas-research-brief.pdf",
         ):
             path = OUTPUTS / name
             if path.exists():
-                add_file(archive, path, f"unbuilt-atlas/outputs/{name}")
+                add_file(archive, path, f"the-promised-atlas/outputs/{name}")
 
     print(DATASET_DIR)
     print(SITE_DIR)

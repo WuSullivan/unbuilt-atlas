@@ -1,4 +1,4 @@
-# 签约之后 / Unbuilt Atlas
+# 签约之后 / The Promised Atlas
 
 > 我把政府公开宣布的招商项目逐个列出来，几年后再查一遍，看有多少留下了公众可以核对的建设证据。
 
@@ -29,9 +29,9 @@
 - [去重来源表](data/source_register.csv)
 - [80项本地不同卫星影像配对元数据](data/wayback_pairs.json)
 - [来源链接健康审计](outputs/source_health.csv)
-- [三页政策简报](outputs/unbuilt-atlas-research-brief.pdf)
-- [完整数据归档](outputs/unbuilt-atlas-dataset.zip)
-- [可直接发布的完整项目归档](outputs/unbuilt-atlas-publication.zip)
+- [三页政策简报](outputs/the-promised-atlas-research-brief.pdf)
+- [完整数据归档](outputs/the-promised-atlas-dataset.zip)
+- [可直接发布的完整项目归档](outputs/the-promised-atlas-publication.zip)
 - [字段字典](data/field_dictionary.md)
 - [方法与纳入规则](data/method.md)
 - [人工判断日志](data/decision_log.md)

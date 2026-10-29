@@ -136,7 +136,7 @@ status_counts.rename_axis("followup_status").rename("count").to_csv(
     OUT / "project_status_counts.csv"
 )
 
-print("Unbuilt Atlas | expanded analysis")
+print("The Promised Atlas | expanded analysis")
 print(f"Event articles: {len(events)}; non-overlapping primary events: {len(counted_events)}")
 print(
     f"Same-article naming: {named_in_same_article}/{announced_slots} "
