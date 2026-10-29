@@ -92,7 +92,6 @@ def main() -> None:
                     add_file(archive, path, f"unbuilt-atlas/{path.relative_to(ROOT)}")
         for name in (
             "analysis_summary.json",
-            "application-story.md",
             "model_results.csv",
             "project_status_counts.csv",
             "source_health.csv",

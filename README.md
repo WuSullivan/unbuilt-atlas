@@ -30,7 +30,6 @@
 - [80项本地不同卫星影像配对元数据](data/wayback_pairs.json)
 - [来源链接健康审计](outputs/source_health.csv)
 - [三页政策简报](outputs/unbuilt-atlas-research-brief.pdf)
-- [申请叙事与延伸路线](outputs/application-story.md)
 - [完整数据归档](outputs/unbuilt-atlas-dataset.zip)
 - [可直接发布的完整项目归档](outputs/unbuilt-atlas-publication.zip)
 - [字段字典](data/field_dictionary.md)
