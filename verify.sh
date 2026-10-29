@@ -131,9 +131,17 @@ if grep -q 'window.UNBUILT_ATLAS = {' site/index.html; then
   echo 'site/index.html must load generated data from atlas-data.js, not embed a stale copy' >&2
   exit 1
 fi
+if rg -n -i 'application-story|美本申请叙事|最适合申请材料的标题' README.md build_publication.py; then
+  echo 'Private application narrative must not be linked or included in the publication builder' >&2
+  exit 1
+fi
 grep -q 'oddsPlot' site/index.html
 "$PYTHON_BIN" - <<'PY'
 import pymupdf
+import zipfile
+
+with zipfile.ZipFile('outputs/unbuilt-atlas-publication.zip') as archive:
+    assert not any(name.lower().endswith('application-story.md') for name in archive.namelist())
 
 document = pymupdf.open('outputs/unbuilt-atlas-research-brief.pdf')
 assert document.page_count == 3, document.page_count
