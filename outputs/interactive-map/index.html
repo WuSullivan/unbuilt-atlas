@@ -2,330 +2,1368 @@
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="description" content="追踪南阳公开招商签约项目在数年后留下的建设证据。">
+  <link rel="canonical" href="https://wusullivan.github.io/unbuilt-atlas/">
+  <meta property="og:title" content="签约之后 | Unbuilt Atlas">
+  <meta property="og:description" content="逐项追踪南阳80个公开招商项目，从签约仪式走到可以核对的建设证据。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wusullivan.github.io/unbuilt-atlas/">
+  <meta name="theme-color" content="#E8ECE6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0F1519" media="(prefers-color-scheme: dark)">
   <title>签约之后 | Unbuilt Atlas</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='11' fill='none' stroke='%23B4152B' stroke-width='4'/%3E%3Ccircle cx='16' cy='16' r='4' fill='%23B4152B'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+SC:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" onerror="this.onerror=null;this.href='https://unpkg.com/leaflet@1.9.4/dist/leaflet.css'">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.css" onerror="this.onerror=null;this.href='https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css'">
+  <script>document.documentElement.classList.add("js");</script>
   <style>
-    :root {
-      --paper:#f3f0e8; --ink:#152129; --muted:#5d696e; --line:#cdd1ca;
-      --night:#102934; --night-soft:#173844; --white:#fffdf7; --yellow:#edc65d;
-      --built:#237a5a; --physical:#1b7682; --admin:#b77d22; --mention:#647789;
-      --absent:#c8553d; --shadow:0 18px 54px rgba(16,41,52,.18);
+    /* ============ Tokens ============ */
+    :root{
+      color-scheme: light dark;
+      --paper:#E8ECE6; --paper-2:#DDE3DB; --panel:#F4F6F1; --raise:#FFFFFF;
+      --ink:#16212A; --ink-2:#47555F; --ink-3:#7B868C; --rule:#C2CAC1; --rule-2:#D5DBD2;
+      --red:#B4152B; --red-deep:#930F22; --band:#B4152B; --on-red:#FFF3EF; --red-wash:rgba(180,21,43,.09);
+      --st-built:#0E7358; --st-physical:#2B8597; --st-admin:#B57A10; --st-mention:#6C719A;
+      --st-none:#9A9488; --st-deep:#4E483F;
+      --mk-ring:#FFFFFF; --hollow-fill:#F4F6F1;
+      --scrim:rgba(14,21,27,.42);
+      --serif:"Noto Serif SC","Noto Serif CJK SC","Source Han Serif SC","Songti SC","STSong",serif;
+      --sans:"Noto Sans SC","Noto Sans CJK SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+      --ease:cubic-bezier(.22,1,.36,1); --ease-io:cubic-bezier(.65,0,.35,1);
+      --nav:56px; --r-s:6px; --r-m:10px; --r-l:18px;
+      --shadow-1:0 1px 2px rgba(22,33,42,.06),0 6px 16px -8px rgba(22,33,42,.18);
+      --shadow-2:0 40px 90px -30px rgba(22,33,42,.45),0 2px 10px rgba(22,33,42,.08);
+      --gutter:clamp(18px,4vw,56px);
     }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;background:var(--paper);color:var(--ink);font-family:"IBM Plex Sans SC",system-ui,sans-serif}
+    @media (prefers-color-scheme: dark){
+      :root:not([data-theme="light"]){
+        --paper:#0F1519; --paper-2:#151D22; --panel:#131A1F; --raise:#1A232A;
+        --ink:#E4E9E2; --ink-2:#A8B3B2; --ink-3:#76838A; --rule:#2B373E; --rule-2:#212B31;
+        --red:#E2475A; --red-deep:#A8162B; --band:#9E1428; --on-red:#FFF3EF; --red-wash:rgba(226,71,90,.12);
+        --st-built:#34B58C; --st-physical:#4EB6C8; --st-admin:#E2A53B; --st-mention:#9CA2D0;
+        --st-none:#8C877E; --st-deep:#D2C9BA;
+        --mk-ring:#0F1519; --hollow-fill:#131A1F; --scrim:rgba(0,0,0,.55);
+        --shadow-1:0 1px 2px rgba(0,0,0,.3),0 8px 20px -10px rgba(0,0,0,.6);
+        --shadow-2:0 40px 90px -30px rgba(0,0,0,.8),0 2px 10px rgba(0,0,0,.4);
+      }
+    }
+    :root[data-theme="dark"]{
+      --paper:#0F1519; --paper-2:#151D22; --panel:#131A1F; --raise:#1A232A;
+      --ink:#E4E9E2; --ink-2:#A8B3B2; --ink-3:#76838A; --rule:#2B373E; --rule-2:#212B31;
+      --red:#E2475A; --red-deep:#A8162B; --band:#9E1428; --on-red:#FFF3EF; --red-wash:rgba(226,71,90,.12);
+      --st-built:#34B58C; --st-physical:#4EB6C8; --st-admin:#E2A53B; --st-mention:#9CA2D0;
+      --st-none:#8C877E; --st-deep:#D2C9BA;
+      --mk-ring:#0F1519; --hollow-fill:#131A1F; --scrim:rgba(0,0,0,.55);
+      --shadow-1:0 1px 2px rgba(0,0,0,.3),0 8px 20px -10px rgba(0,0,0,.6);
+      --shadow-2:0 40px 90px -30px rgba(0,0,0,.8),0 2px 10px rgba(0,0,0,.4);
+    }
+
+    /* ============ Base ============ */
+    *,*::before,*::after{box-sizing:border-box}
+    :root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+    html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav) + env(safe-area-inset-top,0px));-webkit-text-size-adjust:100%}
+    body{margin:0;background:var(--paper);color:var(--ink);font:400 15px/1.7 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    body.lock{overflow:hidden}
     a{color:inherit}
-    button,input,select{font:inherit}
-    .topnav{height:58px;display:flex;align-items:center;justify-content:space-between;padding:0 4vw;background:var(--night);color:#dfeae6;border-bottom:1px solid rgba(255,255,255,.16);position:sticky;top:0;z-index:1000}
-    .brand{font:500 12px "IBM Plex Mono",monospace;letter-spacing:.14em;text-transform:uppercase}
-    .toplinks{display:flex;gap:20px;font-size:12px}.toplinks a{text-decoration:none;color:#c4d3cf}.toplinks a:hover{color:#fff}
-    .hero{min-height:470px;background:var(--night);color:#f3f4ee;padding:64px 4vw 46px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;position:relative}
-    .hero:after{content:"";position:absolute;right:-7vw;bottom:-160px;width:520px;height:520px;border:1px solid rgba(237,198,93,.38);border-radius:50%;box-shadow:0 0 0 64px rgba(237,198,93,.04),0 0 0 128px rgba(237,198,93,.025);pointer-events:none}
-    .kicker{font:500 12px "IBM Plex Mono",monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--yellow)}
-    h1{font-size:clamp(42px,6vw,78px);line-height:.98;letter-spacing:0;font-weight:500;margin:16px 0 22px;max-width:1120px}
-    .hero-copy{max-width:760px;font-size:18px;line-height:1.8;color:#c9d6d2;margin:0}
-    .hero-copy strong{color:#fff;font-weight:500}
-    .hero-stats{display:flex;gap:clamp(26px,5vw,70px);flex-wrap:wrap;margin-top:40px;padding-top:22px;border-top:1px solid rgba(255,255,255,.18);max-width:1050px}
-    .hero-stat b{display:block;font:500 clamp(28px,4vw,48px) "IBM Plex Mono",monospace;color:var(--yellow)}
-    .hero-stat span{display:block;margin-top:5px;font-size:12px;color:#abc0b9}
-    .storyline{padding:18px 4vw;background:var(--yellow);color:#172126;font-weight:500;font-size:15px}
-    .map-section{display:grid;grid-template-columns:320px minmax(0,1fr);min-height:760px;border-bottom:1px solid var(--line)}
-    .controls{padding:28px 24px 34px 4vw;background:#ebe8df;border-right:1px solid var(--line);overflow:auto}
-    .controls h2{font-size:25px;font-weight:600;margin:0 0 8px}.controls .sub{font-size:12px;line-height:1.65;color:var(--muted);margin:0 0 22px}
-    .control{display:grid;gap:7px;margin:0 0 17px}.control label{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
-    .control input,.control select{width:100%;padding:10px 11px;background:var(--white);border:1px solid var(--line);border-radius:0;color:var(--ink)}
-    .status-list{display:grid;gap:6px;margin:8px 0 20px}
-    .status-button{display:grid;grid-template-columns:12px 1fr auto;gap:9px;align-items:center;border:1px solid transparent;background:transparent;padding:8px 6px;text-align:left;color:var(--ink)}
-    .status-button:hover,.status-button.active{border-color:var(--line);background:var(--white)}
-    .status-button i{width:10px;height:10px;border-radius:50%}.status-button small{font:400 11px "IBM Plex Mono",monospace;color:var(--muted)}
-    .live-count{font:500 13px "IBM Plex Mono",monospace;padding-top:16px;border-top:1px solid var(--line)}
-    .map-wrap{position:relative;min-width:0}.map{height:760px;background:#d8dfda}
-    .map-caption{position:absolute;z-index:500;left:16px;bottom:17px;max-width:520px;background:rgba(255,253,247,.94);border:1px solid var(--line);padding:9px 11px;font-size:11px;line-height:1.55;color:var(--muted)}
-    .dot-icon{background:transparent;border:0}.dot-icon span{display:block;width:18px;height:18px;border:3px solid var(--white);border-radius:50%;box-shadow:0 2px 8px rgba(15,35,43,.28)}
-    .marker-cluster div{background:var(--night)!important;color:#fff!important;font:500 12px "IBM Plex Mono",monospace!important}.marker-cluster{background:rgba(16,41,52,.28)!important}
-    .detail{position:fixed;z-index:1300;top:58px;right:0;bottom:0;width:min(570px,100%);background:var(--white);box-shadow:var(--shadow);transform:translateX(102%);transition:transform .2s ease;overflow:auto}
-    .detail.open{transform:translateX(0)}.detail-inner{padding:28px 30px 46px}
-    .close{position:sticky;top:0;float:right;width:38px;height:38px;border:1px solid var(--line);background:var(--white);font-size:24px;line-height:1}
-    .eyebrow{font:500 11px "IBM Plex Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:15px}
-    .detail h3{font-size:27px;line-height:1.28;margin:10px 45px 5px 0}.company{color:var(--muted);font-size:13px}
-    .pills{display:flex;gap:7px;flex-wrap:wrap;margin:18px 0}.pill{border:1px solid var(--line);padding:5px 8px;font-size:11px}.pill.status{color:#fff;border-color:transparent}
-    .facts{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:18px 0}
-    .fact{padding:12px 8px 12px 0}.fact span{display:block;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}.fact b{display:block;font-size:13px;font-weight:500;margin-top:4px}
-    .detail h4{font-size:13px;margin:24px 0 9px}.reason{font-size:13px;line-height:1.75;padding-left:13px;border-left:3px solid var(--physical)}
-    .sources{display:grid;gap:7px}.sources a{font-size:12px;color:var(--physical);overflow-wrap:anywhere}
-    .sat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.sat-box{min-width:0;border-top:3px solid var(--night);background:#ebe8df;padding:9px}.sat-box:last-child{border-color:var(--physical)}.sat-box>strong{display:block;font-size:12px;font-weight:600;line-height:1.5;min-height:36px}.sat-box>span{display:block;font:400 10px "IBM Plex Mono",monospace;color:var(--muted);margin:4px 0 7px}.sat{height:205px;border:1px solid var(--line);background:#d6ddd8}.sat-meta{font-size:10px;line-height:1.55;color:var(--muted);margin-top:7px;min-height:48px}.sat-pair-status{font-size:11px;line-height:1.6;margin:9px 0 0;padding:9px 11px;background:#e2ece7;border-left:3px solid var(--physical)}.sat-pair-status.gap{background:#f4e7d6;border-color:var(--admin)}
-    .sat-note{font-size:11px;line-height:1.6;color:var(--muted);margin:8px 0 0}
-    .findings{padding:70px 4vw 78px}.section-kicker{font:500 11px "IBM Plex Mono",monospace;letter-spacing:.11em;text-transform:uppercase;color:var(--physical)}
-    .findings h2,.method-section h2{font-size:clamp(30px,4.5vw,56px);line-height:1.12;font-weight:500;margin:12px 0 42px;max-width:900px}
-    .finding-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-    .finding{padding:28px 28px 34px 0;min-height:280px}.finding+.finding{border-left:1px solid var(--line);padding-left:28px}.finding .num{font:500 42px "IBM Plex Mono",monospace;color:var(--absent)}.finding h3{font-size:20px;line-height:1.4;margin:16px 0 11px}.finding p{font-size:13px;line-height:1.75;color:var(--muted)}
-    .model-block{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(300px,.9fr);gap:50px;margin-top:62px;align-items:start}
-    .model-copy h3{font-size:27px;margin:0 0 13px}.model-copy p{font-size:14px;line-height:1.8;color:var(--muted);max-width:650px}
-    .odds{padding-top:8px}.odds-row{margin-bottom:26px}.odds-label{display:flex;justify-content:space-between;gap:14px;font-size:12px;margin-bottom:8px}.odds-label b{font:500 12px "IBM Plex Mono",monospace}
-    .odds-track{position:relative;height:22px;border-bottom:1px solid var(--line)}.odds-track:before{content:"";position:absolute;left:50%;top:0;bottom:-1px;border-left:1px solid var(--ink)}
-    .odds-ci{position:absolute;top:10px;height:3px;background:var(--mention)}.odds-point{position:absolute;top:5px;width:12px;height:12px;border-radius:50%;background:var(--absent);transform:translateX(-50%)}
-    .axis{display:flex;justify-content:space-between;font:400 10px "IBM Plex Mono",monospace;color:var(--muted);margin-top:4px}
-    .human{background:#cf5b43;color:#fff8ef;padding:60px 4vw}.human p{font-size:clamp(25px,4vw,48px);line-height:1.3;max-width:1100px;margin:0;font-weight:500}.human small{display:block;margin-top:24px;max-width:770px;font-size:13px;line-height:1.75;color:#f7d8ce}
-    .method-section{padding:68px 4vw 80px}.method-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}.method-step{padding:23px 24px 20px 0}.method-step+.method-step{border-left:1px solid var(--line);padding-left:24px}.method-step b{font:500 12px "IBM Plex Mono",monospace;color:var(--physical)}.method-step h3{font-size:16px;margin:10px 0}.method-step p{font-size:12px;line-height:1.7;color:var(--muted)}
-    .downloads{display:flex;gap:10px;flex-wrap:wrap;margin-top:34px}.downloads a{padding:10px 12px;border:1px solid var(--ink);text-decoration:none;font-size:12px}.downloads a:first-child{background:var(--ink);color:#fff}
-    footer{padding:24px 4vw;background:var(--night);color:#aebfba;font-size:11px;line-height:1.6}
-    @media(max-width:980px){.map-section{grid-template-columns:1fr}.controls{padding:22px 4vw;border-right:0;border-bottom:1px solid var(--line)}.status-list{grid-template-columns:repeat(2,1fr)}.map,.map-section{min-height:650px}.map{height:650px}.finding-grid{grid-template-columns:1fr}.finding+.finding{border-left:0;border-top:1px solid var(--line);padding-left:0}.finding{min-height:auto}.model-block{grid-template-columns:1fr}.method-grid{grid-template-columns:1fr 1fr}.method-step:nth-child(3){border-left:0}.method-step:nth-child(n+3){border-top:1px solid var(--line)}}
-    @media(max-width:620px){.toplinks{display:none}.hero{min-height:520px;padding-top:45px}.hero-copy{font-size:16px}.status-list{grid-template-columns:1fr}.sat-grid,.facts{grid-template-columns:1fr}.sat{height:230px}.detail-inner{padding:20px 18px 36px}.method-grid{grid-template-columns:1fr}.method-step+.method-step{border-left:0;border-top:1px solid var(--line);padding-left:0}.map-caption{right:12px;left:12px}.finding{padding-right:0}}
+    button,input,select{font:inherit;color:inherit}
+    button{cursor:pointer}
+    img,svg{max-width:100%}
+    :focus-visible{outline:2px solid var(--ink);outline-offset:2px;border-radius:4px}
+    ::selection{background:var(--red);color:var(--on-red)}
+    h1,h2,h3,h4{font-feature-settings:"palt";text-wrap:balance}
+    p{text-wrap:pretty}
+    .sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+    .nobr{white-space:nowrap}
+    .num{font-variant-numeric:tabular-nums lining-nums}
+
+    /* ============ Nav ============ */
+    .nav{position:sticky;top:0;z-index:1100;height:var(--nav);display:flex;align-items:center;justify-content:space-between;gap:20px;padding:0 var(--gutter);background:color-mix(in srgb,var(--paper) 78%,transparent);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid transparent;transition:border-color .3s,background .3s}
+    body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:1101;background:var(--paper)}
+    .nav.scrolled{border-bottom-color:var(--rule)}
+    .brand{display:flex;align-items:baseline;gap:10px;text-decoration:none}
+    .brand-cn{font:900 19px/1 var(--serif);letter-spacing:.02em}
+    .brand-en{font-size:12px;color:var(--ink-3);letter-spacing:.02em}
+    .brand-mark{width:14px;height:14px;align-self:center;border-radius:50%;border:3px solid var(--red);position:relative}
+    .brand-mark::after{content:"";position:absolute;inset:2px;border-radius:50%;background:var(--red)}
+    .nav-links{display:flex;gap:4px}
+    .nav-links a{position:relative;padding:8px 12px;font-size:14px;text-decoration:none;color:var(--ink-2);border-radius:99px;transition:color .2s,background .2s}
+    .nav-links a:hover{color:var(--ink);background:var(--paper-2)}
+    .nav-links a.on{color:var(--ink)}
+    .nav-links a.on::after{content:"";position:absolute;left:50%;bottom:2px;width:4px;height:4px;border-radius:50%;background:var(--red);transform:translateX(-50%)}
+
+    /* ============ Hero ============ */
+    .hero{position:relative;padding:clamp(48px,9vh,112px) var(--gutter) 0;overflow:hidden}
+    .hero-place{margin:0 0 22px;font-size:14px;color:var(--ink-2);display:flex;align-items:center;gap:10px}
+    .hero-place::before{content:"";width:28px;height:2px;background:var(--red)}
+    .hero-title{margin:0;font:900 clamp(46px,8.6vw,132px)/1.04 var(--serif);letter-spacing:-.01em;color:var(--ink)}
+    .hero-title .ln{display:block;overflow:hidden;padding-bottom:.06em}
+    .hero-title .ln>span{display:inline-block}
+    .hero-title .ln:nth-child(2)>span{color:var(--red)}
+    .hero-copy{max-width:34em;margin:28px 0 0;font-size:clamp(16px,1.4vw,19px);line-height:1.85;color:var(--ink-2)}
+    .js .hero-title .ln>span{transform:translateY(108%);transition:transform 1.1s var(--ease)}
+    .js .hero-title .ln:nth-child(2)>span{transition-delay:.12s}
+    .js .hero-place,.js .hero-copy{opacity:0;transform:translateY(10px);transition:opacity .9s var(--ease) .35s,transform .9s var(--ease) .35s}
+    .js .ready .hero-title .ln>span{transform:none}
+    .js .ready .hero-place,.js .ready .hero-copy{opacity:1;transform:none}
+
+    .field-wrap{position:relative;margin:clamp(40px,7vh,72px) 0 0;padding:0}
+    .field-legend{display:flex;flex-wrap:wrap;gap:6px 26px;align-items:center;min-height:30px;margin-bottom:14px;font-size:14px;color:var(--ink-2)}
+    .field-legend span{display:inline-flex;align-items:center;gap:8px;transition:opacity .7s var(--ease),transform .7s var(--ease)}
+    .field-legend b{font:900 22px/1 var(--serif);color:var(--ink)}
+    .field-legend i{width:10px;height:10px;border-radius:50%;display:inline-block}
+    .fl-a i{background:var(--red)}
+    .fl-b i{background:transparent;border:1.5px solid var(--ink-3)}
+    .fl-c i{background:var(--red)}
+    .js .field-wrap:not(.settled) .fl-c{opacity:0;transform:translateY(6px)}
+    .field-wrap.settled .fl-a i{background:transparent;border:1.5px solid var(--ink-3)}
+    .field{display:block;width:100%;overflow:visible}
+    .field .dot{fill:var(--red);stroke:var(--ink-3);stroke-width:0;transform-box:fill-box;transform-origin:center;transition:opacity .45s var(--ease) var(--d,0ms),transform .6s var(--ease) var(--d,0ms),fill .9s ease var(--s,0ms),stroke-width .9s ease var(--s,0ms)}
+    .js .field .dot{opacity:0;transform:scale(.2)}
+    .js .field.on .dot{opacity:1;transform:none}
+    .field.settled .dot:not(.named){fill:transparent;stroke-width:1px}
+    .field .ev-hit{fill:transparent;cursor:default}
+    .field .ev.hover .dot:not(.named){stroke:var(--ink)}
+    .field .ev.hover .dot.named{fill:var(--red-deep)}
+    .field .yr{font:500 12px var(--sans);fill:var(--ink-3)}
+    .field .yr-tick{stroke:var(--rule);stroke-width:1}
+    .field-wrap figcaption{margin-top:10px;font-size:13px;color:var(--ink-3);max-width:46em}
+    .tip-card{position:absolute;z-index:5;pointer-events:none;max-width:280px;padding:10px 12px;background:var(--raise);border:1px solid var(--rule);border-radius:var(--r-m);box-shadow:var(--shadow-1);font-size:13px;line-height:1.55;color:var(--ink);transform:translate(-50%,calc(-100% - 12px))}
+    .tip-card b{display:block;font-weight:700}
+    .tip-card small{display:block;color:var(--ink-3);font-size:12px}
+
+    .ledger{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin:clamp(40px,6vh,64px) 0 0;padding:0;border-top:1px solid var(--rule)}
+    .ledger div{padding:22px 20px 34px 0}
+    .ledger div+div{padding-left:20px;border-left:1px solid var(--rule)}
+    .ledger dt{order:2;font-size:13px;color:var(--ink-2);margin-top:6px}
+    .ledger dd{margin:0;font:900 clamp(30px,3.6vw,52px)/1 var(--serif);letter-spacing:-.01em}
+    .ledger div{display:flex;flex-direction:column}
+    .ledger div:last-child dd{color:var(--red)}
+
+    .storyline{margin:0;padding:clamp(40px,7vh,72px) var(--gutter);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);background:var(--paper-2);font:600 clamp(19px,2.2vw,28px)/1.6 var(--serif);text-align:center;color:var(--ink)}
+
+    /* ============ Atlas ============ */
+    .atlas{display:grid;grid-template-columns:400px minmax(0,1fr);grid-template-rows:auto minmax(0,1fr);grid-template-areas:"controls map" "list map";height:calc(100dvh - var(--nav));min-height:660px;max-height:1100px;border-bottom:1px solid var(--rule);background:var(--panel)}
+    .controls{grid-area:controls;padding:26px 24px 16px var(--gutter);border-right:1px solid var(--rule)}
+    .listbox{grid-area:list;display:flex;flex-direction:column;min-height:0;border-right:1px solid var(--rule)}
+    .controls h2{margin:0;font:900 28px/1.2 var(--serif)}
+    .controls>p{margin:8px 0 20px;font-size:13px;line-height:1.7;color:var(--ink-2)}
+    .search{position:relative;display:block}
+    .search svg{position:absolute;left:13px;top:50%;width:16px;height:16px;transform:translateY(-50%);color:var(--ink-3);pointer-events:none}
+    .search input{width:100%;height:44px;padding:0 14px 0 38px;background:var(--raise);border:1px solid var(--rule);border-radius:99px;outline:none;transition:border-color .2s,box-shadow .2s}
+    .search input::placeholder{color:var(--ink-3)}
+    .search input:focus{border-color:var(--ink);box-shadow:0 0 0 4px color-mix(in srgb,var(--ink) 10%,transparent)}
+    .selects{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+    .sel{position:relative;display:block}
+    .sel span{position:absolute;left:14px;top:7px;font-size:11px;color:var(--ink-3);pointer-events:none}
+    .sel select{appearance:none;-webkit-appearance:none;width:100%;height:50px;padding:18px 32px 4px 14px;background:var(--raise);border:1px solid var(--rule);border-radius:var(--r-m);font-size:14px;cursor:pointer;outline:none;transition:border-color .2s}
+    .sel select:focus-visible{border-color:var(--ink)}
+    .sel::after{content:"";position:absolute;right:14px;top:50%;width:7px;height:7px;border-right:1.5px solid var(--ink-2);border-bottom:1.5px solid var(--ink-2);transform:translateY(-70%) rotate(45deg);pointer-events:none}
+    .ev-head{display:flex;justify-content:space-between;align-items:baseline;margin:22px 0 10px;font-size:13px;color:var(--ink-2)}
+    .strip{display:flex;gap:1px;height:26px;border-radius:4px;overflow:hidden}
+    .strip i{flex:1;min-width:0;background:var(--c);transition:opacity .35s var(--ease),transform .35s var(--ease);transform-origin:bottom}
+    .strip i.hollow{background:transparent;box-shadow:inset 0 0 0 1.5px var(--c)}
+    .strip i.dim{opacity:.16;transform:scaleY(.55)}
+    .strip i.cur{transform:scaleY(1.25)}
+    .legend{display:grid;gap:2px;margin-top:10px}
+    .lg{display:grid;grid-template-columns:14px minmax(0,1fr) auto;align-items:center;gap:10px;width:100%;padding:7px 10px;background:transparent;border:0;border-radius:var(--r-s);text-align:left;font-size:14px;transition:background .2s,opacity .2s}
+    .lg:hover{background:var(--paper-2)}
+    .lg[aria-pressed="true"]{background:var(--raise);box-shadow:inset 0 0 0 1px var(--rule)}
+    .legend.filtering .lg[aria-pressed="false"]{opacity:.5}
+    .legend.filtering .lg[aria-pressed="false"]:hover{opacity:1}
+    .lg .ct{font-size:13px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+    .lg:disabled{opacity:.35;cursor:default}
+    .lg:disabled:hover{background:transparent}
+    .sw{display:inline-block;width:12px;height:12px;border-radius:50%;background:var(--c);flex:none}
+    .sw.hollow{background:transparent;box-shadow:inset 0 0 0 2px var(--c)}
+    .sw.deep{background:radial-gradient(circle,var(--c) 0 2px,transparent 2.5px);box-shadow:inset 0 0 0 2px var(--c)}
+    .list-head{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 24px 10px var(--gutter);border-top:1px solid var(--rule);font-size:13px;color:var(--ink-2)}
+    .link-btn{padding:4px 2px;background:none;border:0;font-size:13px;color:var(--red);text-decoration:underline;text-underline-offset:3px}
+    .list{flex:1;min-height:0;overflow:auto;margin:0;padding:0 12px 16px calc(var(--gutter) - 12px);list-style:none;overscroll-behavior:contain;scrollbar-width:thin}
+    .row{display:grid;grid-template-columns:14px minmax(0,1fr) auto;gap:12px;align-items:start;width:100%;padding:11px 12px;background:none;border:0;border-radius:var(--r-m);text-align:left;transition:background .2s}
+    .row .sw{margin-top:6px}
+    .row:hover{background:var(--paper-2)}
+    .row.cur{background:var(--raise);box-shadow:inset 0 0 0 1px var(--rule),var(--shadow-1)}
+    .row b{display:block;font-size:14px;font-weight:500;line-height:1.5}
+    .row small{display:flex;flex-wrap:wrap;gap:0 10px;margin-top:2px;font-size:12px;color:var(--ink-3)}
+    .row .grade{font:900 15px/1.5 var(--serif);color:var(--ink-3)}
+    .row.enter{animation:rowIn .45s var(--ease) both;animation-delay:var(--d,0ms)}
+    @keyframes rowIn{from{opacity:0;transform:translateY(6px)}}
+    .empty{padding:28px var(--gutter);font-size:14px;color:var(--ink-2)}
+    .empty b{display:block;font:600 17px/1.5 var(--serif);color:var(--ink);margin-bottom:6px}
+    .empty button{margin-top:12px;padding:8px 16px;border:1px solid var(--ink);border-radius:99px;background:var(--ink);color:var(--paper);font-size:13px}
+
+    .map-wrap{grid-area:map;position:relative;min-width:0;min-height:0;overflow:hidden;background:var(--paper-2)}
+    .map{position:absolute;inset:0;background:var(--paper-2)}
+    .map-tools{position:absolute;z-index:800;left:16px;top:16px;display:flex;gap:8px}
+    .seg{display:inline-flex;padding:3px;background:var(--raise);border:1px solid var(--rule);border-radius:99px;box-shadow:var(--shadow-1);position:relative}
+    .seg button{position:relative;z-index:1;padding:6px 14px;border:0;background:none;border-radius:99px;font-size:13px;color:var(--ink-2);transition:color .25s}
+    .seg button[aria-checked="true"]{color:var(--paper)}
+    .seg .thumb{position:absolute;z-index:0;top:3px;bottom:3px;left:0;width:0;border-radius:99px;background:var(--ink);transition:transform .45s var(--ease),width .45s var(--ease)}
+    .map-caption{position:absolute;z-index:700;left:16px;bottom:16px;max-width:440px;margin:0;padding:10px 14px;background:color-mix(in srgb,var(--raise) 90%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid var(--rule);border-radius:var(--r-m);font-size:12px;line-height:1.65;color:var(--ink-2)}
+    .wheel-hint{position:absolute;z-index:900;left:50%;top:50%;padding:10px 18px;background:var(--ink);color:var(--paper);border-radius:99px;font-size:13px;transform:translate(-50%,-50%) scale(.96);opacity:0;pointer-events:none;transition:opacity .3s,transform .3s var(--ease)}
+    .wheel-hint.show{opacity:.92;transform:translate(-50%,-50%)}
+    .map-error{position:absolute;inset:0;z-index:950;display:grid;place-content:center;gap:8px;padding:30px;text-align:center;background:var(--paper-2);color:var(--ink-2);font-size:14px}
+    .map-error b{font:600 18px/1.4 var(--serif);color:var(--ink)}
+    .map-error[hidden]{display:none}
+
+    /* Leaflet skin */
+    .leaflet-container{font-family:var(--sans);background:var(--paper-2)}
+    .leaflet-control-zoom{border:1px solid var(--rule)!important;border-radius:var(--r-m)!important;overflow:hidden;box-shadow:var(--shadow-1)!important}
+    .leaflet-control-zoom a{width:34px!important;height:34px!important;line-height:32px!important;background:var(--raise)!important;color:var(--ink)!important;border-bottom-color:var(--rule)!important;font-weight:400}
+    .leaflet-control-zoom a:hover{background:var(--paper-2)!important}
+    .leaflet-control-attribution{background:color-mix(in srgb,var(--raise) 80%,transparent)!important;color:var(--ink-3)!important;font-size:10px!important;border-top-left-radius:6px}
+    .leaflet-control-attribution a{color:var(--ink-2)!important}
+    .leaflet-tile-pane .base-dark{filter:invert(1) hue-rotate(180deg) brightness(.72) contrast(.9) saturate(.55)}
+    .leaflet-tooltip.tip{padding:6px 10px;background:var(--ink);color:var(--paper);border:0;border-radius:8px;box-shadow:var(--shadow-1);font-size:12px;font-weight:500;white-space:nowrap}
+    .leaflet-tooltip.tip::before{border-top-color:var(--ink)}
+    .leaflet-marker-icon.mk-icon{background:none;border:0}
+    .mk{display:block;width:16px;height:16px;border-radius:50%;background:var(--c);box-shadow:0 0 0 2.5px var(--mk-ring),0 3px 10px rgba(0,0,0,.35);transition:transform .25s var(--ease)}
+    .mk.hollow{background:var(--hollow-fill);box-shadow:inset 0 0 0 3px var(--c),0 0 0 2px var(--mk-ring),0 3px 10px rgba(0,0,0,.3)}
+    .mk.deep{background:radial-gradient(circle,var(--c) 0 2.5px,var(--hollow-fill) 3px)}
+    .mk-icon:hover .mk,.mk-icon:focus-visible .mk{transform:scale(1.35)}
+    .mk-icon:focus-visible{outline:none}
+    .mk-icon:focus-visible .mk{box-shadow:0 0 0 2.5px var(--mk-ring),0 0 0 5px var(--ink)}
+    .leaflet-marker-icon.cl-icon{background:none;border:0}
+    .cl{display:grid;place-items:center;width:100%;height:100%;border-radius:50%;padding:4px;box-shadow:0 4px 16px rgba(0,0,0,.28);transition:transform .3s var(--ease)}
+    .cl span{display:grid;place-items:center;width:100%;height:100%;border-radius:50%;background:var(--raise);color:var(--ink);font:700 13px/1 var(--sans);font-variant-numeric:tabular-nums}
+    .cl-icon:hover .cl{transform:scale(1.08)}
+    .leaflet-marker-icon.pulse-icon{background:none;border:0;pointer-events:none!important}
+    .pulse-icon span{position:absolute;inset:0;border-radius:50%;border:2px solid var(--red);animation:pulse 2.2s var(--ease) infinite}
+    .pulse-icon span+span{animation-delay:1.1s}
+    @keyframes pulse{from{transform:scale(.25);opacity:1}to{transform:scale(1);opacity:0}}
+    .marker-cluster-spider-leg,.leaflet-cluster-spider-leg{stroke:var(--ink-3)!important}
+
+    /* ============ Drawer ============ */
+    .scrim{position:fixed;inset:0;z-index:1150;background:var(--scrim);opacity:0;transition:opacity .4s var(--ease)}
+    .scrim.show{opacity:1}
+    .scrim[hidden]{display:none}
+    .drawer{position:fixed;z-index:1200;top:calc(var(--nav) + env(safe-area-inset-top,0px));right:0;bottom:0;width:min(620px,100vw);display:flex;flex-direction:column;background:var(--panel);border-left:1px solid var(--rule);box-shadow:var(--shadow-2);transform:translateX(104%);visibility:hidden;transition:transform .6s var(--ease),visibility 0s linear .6s}
+    .drawer.open{transform:none;visibility:visible;transition:transform .6s var(--ease),visibility 0s}
+    .drawer-bar{flex:none;display:flex;align-items:center;justify-content:space-between;gap:12px;height:56px;padding:0 16px 0 28px;border-bottom:1px solid var(--rule);background:var(--panel);position:relative}
+    .drawer-bar::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:3px;background:var(--c,var(--ink));transition:background .4s}
+    .pager{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--ink-2);font-variant-numeric:tabular-nums}
+    .icon-btn{display:grid;place-items:center;width:36px;height:36px;padding:0;background:transparent;border:1px solid var(--rule);border-radius:50%;color:var(--ink);transition:background .2s,border-color .2s,transform .2s var(--ease)}
+    .icon-btn:hover{background:var(--raise);border-color:var(--ink-3)}
+    .icon-btn:active{transform:scale(.92)}
+    .icon-btn:disabled{opacity:.35;cursor:default}
+    .icon-btn svg{width:16px;height:16px}
+    .drawer-body{flex:1;overflow:auto;overscroll-behavior:contain;padding:28px 28px calc(48px + env(safe-area-inset-bottom,0px))}
+    .drawer-body.swap{animation:swap .5s var(--ease)}
+    @keyframes swap{from{opacity:0;transform:translateY(10px)}}
+    .d-meta{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12px;color:var(--ink-3)}
+    .d-title{margin:10px 0 6px;font:900 clamp(24px,3vw,31px)/1.32 var(--serif);outline:none}
+    .d-company{font-size:14px;color:var(--ink-2)}
+    .d-tags{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0;align-items:center}
+    .chip{display:inline-flex;align-items:center;gap:7px;padding:5px 11px;border:1px solid var(--rule);border-radius:99px;font-size:12px;color:var(--ink-2);background:var(--raise)}
+    .chip.status{color:var(--ink);border-color:color-mix(in srgb,var(--c) 45%,var(--rule));background:color-mix(in srgb,var(--c) 10%,var(--raise));font-weight:500}
+    .grade-badge{margin-left:auto;display:flex;align-items:center;gap:8px;font-size:12px;color:var(--ink-3)}
+    .grade-badge b{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;border:1.5px solid var(--ink);font:900 17px/1 var(--serif);color:var(--ink)}
+    .facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));margin:22px 0 0;border-top:1px solid var(--rule)}
+    .fact{padding:13px 12px 13px 0;border-bottom:1px solid var(--rule-2);min-width:0}
+    .fact:nth-child(even){padding-left:14px;border-left:1px solid var(--rule-2)}
+    .fact.wide{grid-column:1/-1;padding-left:0;border-left:0}
+    .fact span{display:block;font-size:12px;color:var(--ink-3)}
+    .fact b{display:block;margin-top:3px;font-size:14px;font-weight:500;line-height:1.55;overflow-wrap:anywhere}
+    .d-h{margin:32px 0 12px;font:600 17px/1.4 var(--serif)}
+    .reason{margin:0;padding:14px 16px;background:color-mix(in srgb,var(--c) 7%,var(--raise));border-left:3px solid var(--c);border-radius:0 var(--r-m) var(--r-m) 0;font-size:14px;line-height:1.85}
+
+    .tl{display:grid;grid-template-columns:62px minmax(0,1fr);row-gap:0;font-size:11px}
+    .tl-name{display:flex;align-items:center;height:52px;color:var(--ink-3);font-size:12px}
+    .tl-lane{position:relative;height:52px;border-bottom:1px dashed var(--rule-2)}
+    .tl-lane::before{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:var(--rule)}
+    .tl-pt{position:absolute;top:50%;width:0;height:0}
+    .tl-pt i{position:absolute;left:-5px;top:-5px;width:10px;height:10px;border-radius:50%;background:var(--ink)}
+    .tl-pt.rel i{background:var(--panel);box-shadow:inset 0 0 0 1.5px var(--ink-2);border-radius:2px;transform:rotate(45deg)}
+    .tl-pt.sign i{background:var(--red);box-shadow:0 0 0 3px var(--red-wash)}
+    .tl-pt.follow i{background:var(--c)}
+    .tl-pt em{position:absolute;bottom:8px;left:0;transform:translateX(-50%);font-style:normal;white-space:nowrap;color:var(--ink-2);font-variant-numeric:tabular-nums}
+    .tl-pt em.start{transform:translateX(-4px)}
+    .tl-pt em.end{transform:translateX(calc(-100% + 4px))}
+    .tl-pt em.low{bottom:auto;top:8px}
+    .tl-missing{position:absolute;left:0;top:50%;transform:translateY(-50%);padding-right:8px;background:var(--panel);color:var(--ink-3);font-size:11px}
+    .tl-guides{grid-column:2;grid-row:1/span 3;position:relative;pointer-events:none}
+    .tl-guide{position:absolute;top:-4px;bottom:0;border-left:1.5px dashed var(--red)}
+    .tl-guide.cut{border-left-color:var(--ink-3)}
+    .tl-axis{grid-column:2;position:relative;height:22px;color:var(--ink-3)}
+    .tl-axis span{position:absolute;top:5px;transform:translateX(-50%);font-variant-numeric:tabular-nums}
+    .tl-axis span.cut{color:var(--ink-2);transform:translateX(-100%)}
+    .tl-key{display:flex;flex-wrap:wrap;gap:4px 16px;margin-top:8px;font-size:12px;color:var(--ink-3)}
+    .tl-key span{display:inline-flex;align-items:center;gap:6px}
+    .tl-key i{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--ink)}
+    .tl-key i.rel{border-radius:1px;transform:rotate(45deg);background:var(--panel);box-shadow:inset 0 0 0 1.5px var(--ink-2)}
+    .tl-key i.sign{background:var(--red)}
+
+    .sat-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin:36px 0 6px}
+    .sat-head .d-h{margin:0}
+    .note{margin:6px 0 0;font-size:12px;line-height:1.7;color:var(--ink-3)}
+    .sat-purpose{display:grid;grid-template-columns:auto 1fr;gap:10px 14px;align-items:start;margin:16px 0 6px;padding:14px 16px;border:1px solid var(--rule);border-radius:var(--r-m);background:linear-gradient(135deg,color-mix(in srgb,var(--red) 7%,var(--raise)),var(--raise) 54%,color-mix(in srgb,var(--st-built) 7%,var(--raise)))}
+    .sat-purpose .q{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--ink);color:var(--paper);font:900 14px/1 var(--serif)}
+    .sat-purpose b{display:block;margin-bottom:3px;font-size:13px}
+    .sat-purpose span{display:block;font-size:12px;line-height:1.7;color:var(--ink-2)}
+    .sat-purpose em{font-style:normal;color:var(--red);font-weight:600}
+    .sat-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 12px;margin-top:14px;grid-template-areas:"cb ca" "fb fa"}
+    .sat-grid.swipe{grid-template-areas:"cb ca" "fs fs"}
+    .sat-card{padding:10px 0 0;border-top:3px solid var(--ink-3);min-width:0}
+    .sat-card.b{grid-area:cb}
+    .sat-card.a{grid-area:ca;border-top-color:var(--ink)}
+    .sat-card .t{font-size:12px;color:var(--ink-2)}
+    .sat-card .d{display:block;margin:2px 0 4px;font:900 20px/1.25 var(--serif);font-variant-numeric:tabular-nums}
+    .sat-card .d.miss{font:500 15px/1.5 var(--sans);color:var(--ink-3)}
+    .sat-card .r,.sat-card .m{display:block;font-size:11.5px;line-height:1.6;color:var(--ink-3);overflow-wrap:anywhere}
+    .sat-card .r b{font-weight:500;color:var(--ink-2)}
+    .sat-frame{position:relative;height:230px;border-radius:var(--r-m);overflow:hidden;background:var(--paper-2);border:1px solid var(--rule)}
+    .sat-frame.fb{grid-area:fb}.sat-frame.fa{grid-area:fa}.sat-frame.fs{grid-area:fs;height:320px;display:none}
+    .sat-grid.swipe .fb,.sat-grid.swipe .fa{display:none}
+    .sat-grid.swipe .fs{display:block}
+    .sat-grid.emphasis .fb{border-color:#9a5f42;box-shadow:inset 0 0 0 2px rgba(154,95,66,.16)}
+    .sat-grid.emphasis .fa{border-color:#2f7468;box-shadow:inset 0 0 0 2px rgba(47,116,104,.16)}
+    .sat-grid.emphasis .fb .leaflet-tile-pane{filter:grayscale(.88) sepia(.42) saturate(.72) contrast(1.2) brightness(.87)}
+    .sat-grid.emphasis .fa .leaflet-tile-pane{filter:saturate(1.28) contrast(1.12) brightness(1.03)}
+    .sat-grid.emphasis .fb::after,.sat-grid.emphasis .fa::after{content:"";position:absolute;inset:0;z-index:620;pointer-events:none;box-shadow:inset 0 0 48px rgba(0,0,0,.14)}
+    .visual-code{display:none;position:absolute;z-index:655;left:8px;bottom:8px;padding:4px 9px;border-radius:99px;background:rgba(255,253,247,.9);color:#16212a;font-size:10.5px;font-weight:650;box-shadow:0 2px 8px rgba(0,0,0,.2);pointer-events:none;backdrop-filter:blur(5px)}
+    .sat-grid.emphasis .visual-code{display:block}
+    .sat-grid.emphasis .fb .visual-code{color:#7d4028}.sat-grid.emphasis .fa .visual-code{color:#175e51}
+    .sat{position:absolute;inset:0}
+    .sat-state{position:absolute;inset:0;z-index:600;display:grid;place-items:center;padding:16px;text-align:center;font-size:12px;color:var(--ink-3);pointer-events:none;opacity:0;transition:opacity .35s}
+    .sat-frame.loading .sat-state{opacity:1;background:linear-gradient(100deg,transparent 30%,color-mix(in srgb,var(--raise) 55%,transparent) 50%,transparent 70%) 0 0/250% 100%,var(--paper-2);animation:shimmer 1.4s linear infinite}
+    .sat-frame.error .sat-state{opacity:1;background:var(--paper-2);color:var(--ink-2);animation:none}
+    @keyframes shimmer{to{background-position:-250% 0,0 0}}
+    .sat-tag{position:absolute;z-index:650;top:8px;padding:3px 9px;border-radius:99px;background:rgba(14,21,27,.72);color:#fff;font-size:11px;pointer-events:none;backdrop-filter:blur(4px)}
+    .sat-tag.l{left:8px}.sat-tag.r{right:8px}
+    .fb .sat-tag,.fa .sat-tag{left:auto;right:8px}
+    .swipe-line{position:absolute;z-index:640;top:0;bottom:0;left:50%;width:2px;margin-left:-1px;background:#fff;box-shadow:0 0 0 1px rgba(0,0,0,.25);pointer-events:none}
+    .swipe-handle{position:absolute;z-index:660;top:50%;left:50%;width:40px;height:40px;margin:-20px 0 0 -20px;display:grid;place-items:center;border-radius:50%;background:#fff;color:#16212A;box-shadow:0 4px 16px rgba(0,0,0,.35);cursor:ew-resize;touch-action:none;transition:transform .2s var(--ease)}
+    .swipe-handle:hover,.swipe-handle.drag{transform:scale(1.1)}
+    .swipe-handle svg{width:20px;height:20px}
+    .sat-tools{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:8px}
+    .sat-code-note{display:none;font-size:11px;line-height:1.55;color:var(--ink-3)}
+    .sat-grid.emphasis + .sat-tools .sat-code-note{display:block}
+    .text-btn{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border:1px solid var(--rule);border-radius:99px;background:var(--raise);font-size:12px;color:var(--ink-2);transition:border-color .2s,color .2s}
+    .text-btn:hover{border-color:var(--ink-3);color:var(--ink)}
+    .text-btn svg{width:14px;height:14px}
+    .pair-status{margin:14px 0 0;padding:12px 14px;border-radius:var(--r-m);font-size:13px;line-height:1.75;background:color-mix(in srgb,var(--st-built) 9%,var(--raise));border:1px solid color-mix(in srgb,var(--st-built) 30%,var(--rule))}
+    .pair-status.gap{background:color-mix(in srgb,var(--st-admin) 10%,var(--raise));border-color:color-mix(in srgb,var(--st-admin) 38%,var(--rule))}
+    .pair-status b{display:block;font-weight:700;margin-bottom:2px}
+    .sat-grid .leaflet-control-zoom a{width:28px!important;height:28px!important;line-height:26px!important;font-size:16px!important}
+    .xhair{position:relative;width:26px;height:26px}
+    .xhair::before,.xhair::after{content:"";position:absolute;background:#FFD54A;box-shadow:0 0 0 1px rgba(0,0,0,.45)}
+    .xhair::before{left:12px;top:0;width:2px;height:26px}
+    .xhair::after{top:12px;left:0;height:2px;width:26px}
+    .leaflet-marker-icon.xhair-icon{background:none;border:0;pointer-events:none!important}
+
+    .sources{display:grid;gap:8px}
+    .src{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center;padding:12px 14px;border:1px solid var(--rule);border-radius:var(--r-m);background:var(--raise);text-decoration:none;transition:border-color .2s,transform .25s var(--ease),box-shadow .25s}
+    .src:hover{border-color:var(--ink-3);transform:translateY(-1px);box-shadow:var(--shadow-1)}
+    .src b{display:block;font-size:14px;font-weight:500}
+    .src small{display:block;font-size:12px;color:var(--ink-3);overflow-wrap:anywhere}
+    .src svg{width:16px;height:16px;color:var(--ink-3)}
+    .no-src{font-size:13px;color:var(--ink-3)}
+
+    /* ============ Findings ============ */
+    .sec{padding:clamp(64px,11vh,120px) var(--gutter)}
+    .sec-title{margin:0 0 clamp(36px,6vh,60px);max-width:17em;font:900 clamp(30px,4.6vw,60px)/1.22 var(--serif);letter-spacing:-.005em}
+    .finding-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--ink)}
+    .finding{padding:30px 32px 36px 0}
+    .finding+.finding{padding-left:32px;border-left:1px solid var(--rule)}
+    .finding .big{margin:0;font:900 clamp(48px,5.6vw,80px)/1 var(--serif);letter-spacing:-.02em;color:var(--red);font-variant-numeric:tabular-nums}
+    .finding h3{margin:20px 0 10px;font:600 20px/1.5 var(--serif)}
+    .finding p{margin:0;font-size:14px;line-height:1.85;color:var(--ink-2)}
+    .model{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,90px);margin-top:clamp(56px,9vh,96px);padding-top:clamp(32px,5vh,48px);border-top:1px solid var(--rule);align-items:start}
+    .model h3{margin:0 0 14px;font:900 clamp(24px,2.6vw,32px)/1.35 var(--serif)}
+    .model p{margin:0 0 14px;font-size:15px;line-height:1.9;color:var(--ink-2);max-width:34em}
+    .forest{padding:22px 24px 18px;background:var(--panel);border:1px solid var(--rule);border-radius:var(--r-l)}
+    .forest-title{margin:0 0 18px;font-size:13px;color:var(--ink-2)}
+    .f-row{margin-bottom:26px}
+    .f-head{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:4px 14px;margin-bottom:10px}
+    .f-label{font-size:14px;font-weight:500}
+    .f-val{font-size:13px;color:var(--ink-2);font-variant-numeric:tabular-nums}
+    .f-val b{font:900 16px var(--serif);color:var(--ink)}
+    .f-track{position:relative;height:28px}
+    .f-plot{position:relative}
+    .f-null{position:absolute;top:-6px;bottom:28px;left:50%;border-left:1.5px solid var(--ink)}
+    .f-null-label{position:absolute;bottom:-24px;left:50%;transform:translateX(-50%);font-size:11px;white-space:nowrap;color:var(--ink)}
+    .f-ci{position:absolute;top:13px;height:3px;border-radius:2px;background:var(--st-mention);transform-origin:var(--o) 50%;transition:transform 1.1s var(--ease) var(--dl,0s)}
+    .f-ci::before,.f-ci::after{content:"";position:absolute;top:-5px;width:2px;height:13px;background:var(--st-mention)}
+    .f-ci::before{left:0}.f-ci::after{right:0}
+    .f-pt{position:absolute;top:7px;width:15px;height:15px;margin-left:-7.5px;border-radius:50%;background:var(--red);box-shadow:0 0 0 3px var(--panel);transition:transform .6s var(--ease) calc(var(--dl,0s) + .5s),opacity .3s calc(var(--dl,0s) + .5s)}
+    .js .forest:not(.on) .f-ci{transform:scaleX(0)}
+    .js .forest:not(.on) .f-pt{transform:scale(0);opacity:0}
+    .f-axis{position:relative;height:24px;margin-top:4px;border-top:1px solid var(--rule)}
+    .f-axis span{position:absolute;top:6px;transform:translateX(-50%);font-size:11px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+    .f-dir{display:flex;justify-content:space-between;margin-top:6px;font-size:12px;color:var(--ink-3)}
+    .forest .note{margin-top:14px}
+
+    /* ============ Human ============ */
+    .human{position:relative;padding:clamp(72px,13vh,140px) var(--gutter);background:var(--band);color:var(--on-red);overflow:hidden}
+    .human p{position:relative;margin:0;max-width:21em;font:900 clamp(28px,4.4vw,58px)/1.42 var(--serif);text-wrap:balance}
+    .human small{position:relative;display:block;margin-top:30px;max-width:40em;font-size:15px;line-height:1.85;color:color-mix(in srgb,var(--on-red) 82%,transparent)}
+    .human::after{content:"";position:absolute;right:-12vw;top:50%;width:min(70vw,780px);aspect-ratio:1;border-radius:50%;transform:translateY(-50%);background:radial-gradient(circle,transparent 0 30%,rgba(255,255,255,.06) 30.2% 30.6%,transparent 30.8% 45%,rgba(255,255,255,.05) 45.2% 45.6%,transparent 45.8% 60%,rgba(255,255,255,.04) 60.2% 60.6%,transparent 60.8%);pointer-events:none}
+
+    /* ============ Method ============ */
+    .steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin:0;padding:0;list-style:none;counter-reset:s}
+    .step{position:relative;padding:44px 28px 8px 0}
+    .step::before{counter-increment:s;content:counter(s);position:absolute;top:0;left:0;display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--paper);border:1.5px solid var(--ink);font:900 14px/1 var(--serif);z-index:1}
+    .step::after{content:"";position:absolute;top:15px;left:30px;right:0;height:1.5px;background:var(--ink)}
+    .step:last-child::after{background:linear-gradient(90deg,var(--ink) 0 40%,transparent 40%) 0 0/10px 1.5px repeat-x}
+    .step h3{margin:0 0 10px;font:600 18px/1.5 var(--serif)}
+    .step p{margin:0;font-size:14px;line-height:1.85;color:var(--ink-2)}
+    .downloads{display:flex;flex-wrap:wrap;gap:10px;margin-top:clamp(40px,7vh,64px)}
+    .dl{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border:1px solid var(--rule);border-radius:99px;background:var(--panel);font-size:14px;text-decoration:none;transition:border-color .2s,background .2s,transform .25s var(--ease)}
+    .dl:hover{border-color:var(--ink);transform:translateY(-2px)}
+    .dl.primary{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+    .dl svg{width:15px;height:15px}
+
+    footer{padding:28px var(--gutter) calc(28px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--rule);font-size:12px;line-height:1.75;color:var(--ink-3)}
+    footer .f-brand{font:900 15px var(--serif);color:var(--ink);margin-right:10px}
+
+    /* ============ Responsive ============ */
+    @media (max-width:1180px){
+      .atlas{grid-template-columns:350px minmax(0,1fr)}
+    }
+    @media (max-width:900px){
+      .atlas{display:grid;grid-template-columns:1fr;grid-template-rows:auto auto auto;grid-template-areas:"controls" "map" "list";height:auto;max-height:none;min-height:0}
+      .controls{padding:28px var(--gutter) 18px;border-right:0}
+      .map-wrap{height:min(72vh,620px);min-height:420px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+      .listbox{border-right:0}
+      .list{max-height:none;overflow:visible;padding:0 calc(var(--gutter) - 12px) 20px}
+      .list.clamped li:nth-child(n+9){display:none}
+      .more{display:block!important}
+      .finding-grid{grid-template-columns:1fr}
+      .finding+.finding{padding-left:0;border-left:0;border-top:1px solid var(--rule)}
+      .model{grid-template-columns:1fr}
+      .steps{grid-template-columns:1fr 1fr;row-gap:28px}
+      .step:nth-child(2)::after{background:linear-gradient(90deg,var(--ink) 0 40%,transparent 40%) 0 0/10px 1.5px repeat-x}
+      .ledger{grid-template-columns:1fr 1fr}
+      .ledger div:nth-child(3){padding-left:0;border-left:0}
+      .ledger div:nth-child(n+3){border-top:1px solid var(--rule)}
+    }
+    .more[hidden]{display:none!important}
+    .more{display:none;margin:0 var(--gutter) 24px;width:calc(100% - 2 * var(--gutter));padding:12px;border:1px solid var(--rule);border-radius:99px;background:var(--raise);font-size:14px}
+    @media (max-width:720px){
+      .drawer{top:auto;left:0;right:0;width:100%;height:calc(100dvh - 32px - env(safe-area-inset-top,0px));border-left:0;border-radius:var(--r-l) var(--r-l) 0 0;transform:translateY(104%)}
+      .drawer-bar{padding:0 12px 0 18px;border-radius:var(--r-l) var(--r-l) 0 0}
+      .drawer-bar::before{content:"";position:absolute;left:50%;top:6px;width:38px;height:4px;margin-left:-19px;border-radius:2px;background:var(--rule)}
+      .drawer-body{padding:22px 18px calc(40px + env(safe-area-inset-bottom,0px))}
+    }
+    @media (max-width:620px){
+      .nav-links a:not(.keep){display:none}
+      .brand-en{display:none}
+      .hero-title{font-size:clamp(40px,12.4vw,64px)}
+      .ledger div,.ledger div+div{padding:18px 12px 24px 0}
+      .ledger div:nth-child(even){padding-left:14px}
+      .steps{grid-template-columns:1fr}
+      .step::after{display:none}
+      .step{padding:0 0 0 48px}
+      .step::before{top:0}
+      .map-caption{right:12px;left:12px;bottom:12px;max-width:none;font-size:11px}
+      .map-tools{left:12px;top:12px}
+      .selects{grid-template-columns:1fr 1fr}
+      .facts{grid-template-columns:1fr}
+      .fact:nth-child(even){padding-left:0;border-left:0}
+      .sat-grid{grid-template-areas:"cb" "fb" "ca" "fa";grid-template-columns:1fr}
+      .sat-grid.swipe{grid-template-areas:"cb ca" "fs fs";grid-template-columns:1fr 1fr}
+      .sat-frame{height:220px}
+      .sat-frame.fs{height:300px}
+      .grade-badge{margin-left:0}
+      .tl{grid-template-columns:52px minmax(0,1fr)}
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;transition-delay:0s!important;scroll-behavior:auto!important}
+      .pulse-icon span{animation:none;transform:scale(.6);opacity:.8}
+      .pulse-icon span+span{display:none}
+    }
   </style>
 </head>
 <body>
-  <nav class="topnav">
-    <div class="brand">Unbuilt Atlas / 签约之后</div>
-    <div class="toplinks"><a href="#atlas">地图</a><a href="#findings">发现</a><a href="#method">方法</a><a href="../data/nanyang_projects.csv">数据</a></div>
-  </nav>
-
-  <header class="hero">
-    <div class="kicker">河南南阳 · 2019-2022签约 · 追踪至2025年底</div>
-    <h1>签约之后，项目去了哪里？</h1>
-    <p class="hero-copy">我把政府公开宣布的招商项目逐个列出来，几年后再查一遍。<strong>不是统计掌声，而是统计还能被公众核对的厂房、施工和投产记录。</strong></p>
-    <div class="hero-stats">
-      <div class="hero-stat"><b id="heroSlots">426</b><span>官方报道宣布的项目名额</span></div>
-      <div class="hero-stat"><b id="heroNamed">14.6%</b><span>同篇报道明确点名率</span></div>
-      <div class="hero-stat"><b id="heroProjects">80</b><span>逐项追踪项目</span></div>
-      <div class="hero-stat"><b id="heroStrong">17.5%</b><span>留下强物理里程碑</span></div>
-    </div>
+  <header class="nav" id="nav">
+    <a class="brand" href="#top" aria-label="签约之后，返回顶部"><span class="brand-mark" aria-hidden="true"></span><span class="brand-cn">签约之后</span><span class="brand-en">Unbuilt Atlas</span></a>
+    <nav class="nav-links" aria-label="页面导航">
+      <a class="keep" href="#atlas" data-sec="atlas">地图</a>
+      <a href="#findings" data-sec="findings">发现</a>
+      <a href="#method" data-sec="method">方法</a>
+      <a class="keep" href="../data/nanyang_projects.csv">数据</a>
+    </nav>
   </header>
-  <div class="storyline">一场签约会结束以后，承诺去了哪里，等待它的人付出了什么代价？</div>
 
-  <section id="atlas" class="map-section">
-    <aside class="controls">
-      <h2>项目兑现地图</h2>
-      <p class="sub">每个点是一项明确点名项目。颜色表示截至2025-12-31找到的最强公开后续证据。</p>
-      <div class="control"><label for="search">搜索项目或企业</label><input id="search" type="search" placeholder="例如：东方雨虹、光学、卧龙区"></div>
-      <div class="control"><label for="county">地区</label><select id="county"><option value="all">全部地区</option></select></div>
-      <div class="control"><label for="cohort">核查层级</label><select id="cohort"><option value="all">全部80项</option><option value="nanyang_named_project">南阳广域追踪66项</option><option value="xichuan_deep_audit">淅川深度核查14项</option></select></div>
-      <div class="control"><label>最强后续证据</label><div id="statusList" class="status-list"></div></div>
-      <div id="liveCount" class="live-count" aria-live="polite">显示 80 / 80 项</div>
-    </aside>
-    <div class="map-wrap">
-      <div id="map" class="map" aria-label="南阳招商项目公开证据地图"></div>
-      <div class="map-caption">广域队列使用县区中心指示点，淅川深审使用园区或乡镇指示点。重合点会自动聚合并在点击后展开。坐标不是宗地红线。</div>
-    </div>
-  </section>
-
-  <article id="detail" class="detail" aria-live="polite">
-    <div class="detail-inner"><button id="close" class="close" aria-label="关闭">×</button><div id="detailContent"></div></div>
-  </article>
-
-  <section id="findings" class="findings">
-    <div class="section-kicker">What the record says</div>
-    <h2>项目先在报道里消失，然后才可能在土地上消失。</h2>
-    <div class="finding-grid">
-      <article class="finding"><div class="num">14.6%</div><h3>多数“项目”连名字都没有公开。</h3><p>21篇不重复的主要签约报道共宣布426个项目名额，只有62个在同一篇报道里被明确点名。公众往往从第一天就无法建立后续追踪清单。</p></article>
-      <article class="finding"><div class="num">17.5%</div><h3>80项明确项目中，14项留下强物理里程碑。</h3><p>5项有投产或试产记录，9项有开工、主体建成或明确投产调度。另有58项在既定公开检索中没有定位到项目专属后续里程碑。</p></article>
-      <article class="finding"><div class="num">21.4%</div><h3>淅川深审没有推翻广域结果。</h3><p>在统一的14项深度队列中，1项建成、2项部分建成，建成或部分建成率为3/14。更深的核查没有把签约名单变成高兑现名单。</p></article>
-    </div>
-    <div class="model-block">
-      <div class="model-copy">
-        <h3>名气和大场面没有预测兑现。</h3>
-        <p>在核查方法一致的66项广域队列中，带有上市公司、央企或全国品牌信号的项目，强物理里程碑率为18.2%；其他或未披露企业为16.4%。简单逻辑回归同时放入企业名气信号和活动公布项目规模，两者的置信区间都跨过1。</p>
-        <p>这不是“名企不会落地”。结论更直接：签约时最醒目的两个表面信号，没有提供可依赖的兑现预测。单项目金额只有11/66项可比，因此没有强行拟合金额模型。</p>
+  <main>
+    <section class="hero" id="top">
+      <div class="hero-inner">
+        <p class="hero-place">河南南阳，2019至2022年签约，追踪至2025年底</p>
+        <h1 class="hero-title"><span class="ln"><span>签约之后，</span></span><span class="ln"><span>项目去了哪里？</span></span></h1>
+        <p class="hero-copy">我把政府公开宣布的招商项目逐个列出来，几年后再查一遍。不是统计掌声，而是统计还能被公众核对的厂房、施工和投产记录。</p>
       </div>
-      <div id="oddsPlot" class="odds" aria-label="逻辑回归优势比"></div>
-    </div>
-  </section>
+      <figure class="field-wrap" id="fieldWrap">
+        <div class="field-legend" aria-hidden="true">
+          <span class="fl-a"><i></i><b id="fieldSlots" class="num">426</b>个公布的项目名额</span>
+          <span class="fl-c"><i></i>其中<b id="fieldNamed" class="num">62</b>个在同一篇报道里有名字</span>
+        </div>
+        <svg id="field" class="field" role="img" aria-label="21场主要签约活动共公布426个项目名额，其中62个在同一篇报道里被明确点名。"></svg>
+        <figcaption>每个点是签约报道里的一个项目名额；每一组点是一场签约活动，按日期从左到右排列，共21场不重复的主要活动。</figcaption>
+        <div id="fieldTip" class="tip-card" hidden></div>
+      </figure>
+      <dl class="ledger">
+        <div><dt>官方报道宣布的项目名额</dt><dd class="num" id="heroSlots" data-count>426</dd></div>
+        <div><dt>同篇报道明确点名率</dt><dd class="num" id="heroNamed" data-count>14.6%</dd></div>
+        <div><dt>逐项追踪项目</dt><dd class="num" id="heroProjects" data-count>80</dd></div>
+        <div><dt>留下强物理里程碑</dt><dd class="num" id="heroStrong" data-count>17.5%</dd></div>
+      </dl>
+    </section>
 
-  <section class="human">
-    <p>消失的不是一座抽象工厂。它可能是一块被预留的土地、一笔被许诺的就业、一套围绕项目安排的人生计划。</p>
-    <small>地图只写公开记录能证明的事，不把“没查到”写成“没有建”。但公共承诺如果无法被逐项核对，本身就是治理问题。</small>
-  </section>
+    <p class="storyline">一场签约会结束以后，承诺去了哪里，等待它的人付出了什么代价？</p>
 
-  <section id="method" class="method-section">
-    <div class="section-kicker">Reproducible by design</div>
-    <h2>把一次漂亮的签约，改造成一条必须继续更新的证据链。</h2>
-    <div class="method-grid">
-      <article class="method-step"><b>01</b><h3>预先锁定范围</h3><p>南阳官方政府与招商报道，签约窗口2019-2022年，追踪截止2025-12-31。重复报道和子活动按事件角色去重。</p></article>
-      <article class="method-step"><b>02</b><h3>逐项建立身份</h3><p>记录项目名、企业、地区、行业、活动形式、活动规模、企业信号和公开投资额。名称不明的项目不进入80项队列。</p></article>
-      <article class="method-step"><b>03</b><h3>分层审定证据</h3><p>投产或试产为建成；开工、主体建成或明确生产调度为物理进度；规划备案单列；没有把搜索空白改写成烂尾。</p></article>
-      <article class="method-step"><b>04</b><h3>保留原始链接</h3><p>搜索候选、人工审定、状态理由、来源链接和可复现脚本全部公开。任何人都能回到原始报道并挑战判断。</p></article>
-    </div>
-    <div class="downloads">
-      <a href="../data/nanyang_projects.csv">下载80项数据集</a>
-      <a href="../data/events.csv">下载事件表</a>
-      <a href="../data/wayback_pairs.json">下载80组影像配对</a>
-      <a href="../data/followup_search_results.csv">查看497条搜索候选</a>
-      <a href="../outputs/unbuilt-atlas-research-brief.pdf">研究简报 PDF</a>
-      <a href="../README.md">方法与复现说明</a>
-    </div>
-  </section>
-  <footer>Unbuilt Atlas · 数据状态审定于2026-10-29 · 影像为Esri World Imagery Wayback发布版本，仅作指示点周边上下文，不用于单独判定项目状态。</footer>
+    <section id="atlas" class="atlas" aria-labelledby="atlasTitle">
+      <div class="controls">
+        <h2 id="atlasTitle">项目兑现地图</h2>
+        <p>每个点是一项明确点名项目。颜色表示截至<span class="nobr">2025-12-31</span>找到的最强公开后续证据；空心点表示在既定检索中没有定位到对应证据，不等于没有建设。</p>
+        <label class="search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <span class="sr">搜索项目或企业</span>
+          <input id="search" type="search" placeholder="搜索项目或企业，如东方雨虹" autocomplete="off">
+        </label>
+        <div class="selects">
+          <label class="sel"><span>地区</span><select id="county"><option value="all">全部地区</option></select></label>
+          <label class="sel"><span>核查层级</span><select id="cohort"><option value="all">全部80项</option><option value="nanyang_named_project">南阳广域追踪66项</option><option value="xichuan_deep_audit">淅川深度核查14项</option></select></label>
+        </div>
+        <div class="ev-head"><span id="evLabel">最强后续证据</span><button id="resetStatus" class="link-btn" type="button" hidden>显示全部状态</button></div>
+        <div id="strip" class="strip" aria-hidden="true"></div>
+        <div id="statusList" class="legend" role="group" aria-labelledby="evLabel"></div>
+      </div>
 
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+      <div class="map-wrap">
+        <div id="map" class="map" role="region" aria-label="南阳招商项目公开证据地图"></div>
+        <div class="map-tools">
+          <div class="seg" id="baseSeg" role="radiogroup" aria-label="底图">
+            <span class="thumb" aria-hidden="true"></span>
+            <button type="button" role="radio" aria-checked="true" data-base="street">街道</button>
+            <button type="button" role="radio" aria-checked="false" data-base="sat">卫星</button>
+          </div>
+        </div>
+        <p class="map-caption">广域队列使用县区中心指示点，淅川深审使用园区或乡镇指示点。重合点会自动聚合，点击后展开；圆环颜色是该组项目的证据构成。坐标不是宗地红线。</p>
+        <div id="wheelHint" class="wheel-hint" aria-hidden="true">点击地图后即可用滚轮缩放</div>
+        <div id="mapError" class="map-error" hidden><b>地图组件没有加载成功</b><span>请检查网络连接后刷新页面。左侧列表和项目详情仍可正常使用。</span></div>
+      </div>
+
+      <div class="listbox">
+        <div class="list-head"><span id="liveCount" aria-live="polite">显示 80 / 80 项</span><button id="clearAll" class="link-btn" type="button" hidden>清除全部筛选</button></div>
+        <ol id="list" class="list clamped" aria-label="项目列表"></ol>
+        <div id="empty" class="empty" hidden><b>没有符合条件的项目</b>换一个关键词，或清除筛选后重新查看全部80项。<br><button type="button" id="emptyReset">清除筛选</button></div>
+        <button type="button" id="more" class="more">显示全部项目</button>
+      </div>
+    </section>
+
+    <section id="findings" class="sec findings" aria-labelledby="findTitle">
+      <h2 class="sec-title" id="findTitle">项目先在报道里消失，然后才可能在土地上消失。</h2>
+      <div class="finding-grid">
+        <article class="finding"><p class="big num" id="fNamed" data-count>14.6%</p><h3>多数“项目”连名字都没有公开。</h3><p>21篇不重复的主要签约报道共宣布426个项目名额，只有62个在同一篇报道里被明确点名。公众往往从第一天就无法建立后续追踪清单。</p></article>
+        <article class="finding"><p class="big num" id="fStrong" data-count>17.5%</p><h3>80项明确项目中，14项留下强物理里程碑。</h3><p>5项有投产或试产记录，9项有开工、主体建成或明确投产调度。另有58项在既定公开检索中没有定位到项目专属后续里程碑。</p></article>
+        <article class="finding"><p class="big num" id="fXichuan" data-count>21.4%</p><h3>淅川深审没有推翻广域结果。</h3><p>在统一的14项深度队列中，1项建成、2项部分建成，建成或部分建成率为3/14。更深的核查没有把签约名单变成高兑现名单。</p></article>
+      </div>
+      <div class="model">
+        <div class="model-copy">
+          <h3>名气和大场面没有预测兑现。</h3>
+          <p>在核查方法一致的66项广域队列中，带有上市公司、央企或全国品牌信号的项目，强物理里程碑率为18.2%；其他或未披露企业为16.4%。简单逻辑回归同时放入企业名气信号和活动公布项目规模，两者的置信区间都跨过1。</p>
+          <p>这不是“名企不会落地”。结论更直接：签约时最醒目的两个表面信号，没有提供可依赖的兑现预测。单项目金额只有11/66项可比，因此没有强行拟合金额模型。</p>
+        </div>
+        <figure class="forest" id="oddsPlot" aria-label="逻辑回归优势比">
+          <p class="forest-title">优势比与95%置信区间，对数刻度，n = 66</p>
+          <div class="f-plot" id="fPlot"></div>
+          <div class="f-dir"><span>兑现几率更低</span><span>兑现几率更高</span></div>
+          <p class="note">区间跨过竖线1，表示数据无法把该信号与兑现几率区分开。</p>
+        </figure>
+      </div>
+    </section>
+
+    <section class="human" aria-label="为什么重要">
+      <p>消失的不是一座抽象工厂。它可能是一块被预留的土地、一笔被许诺的就业、一套围绕项目安排的人生计划。</p>
+      <small>地图只写公开记录能证明的事，不把“没查到”写成“没有建”。但公共承诺如果无法被逐项核对，本身就是治理问题。</small>
+    </section>
+
+    <section id="method" class="sec method" aria-labelledby="methodTitle">
+      <h2 class="sec-title" id="methodTitle">把一次漂亮的签约，改造成一条必须继续更新的证据链。</h2>
+      <ol class="steps">
+        <li class="step"><h3>预先锁定范围</h3><p>南阳官方政府与招商报道，签约窗口2019至2022年，追踪截止2025-12-31。重复报道和子活动按事件角色去重。</p></li>
+        <li class="step"><h3>逐项建立身份</h3><p>记录项目名、企业、地区、行业、活动形式、活动规模、企业信号和公开投资额。名称不明的项目不进入80项队列。</p></li>
+        <li class="step"><h3>分层审定证据</h3><p>投产或试产为建成；开工、主体建成或明确生产调度为物理进度；规划备案单列；没有把搜索空白改写成烂尾。</p></li>
+        <li class="step"><h3>保留原始链接</h3><p>搜索候选、人工审定、状态理由、来源链接和可复现脚本全部公开。任何人都能回到原始报道并挑战判断。</p></li>
+      </ol>
+      <div class="downloads">
+        <a class="dl primary" href="../data/nanyang_projects.csv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0 4.5-4.5M12 15l-4.5-4.5M5 20h14"/></svg>下载80项数据集</a>
+        <a class="dl" href="../data/events.csv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0 4.5-4.5M12 15l-4.5-4.5M5 20h14"/></svg>下载事件表</a>
+        <a class="dl" href="../data/wayback_pairs.json"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0 4.5-4.5M12 15l-4.5-4.5M5 20h14"/></svg>下载80组影像配对</a>
+        <a class="dl" href="../data/followup_search_results.csv" target="_blank" rel="noopener">查看497条搜索候选</a>
+        <a class="dl" href="../outputs/unbuilt-atlas-research-brief.pdf" target="_blank" rel="noopener">研究简报 PDF</a>
+        <a class="dl" href="../README.md" target="_blank" rel="noopener">方法与复现说明</a>
+      </div>
+    </section>
+  </main>
+
+  <footer><span class="f-brand">Unbuilt Atlas</span>数据状态审定于2026-10-29。影像为Esri World Imagery Wayback发布版本，仅作指示点周边上下文，不用于单独判定项目状态。</footer>
+
+  <div id="scrim" class="scrim" hidden></div>
+  <aside id="detail" class="drawer" role="dialog" aria-modal="false" aria-labelledby="dTitle" inert>
+    <div class="drawer-bar">
+      <div class="pager">
+        <button id="prev" class="icon-btn" type="button" aria-label="上一个项目"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg></button>
+        <span id="pagerPos">1 / 80</span>
+        <button id="next" class="icon-btn" type="button" aria-label="下一个项目"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></button>
+      </div>
+      <button id="close" class="icon-btn" type="button" aria-label="关闭详情"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    </div>
+    <div id="detailContent" class="drawer-body" tabindex="-1"></div>
+  </aside>
+
   <script src="atlas-data.js"></script>
   <script>
+  (() => {
+    "use strict";
     const DATA = window.UNBUILT_ATLAS;
     const projects = DATA.projects;
-    const eventMap = Object.fromEntries(DATA.events.map(event => [event.event_id, event]));
-    const statusMeta = {
-      built:{label:"建成 / 试产",color:"#237a5a"},
-      physical_progress:{label:"物理建设进度",color:"#1b7682"},
-      administrative_only:{label:"仅手续进度",color:"#b77d22"},
-      later_mention_only:{label:"仅后续提及",color:"#647789"},
-      no_later_trace_located:{label:"未定位后续里程碑",color:"#c8553d"},
-      no_physical_milestone_located:{label:"深审未定位物理里程碑",color:"#9e3f32"}
-    };
-    const esc = value => String(value ?? "").replace(/[&<>"']/g, char => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
+    const $ = (sel, root = document) => root.querySelector(sel);
+    const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
+    const esc = value => String(value ?? "").replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
     const pct = value => (100 * Number(value)).toFixed(1) + "%";
-    document.getElementById("heroSlots").textContent = DATA.summary.event_transparency.announced_project_slots;
-    document.getElementById("heroNamed").textContent = pct(DATA.summary.event_transparency.same_article_naming_rate);
-    document.getElementById("heroProjects").textContent = DATA.summary.scope.projects_total;
-    document.getElementById("heroStrong").textContent = pct(DATA.summary.outcomes.strong_physical_milestone_rate);
+    const reduceMQ = matchMedia("(prefers-reduced-motion: reduce)");
+    const darkMQ = matchMedia("(prefers-color-scheme: dark)");
+    const reduced = () => reduceMQ.matches;
+    const byId = Object.fromEntries(projects.map(p => [p.project_id, p]));
+    const eventMap = Object.fromEntries(DATA.events.map(e => [e.event_id, e]));
 
-    const countySelect = document.getElementById("county");
-    [...new Set(projects.map(p => p.county))].sort((a,b) => a.localeCompare(b,"zh-CN")).forEach(county => {
-      countySelect.insertAdjacentHTML("beforeend", `<option value="${esc(county)}">${esc(county)}</option>`);
-    });
-    const statusList = document.getElementById("statusList");
-    Object.entries(statusMeta).forEach(([key, meta]) => {
-      const count = projects.filter(p => p.followup_status === key).length;
-      statusList.insertAdjacentHTML("beforeend", `<button class="status-button" data-status="${key}"><i style="background:${meta.color}"></i><span>${meta.label}</span><small>${count}</small></button>`);
-    });
-
-    const map = L.map("map",{zoomControl:true,minZoom:7}).setView([33.05,112.35],8);
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{
-      attribution:"© OpenStreetMap contributors",maxZoom:18,opacity:.56
-    }).addTo(map);
-    const cluster = L.markerClusterGroup({
-      showCoverageOnHover:false,spiderfyOnMaxZoom:true,maxClusterRadius:42,
-      iconCreateFunction:c => L.divIcon({html:`<div><span>${c.getChildCount()}</span></div>`,className:"marker-cluster marker-cluster-small",iconSize:L.point(40,40)})
-    });
-    map.addLayer(cluster);
-    const markers = [];
-    projects.forEach(project => {
-      const color = statusMeta[project.followup_status].color;
-      const icon = L.divIcon({className:"dot-icon",html:`<span style="background:${color}"></span>`,iconSize:[18,18],iconAnchor:[9,9]});
-      const marker = L.marker([Number(project.lat),Number(project.lon)],{icon,title:project.project_name});
-      marker.bindTooltip(esc(project.project_name),{direction:"top"});
-      marker.on("click",() => showDetail(project));
-      marker.project = project;
-      markers.push(marker);
-    });
-
-    let selectedStatus = "all";
-    const filters = {search:"",county:"all",cohort:"all"};
-    const matches = p => {
-      const hay = [p.project_name,p.company_name,p.industry,p.county].join(" ").toLowerCase();
-      return (!filters.search || hay.includes(filters.search))
-        && (filters.county === "all" || p.county === filters.county)
-        && (filters.cohort === "all" || p.cohort_role === filters.cohort)
-        && (selectedStatus === "all" || p.followup_status === selectedStatus);
+    /* ---------- Status vocabulary (labels are part of the research contract) ---------- */
+    const statusMeta = {
+      built:{label:"建成 / 试产", v:"--st-built"},
+      physical_progress:{label:"物理建设进度", v:"--st-physical"},
+      administrative_only:{label:"仅手续进度", v:"--st-admin"},
+      later_mention_only:{label:"仅后续提及", v:"--st-mention"},
+      no_later_trace_located:{label:"未定位后续里程碑", v:"--st-none", hollow:true},
+      no_physical_milestone_located:{label:"深审未定位物理里程碑", v:"--st-deep", hollow:true, deep:true}
     };
-    function applyFilters(){
-      cluster.clearLayers();
-      const visible = markers.filter(marker => matches(marker.project));
-      cluster.addLayers(visible);
-      document.getElementById("liveCount").textContent = `显示 ${visible.length} / ${projects.length} 项`;
-      document.querySelectorAll(".status-button").forEach(button => button.classList.toggle("active",button.dataset.status === selectedStatus));
-    }
-    document.getElementById("search").addEventListener("input",event => {filters.search=event.target.value.trim().toLowerCase();applyFilters()});
-    countySelect.addEventListener("change",event => {filters.county=event.target.value;applyFilters()});
-    document.getElementById("cohort").addEventListener("change",event => {filters.cohort=event.target.value;applyFilters()});
-    document.querySelectorAll(".status-button").forEach(button => button.addEventListener("click",() => {selectedStatus=selectedStatus===button.dataset.status?"all":button.dataset.status;applyFilters()}));
-    applyFilters();
-
-    let beforeMap = null, afterMap = null;
-    const precisionLabel = value => ({indicative_county_centroid:"县区中心指示点",indicative_houpo_zone:"园区指示点",indicative_industrial_zone:"园区指示点",indicative_rural_zone:"乡镇指示点"}[value] || "区域指示点");
-    const imageMetaText = image => {
-      const capture = image.capture_date ? `采集 ${image.capture_date}` : "采集日期未返回";
-      const provider = image.provider ? ` · ${image.provider}` : "";
-      const resolution = image.resolution_m ? ` · ${Number(image.resolution_m).toFixed(1)} 米/像素` : "";
-      return `${capture}${provider}${resolution}`;
+    const STATUS_KEYS = Object.keys(statusMeta);
+    const swCls = key => "sw" + (statusMeta[key].hollow ? " hollow" : "") + (statusMeta[key].deep ? " deep" : "");
+    const swatch = key => `<i class="${swCls(key)}" style="--c:var(${statusMeta[key].v})" aria-hidden="true"></i>`;
+    const cohortLabel = role => role === "xichuan_deep_audit" ? "淅川深度核查" : "南阳广域追踪";
+    const signalLabel = {
+      national_company:"全国性企业", regional_company:"区域企业", undisclosed:"未披露", private_regional:"区域民营企业",
+      local_state_linked:"地方国资关联", regional_manufacturer:"区域制造企业", regional_group:"区域企业集团",
+      listed_company:"上市公司", national_brand:"全国品牌", local_platform:"地方平台公司", central_state_company:"央企"
     };
-    document.getElementById("close").addEventListener("click",() => document.getElementById("detail").classList.remove("open"));
-    function showDetail(project){
-      if(beforeMap){beforeMap.remove();beforeMap=null} if(afterMap){afterMap.remove();afterMap=null}
-      const event = eventMap[project.event_id] || {};
-      const meta = statusMeta[project.followup_status];
-      const imagePair = DATA.wayback_pairs[project.project_id];
-      const amount = project.announced_investment_cny_100m ? project.announced_investment_cny_100m + "亿元" : "未公开可比金额";
-      const cohort = project.cohort_role === "xichuan_deep_audit" ? "淅川深度核查" : "南阳广域追踪";
-      const sourceLinks = [
-        project.source_sign ? `<a href="${esc(project.source_sign)}" target="_blank" rel="noreferrer">纳入项目的原始官方报道 ↗</a>` : "",
-        project.source_followup ? `<a href="${esc(project.source_followup)}" target="_blank" rel="noreferrer">主要后续证据 ↗</a>` : "",
-        project.source_followup_secondary ? `<a href="${esc(project.source_followup_secondary)}" target="_blank" rel="noreferrer">交叉核对来源 ↗</a>` : ""
-      ].filter(Boolean).join("");
-      document.getElementById("detailContent").innerHTML = `
-        <div class="eyebrow">${esc(project.project_id)} · ${esc(cohort)} · 证据等级 ${esc(project.evidence_grade)}</div>
-        <h3>${esc(project.project_name)}</h3><div class="company">${esc(project.company_name || "签约报道未披露企业名")}</div>
-        <div class="pills"><span class="pill status" style="background:${meta.color}">${meta.label}</span><span class="pill">${esc(project.county)}</span><span class="pill">${esc(project.industry)}</span></div>
-        <div class="facts">
-          <div class="fact"><span>签约 / 纳入日期</span><b>${esc(project.sign_date)}</b></div>
-          <div class="fact"><span>公开投资额</span><b>${esc(amount)}</b></div>
-          <div class="fact"><span>活动公布规模</span><b>${esc(project.event_announced_project_slots)}个项目名额</b></div>
-          <div class="fact"><span>企业信号</span><b>${esc(project.company_signal)}</b></div>
-          <div class="fact"><span>后续日期</span><b>${esc(project.followup_date || "未定位")}</b></div>
-          <div class="fact"><span>活动名称</span><b>${esc(event.event_title || project.event_id)}</b></div>
-        </div>
-        <h4>状态为什么这样判</h4><div class="reason">${esc(project.followup_reason)}</div>
-        <h4>同一地点，两期不同影像</h4>
-        <p class="sat-note">两幅图已锁定同一中心和比例尺，拖动或缩放任一幅会同步另一幅。</p>
-        <div class="sat-grid">
-          <div class="sat-box"><strong id="satBeforeTitle"></strong><span id="satBeforeRelease"></span><div id="satBefore" class="sat" aria-label="较早卫星影像"></div><div id="satBeforeMeta" class="sat-meta"></div></div>
-          <div class="sat-box"><strong id="satAfterTitle"></strong><span id="satAfterRelease"></span><div id="satAfter" class="sat" aria-label="较新卫星影像"></div><div id="satAfterMeta" class="sat-meta"></div></div>
-        </div>
-        <p id="satPairStatus" class="sat-pair-status"></p>
-        <p class="sat-note">两幅图使用同一指示坐标、同一缩放级别；中心瓦片文件经SHA-256核对确实不同。图中优先标注影像采集日期，Wayback日期仅表示存档发布版本。广域坐标是县区中心，淅川坐标是园区或乡镇指示点，不是项目宗地；影像不参与状态判定。</p>
-        <h4>原始记录</h4><div class="sources">${sourceLinks || "没有可链接的后续来源"}</div>`;
-      document.getElementById("detail").classList.add("open");
-      requestAnimationFrame(() => {
-        const center=[Number(project.lat),Number(project.lon)], zoom=imagePair.zoom;
-        const beforeIsPre = Boolean(imagePair.before.capture_date && imagePair.before.capture_date <= project.sign_date);
-        const afterIsPost = Boolean(imagePair.after.capture_date && imagePair.after.capture_date > project.sign_date);
-        const beforeDate = imagePair.before.capture_date || "采集日期缺失";
-        const afterDate = imagePair.after.capture_date || "采集日期缺失";
-        document.getElementById("satBeforeTitle").textContent = `${beforeIsPre ? "签约前" : "较早影像"} · ${beforeDate}`;
-        document.getElementById("satAfterTitle").textContent = `${afterIsPost ? "签约后" : "较新影像"} · ${afterDate}`;
-        document.getElementById("satBeforeRelease").textContent = `Wayback ${imagePair.before.release_date}`;
-        document.getElementById("satAfterRelease").textContent = `Wayback ${imagePair.after.release_date}`;
-        document.getElementById("satBeforeMeta").textContent = imageMetaText(imagePair.before);
-        document.getElementById("satAfterMeta").textContent = imageMetaText(imagePair.after);
-        const pairStatus = document.getElementById("satPairStatus");
-        if (beforeIsPre && afterIsPost) {
-          pairStatus.textContent = `实际采集日期跨过签约日 ${project.sign_date}。地点精度：${precisionLabel(project.geometry_precision)}；这不是宗地级项目归因。`;
-        } else if (beforeIsPre) {
-          pairStatus.classList.add("gap");
-          pairStatus.textContent = `截至影像检索范围，没有定位到签约日 ${project.sign_date} 之后采集的影像。两图仍是不同影像版本，但不能称为签约前后变化。地点精度：${precisionLabel(project.geometry_precision)}。`;
-        } else {
-          pairStatus.classList.add("gap");
-          pairStatus.textContent = `影像采集日期未能完整跨越签约日 ${project.sign_date}；左图仅能确认其Wayback版本早于签约。地点精度：${precisionLabel(project.geometry_precision)}。`;
+    const precisionLabel = v => ({indicative_county_centroid:"县区中心指示点", indicative_houpo_zone:"园区指示点", indicative_industrial_zone:"园区指示点", indicative_rural_zone:"乡镇指示点"}[v] || "区域指示点");
+    const icon = {
+      ext:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>',
+      recenter:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg>',
+      swipe:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 7-5 5 5 5M15 7l5 5-5 5"/></svg>'
+    };
+
+    /* ---------- Library loading with fallback (page stays usable without it) ---------- */
+    const loadScript = srcs => new Promise((resolve, reject) => {
+      let i = 0;
+      const next = () => {
+        if (i >= srcs.length) return reject(new Error("load failed"));
+        const s = document.createElement("script");
+        s.src = srcs[i++]; s.async = false;
+        s.onload = () => resolve();
+        s.onerror = () => { s.remove(); next(); };
+        document.head.appendChild(s);
+      };
+      next();
+    });
+    const leafletReady = (window.L && window.L.markerClusterGroup ? Promise.resolve() :
+      loadScript(["https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js","https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"])
+        .then(() => loadScript(["https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/leaflet.markercluster.js","https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"])))
+      .then(() => true, () => false);
+
+    /* ---------- Summary figures ---------- */
+    const S = DATA.summary;
+    const countTargets = {
+      heroSlots:{v:S.event_transparency.announced_project_slots, f:v => String(Math.round(v))},
+      heroNamed:{v:S.event_transparency.same_article_naming_rate, f:pct},
+      heroProjects:{v:S.scope.projects_total, f:v => String(Math.round(v))},
+      heroStrong:{v:S.outcomes.strong_physical_milestone_rate, f:pct},
+      fNamed:{v:S.event_transparency.same_article_naming_rate, f:pct},
+      fStrong:{v:S.outcomes.strong_physical_milestone_rate, f:pct},
+      fXichuan:{v:S.outcomes.xichuan_strong_rate, f:pct}
+    };
+    Object.entries(countTargets).forEach(([id, t]) => { const el = document.getElementById(id); if (el) el.textContent = t.f(t.v); });
+    $("#fieldSlots").textContent = S.event_transparency.announced_project_slots;
+    $("#fieldNamed").textContent = S.event_transparency.named_projects_in_same_article;
+    const countUp = el => {
+      const t = countTargets[el.id]; if (!t || reduced()) return;
+      const dur = 1300, t0 = performance.now();
+      const step = now => {
+        const k = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - k, 4);
+        el.textContent = t.f(t.v * e);
+        if (k < 1) requestAnimationFrame(step); else el.textContent = t.f(t.v);
+      };
+      requestAnimationFrame(step);
+    };
+    const once = (els, fn, opts = {threshold:.35}) => {
+      if (!("IntersectionObserver" in window)) { els.forEach(fn); return; }
+      const io = new IntersectionObserver(entries => entries.forEach(en => { if (en.isIntersecting) { io.unobserve(en.target); fn(en.target); } }), opts);
+      els.forEach(el => io.observe(el));
+    };
+
+    /* ---------- Hero: one dot per announced project slot ---------- */
+    const fieldWrap = $("#fieldWrap"), fieldSvg = $("#field"), fieldTip = $("#fieldTip");
+    const primaryEvents = DATA.events.filter(e => e.counting_role === "primary_event").sort((a, b) => a.event_date.localeCompare(b.event_date));
+    let fieldBuiltWidth = 0;
+    function buildField(){
+      const W = Math.floor(fieldWrap.clientWidth);
+      if (!W || W === fieldBuiltWidth) return;
+      fieldBuiltWidth = W;
+      const rows = W < 520 ? 15 : W < 900 ? 11 : 8;
+      const gapCols = W < 520 ? .7 : 1;
+      const blocks = primaryEvents.map(e => ({e, slots:+e.announced_project_slots, named:Math.min(+e.named_physical_projects_in_article, +e.announced_project_slots)}));
+      const totalCols = blocks.reduce((s, b) => s + Math.ceil(b.slots / rows), 0) + gapCols * (blocks.length - 1);
+      const p = W / totalCols, r = Math.max(1.3, Math.min(5.2, p * .36)), H = rows * p;
+      let x = 0, idx = 0, lastYear = "";
+      const settleDelay = n => Math.round(n * 0.9);
+      let out = "";
+      const years = [];
+      blocks.forEach((b, bi) => {
+        const cols = Math.ceil(b.slots / rows);
+        const year = b.e.event_date.slice(0, 4);
+        if (year !== lastYear) { if (!years.length || x * p - years[years.length - 1].x > 40) years.push({year, x:x * p}); lastYear = year; }
+        out += `<g class="ev" data-i="${bi}"><rect class="ev-hit" x="${(x * p).toFixed(1)}" y="0" width="${(cols * p).toFixed(1)}" height="${H.toFixed(1)}"/>`;
+        for (let i = 0; i < b.slots; i++) {
+          const c = Math.floor(i / rows), rr = i % rows;
+          const cx = (x + c + .5) * p, cy = (rr + .5) * p;
+          out += `<circle class="dot${i < b.named ? " named" : ""}" cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="${r.toFixed(2)}" style="--d:${idx * 2}ms;--s:${settleDelay(bi * 40)}ms"/>`;
+          idx++;
         }
-        beforeMap=L.map("satBefore",{zoomControl:true,attributionControl:false,dragging:true,scrollWheelZoom:false,maxZoom:18}).setView(center,zoom);
-        afterMap=L.map("satAfter",{zoomControl:false,attributionControl:false,dragging:true,scrollWheelZoom:false}).setView(center,zoom);
-        L.tileLayer(imagePair.before.tile_url,{maxZoom:18}).addTo(beforeMap);L.tileLayer(imagePair.after.tile_url,{maxZoom:18}).addTo(afterMap);
-        [beforeMap,afterMap].forEach(m => L.circleMarker(center,{radius:5,color:"#edc65d",fillColor:"#edc65d",fillOpacity:1,weight:2}).addTo(m));
-        let synchronizing=false;
-        const syncView=(source,target)=>source.on("moveend zoomend",()=>{
-          if(synchronizing)return;
-          synchronizing=true;
-          target.setView(source.getCenter(),source.getZoom(),{animate:false});
-          synchronizing=false;
-        });
-        syncView(beforeMap,afterMap);
-        syncView(afterMap,beforeMap);
+        out += "</g>";
+        x += cols + gapCols;
       });
+      years.forEach(y => { out += `<line class="yr-tick" x1="${y.x.toFixed(1)}" x2="${y.x.toFixed(1)}" y1="${(H + 4).toFixed(1)}" y2="${(H + 12).toFixed(1)}"/><text class="yr" x="${(y.x + 4).toFixed(1)}" y="${(H + 24).toFixed(1)}">${y.year}</text>`; });
+      fieldSvg.setAttribute("viewBox", `0 0 ${W} ${Math.ceil(H + 30)}`);
+      fieldSvg.setAttribute("height", Math.ceil(H + 30));
+      fieldSvg.innerHTML = out;
+      fieldSvg._blocks = blocks;
+    }
+    function fieldHover(e){
+      const g = e.target.closest && e.target.closest(".ev");
+      $$(".ev.hover", fieldSvg).forEach(n => n !== g && n.classList.remove("hover"));
+      if (!g) { fieldTip.hidden = true; return; }
+      g.classList.add("hover");
+      const b = fieldSvg._blocks[+g.dataset.i];
+      const box = g.querySelector(".ev-hit").getBoundingClientRect(), wrap = fieldWrap.getBoundingClientRect();
+      fieldTip.innerHTML = `<b>${esc(b.e.event_title)}</b><small>${esc(b.e.event_date)}　${esc(b.e.county)}</small>公布 ${b.slots} 个名额，同篇点名 ${b.named} 个`;
+      fieldTip.hidden = false;
+      const half = Math.min(140, wrap.width / 2);
+      const cx = Math.max(half, Math.min(wrap.width - half, box.left - wrap.left + box.width / 2));
+      fieldTip.style.left = cx + "px";
+      fieldTip.style.top = (box.top - wrap.top) + "px";
+    }
+    fieldSvg.addEventListener("pointermove", fieldHover);
+    fieldSvg.addEventListener("pointerdown", fieldHover);
+    fieldSvg.addEventListener("pointerleave", () => { fieldTip.hidden = true; $$(".ev.hover", fieldSvg).forEach(n => n.classList.remove("hover")); });
+
+    function startHero(){
+      buildField();
+      const hero = $(".hero");
+      requestAnimationFrame(() => hero.classList.add("ready"));
+      if (reduced()) { fieldSvg.classList.add("on", "settled"); fieldWrap.classList.add("settled"); return; }
+      const n = S.event_transparency.announced_project_slots;
+      setTimeout(() => fieldSvg.classList.add("on"), 650);
+      setTimeout(() => { fieldSvg.classList.add("settled"); fieldWrap.classList.add("settled"); }, 650 + n * 2 + 700);
+    }
+    let resizeTimer;
+    addEventListener("resize", () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(() => { buildField(); syncSeg($("#baseSeg")); if (map) map.invalidateSize(); satMaps.forEach(m => m.invalidateSize()); }, 120); });
+    if (!reduced()) Object.entries(countTargets).forEach(([id, t]) => { const el = document.getElementById(id); if (el) el.textContent = t.f(0); });
+    once($$(".ledger [data-count]"), countUp, {threshold:.6});
+    once($$(".finding .big"), countUp, {threshold:.6});
+
+    /* ---------- Nav state ---------- */
+    const nav = $("#nav");
+    addEventListener("scroll", () => nav.classList.toggle("scrolled", scrollY > 8), {passive:true});
+    if ("IntersectionObserver" in window) {
+      const links = $$(".nav-links a[data-sec]");
+      const io = new IntersectionObserver(entries => entries.forEach(en => {
+        if (en.isIntersecting) links.forEach(a => a.classList.toggle("on", a.dataset.sec === en.target.id));
+      }), {rootMargin:"-45% 0px -50% 0px"});
+      ["atlas","findings","method"].forEach(id => io.observe(document.getElementById(id)));
     }
 
-    function renderOdds(){
-      const rows=DATA.summary.surface_signals.model, plot=document.getElementById("oddsPlot");
-      const min=-2.1,max=2.1,pos=x=>100*(Math.log(x)-min)/(max-min);
-      rows.forEach(row => {
-        plot.insertAdjacentHTML("beforeend",`<div class="odds-row"><div class="odds-label"><span>${esc(row.label)}</span><b>OR ${row.odds_ratio.toFixed(2)} [${row.ci95_low.toFixed(2)}, ${row.ci95_high.toFixed(2)}]</b></div><div class="odds-track"><div class="odds-ci" style="left:${Math.max(0,pos(row.ci95_low))}%;right:${Math.max(0,100-pos(row.ci95_high))}%"></div><div class="odds-point" style="left:${pos(row.odds_ratio)}%"></div></div></div>`);
+    /* ---------- Filters ---------- */
+    const state = {search:"", county:"all", cohort:"all", status:"all"};
+    const hay = Object.fromEntries(projects.map(p => [p.project_id, [p.project_name, p.company_name, p.industry, p.county, p.project_id].join(" ").toLowerCase()]));
+    const pass = (p, skipStatus) => (!state.search || hay[p.project_id].includes(state.search))
+      && (state.county === "all" || p.county === state.county)
+      && (state.cohort === "all" || p.cohort_role === state.cohort)
+      && (skipStatus || state.status === "all" || p.followup_status === state.status);
+
+    const countySelect = $("#county");
+    [...new Set(projects.map(p => p.county))].sort((a, b) => a.localeCompare(b, "zh-CN")).forEach(c => {
+      countySelect.insertAdjacentHTML("beforeend", `<option value="${esc(c)}">${esc(c)}</option>`);
+    });
+    const statusList = $("#statusList");
+    STATUS_KEYS.forEach(key => statusList.insertAdjacentHTML("beforeend",
+      `<button type="button" class="lg" data-status="${key}" aria-pressed="false">${swatch(key)}<span>${statusMeta[key].label}</span><span class="ct num">0</span></button>`));
+    const strip = $("#strip");
+    const stripOrder = [...projects].sort((a, b) => STATUS_KEYS.indexOf(a.followup_status) - STATUS_KEYS.indexOf(b.followup_status));
+    strip.innerHTML = stripOrder.map(p => `<i class="${statusMeta[p.followup_status].hollow ? "hollow" : ""}" data-id="${p.project_id}" style="--c:var(${statusMeta[p.followup_status].v})" title="${esc(p.project_name)}"></i>`).join("");
+    strip.addEventListener("click", e => { const c = e.target.closest("i[data-id]"); if (c) openDetail(c.dataset.id, {fly:true, trigger:c}); });
+
+    const list = $("#list");
+    let visible = projects.slice();
+    let listAnimated = false;
+    function renderList(){
+      const ids = visible.map(p => p.project_id).join();
+      if (list._ids === ids) return markCurrent();
+      list._ids = ids;
+      list.innerHTML = visible.map((p, i) => `<li><button type="button" class="row${listAnimated && !reduced() ? " enter" : ""}" data-id="${p.project_id}" style="--d:${Math.min(i, 14) * 22}ms">${swatch(p.followup_status)}<span><b>${esc(p.project_name)}</b><small><span>${esc(p.county)}</span><span>${esc(p.industry)}</span><span class="num">签约 ${esc(p.sign_date)}</span></small></span><span class="grade" title="证据等级">${esc(p.evidence_grade)}</span></button></li>`).join("");
+      listAnimated = true;
+      markCurrent();
+    }
+    function markCurrent(){
+      $$(".row.cur", list).forEach(r => r.classList.remove("cur"));
+      $$("i.cur", strip).forEach(r => r.classList.remove("cur"));
+      if (!current) return;
+      const row = list.querySelector(`[data-id="${current.project_id}"]`);
+      if (row) row.classList.add("cur");
+      const cell = strip.querySelector(`[data-id="${current.project_id}"]`);
+      if (cell) cell.classList.add("cur");
+    }
+    list.addEventListener("click", e => { const b = e.target.closest(".row"); if (b) openDetail(b.dataset.id, {fly:true, trigger:b}); });
+    let listExpanded = false;
+    const moreBtn = $("#more");
+    moreBtn.addEventListener("click", () => { listExpanded = true; list.classList.remove("clamped"); moreBtn.hidden = true; });
+
+    function apply(){
+      visible = projects.filter(p => pass(p));
+      const base = projects.filter(p => pass(p, true));
+      $$(".lg", statusList).forEach(btn => {
+        const key = btn.dataset.status, n = base.filter(p => p.followup_status === key).length;
+        btn.querySelector(".ct").textContent = n;
+        const on = state.status === key;
+        btn.setAttribute("aria-pressed", String(on));
+        btn.disabled = n === 0 && !on;
       });
-      plot.insertAdjacentHTML("beforeend",'<div class="axis"><span>OR 0.12</span><span>OR 1</span><span>OR 8.2</span></div>');
+      statusList.classList.toggle("filtering", state.status !== "all");
+      $("#resetStatus").hidden = state.status === "all";
+      const visibleIds = new Set(visible.map(p => p.project_id));
+      $$("i[data-id]", strip).forEach(c => c.classList.toggle("dim", !visibleIds.has(c.dataset.id)));
+      $("#liveCount").textContent = `显示 ${visible.length} / ${projects.length} 项`;
+      const filtered = state.search || state.county !== "all" || state.cohort !== "all" || state.status !== "all";
+      $("#clearAll").hidden = !filtered;
+      $("#empty").hidden = visible.length > 0;
+      moreBtn.hidden = listExpanded || visible.length <= 8;
+      renderList();
+      if (map) {
+        cluster.clearLayers();
+        cluster.addLayers(visible.map(p => markers.get(p.project_id)));
+      }
+      if (current) updatePager();
+    }
+    let searchTimer;
+    $("#search").addEventListener("input", e => { clearTimeout(searchTimer); searchTimer = setTimeout(() => { state.search = e.target.value.trim().toLowerCase(); apply(); }, 120); });
+    countySelect.addEventListener("change", e => { state.county = e.target.value; apply(); });
+    $("#cohort").addEventListener("change", e => { state.cohort = e.target.value; apply(); });
+    statusList.addEventListener("click", e => {
+      const b = e.target.closest(".lg"); if (!b || b.disabled) return;
+      state.status = state.status === b.dataset.status ? "all" : b.dataset.status; apply();
+    });
+    $("#resetStatus").addEventListener("click", () => { state.status = "all"; apply(); });
+    const resetAll = () => {
+      Object.assign(state, {search:"", county:"all", cohort:"all", status:"all"});
+      $("#search").value = ""; countySelect.value = "all"; $("#cohort").value = "all"; apply();
+    };
+    $("#clearAll").addEventListener("click", resetAll);
+    $("#emptyReset").addEventListener("click", resetAll);
+
+    /* ---------- Segmented controls ---------- */
+    function syncSeg(seg){
+      if (!seg) return;
+      const on = seg.querySelector('[aria-checked="true"]'), thumb = seg.querySelector(".thumb");
+      if (!on || !thumb) return;
+      thumb.style.width = on.offsetWidth + "px";
+      thumb.style.transform = `translateX(${on.offsetLeft}px)`;
+    }
+    function bindSeg(seg, onPick){
+      seg.addEventListener("click", e => {
+        const b = e.target.closest("button[role=radio]"); if (!b || b.getAttribute("aria-checked") === "true") return;
+        $$("button[role=radio]", seg).forEach(x => x.setAttribute("aria-checked", String(x === b)));
+        syncSeg(seg); onPick(b);
+      });
+      seg.addEventListener("keydown", e => {
+        if (!["ArrowLeft","ArrowRight"].includes(e.key)) return;
+        const btns = $$("button[role=radio]", seg), i = btns.findIndex(b => b.getAttribute("aria-checked") === "true");
+        const n = btns[(i + (e.key === "ArrowRight" ? 1 : btns.length - 1)) % btns.length];
+        n.focus(); n.click(); e.preventDefault();
+      });
+      requestAnimationFrame(() => syncSeg(seg));
+    }
+
+    /* ---------- Main map ---------- */
+    let map = null, cluster = null, pulse = null, baseLayer = null, baseMode = "street";
+    const markers = new Map();
+    const mapEl = $("#map");
+    const basemaps = {
+      light:() => L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors', maxZoom:19}),
+      dark:() => L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors', maxZoom:19, className:"base-dark"}),
+      sat:() => L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}", {attribution:"Imagery &copy; Esri, Maxar, Earthstar Geographics", maxZoom:18})
+    };
+    const isDark = () => document.documentElement.dataset.theme ? document.documentElement.dataset.theme === "dark" : darkMQ.matches;
+    function setBase(){
+      if (!map) return;
+      const key = baseMode === "sat" ? "sat" : (isDark() ? "dark" : "light");
+      if (baseLayer && baseLayer._key === key) return;
+      const next = basemaps[key](); next._key = key;
+      let fallback = false;
+      next.on("tileerror", () => {
+        if (fallback || key === "sat") return; fallback = true;
+        // Primary street tiles unreachable: retry with a quieter OSM fallback.
+        map.removeLayer(next);
+        const osm = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {attribution:"&copy; OpenStreetMap contributors", maxZoom:19, opacity:isDark() ? .55 : .75});
+        osm._key = key; osm.addTo(map); baseLayer = osm;
+      });
+      next.addTo(map);
+      if (baseLayer) map.removeLayer(baseLayer);
+      baseLayer = next;
+    }
+    bindSeg($("#baseSeg"), b => { baseMode = b.dataset.base; setBase(); });
+    darkMQ.addEventListener && darkMQ.addEventListener("change", setBase);
+
+    const markerIcon = p => {
+      const m = statusMeta[p.followup_status];
+      return L.divIcon({className:"mk-icon", html:`<span class="mk${m.hollow ? " hollow" : ""}${m.deep ? " deep" : ""}" style="--c:var(${m.v})"></span>`, iconSize:[16,16], iconAnchor:[8,8], tooltipAnchor:[0,-6]});
+    };
+    function clusterIcon(c){
+      const kids = c.getAllChildMarkers(), n = kids.length;
+      const counts = STATUS_KEYS.map(k => kids.filter(m => m.project.followup_status === k).length);
+      let acc = 0;
+      const stops = counts.map((ct, i) => {
+        if (!ct) return null;
+        const a = acc / n * 360, b = (acc + ct) / n * 360; acc += ct;
+        return `var(${statusMeta[STATUS_KEYS[i]].v}) ${a.toFixed(1)}deg ${b.toFixed(1)}deg`;
+      }).filter(Boolean).join(",");
+      const size = Math.round(36 + Math.min(20, Math.sqrt(n) * 3));
+      return L.divIcon({className:"cl-icon", html:`<div class="cl" style="background:conic-gradient(${stops})"><span>${n}</span></div>`, iconSize:L.point(size, size)});
+    }
+    function initMap(){
+      map = L.map(mapEl, {zoomControl:false, minZoom:7, maxZoom:18, scrollWheelZoom:false, zoomSnap:.5}).setView([33.05,112.35], 8);
+      L.control.zoom({position:"topright", zoomInTitle:"放大", zoomOutTitle:"缩小"}).addTo(map);
+      map.attributionControl.setPrefix(false);
+      setBase();
+      cluster = L.markerClusterGroup({
+        showCoverageOnHover:false, zoomToBoundsOnClick:false, spiderfyOnMaxZoom:false,
+        maxClusterRadius:46, spiderfyDistanceMultiplier:1.7, iconCreateFunction:clusterIcon,
+        animate:!reduced()
+      });
+      cluster.on("clusterclick", e => {
+        const c = e.layer, b = c.getBounds();
+        const samePoint = b.getNorthEast().equals(b.getSouthWest(), 1e-6);
+        if (samePoint || map.getZoom() >= 13 || map.getBoundsZoom(b, false, L.point(60, 60)) <= map.getZoom()) c.spiderfy();
+        else if (reduced()) map.fitBounds(b, {padding:[60,60], maxZoom:13});
+        else map.flyToBounds(b, {padding:[60,60], maxZoom:13, duration:.8});
+      });
+      map.addLayer(cluster);
+      projects.forEach(p => {
+        const m = L.marker([+p.lat, +p.lon], {icon:markerIcon(p), keyboard:true, riseOnHover:true});
+        m.project = p;
+        m.bindTooltip(esc(p.project_name), {direction:"top", className:"tip", offset:[0,-4]});
+        m.on("click", () => openDetail(p.project_id, {fly:false}));
+        m.on("add", () => { const el = m.getElement(); if (el) { el.setAttribute("aria-label", `${p.project_name}，${statusMeta[p.followup_status].label}`); } });
+        markers.set(p.project_id, m);
+      });
+      // Wheel zoom only after the map is engaged, so the page can scroll past it.
+      const hint = $("#wheelHint"); let hintTimer;
+      const engage = () => map.scrollWheelZoom.enable();
+      map.on("click focus", engage);
+      mapEl.addEventListener("mouseleave", () => map.scrollWheelZoom.disable());
+      mapEl.addEventListener("wheel", () => {
+        if (map.scrollWheelZoom.enabled()) return;
+        hint.classList.add("show"); clearTimeout(hintTimer);
+        hintTimer = setTimeout(() => hint.classList.remove("show"), 1200);
+      }, {passive:true});
+      apply();
+      if (current) { showPulse(current); flyTo(current); }
+    }
+
+    function showPulse(p){
+      if (!map) return;
+      const ll = [+p.lat, +p.lon];
+      if (!pulse) {
+        pulse = L.marker(ll, {icon:L.divIcon({className:"pulse-icon", html:"<span></span><span></span>", iconSize:[64,64], iconAnchor:[32,32]}), interactive:false, keyboard:false, zIndexOffset:-1000}).addTo(map);
+      } else { pulse.setLatLng(ll); if (!map.hasLayer(pulse)) pulse.addTo(map); }
+    }
+    const drawerSide = () => innerWidth > 720;
+    function flyTo(p){
+      if (!map) return;
+      const ll = L.latLng(+p.lat, +p.lon), z = Math.max(map.getZoom(), 10);
+      let target = ll;
+      if (drawerSide()) {
+        const shift = Math.min($("#detail").offsetWidth, mapEl.clientWidth * .6) / 2;
+        target = map.unproject(map.project(ll, z).add([shift, 0]), z);
+      }
+      if (reduced()) map.setView(target, z); else map.flyTo(target, z, {duration:.9});
+    }
+
+    /* ---------- Detail drawer ---------- */
+    const drawer = $("#detail"), body = $("#detailContent"), scrim = $("#scrim");
+    let current = null, lastTrigger = null, satMode = "emphasis", satMaps = [], satToken = 0, satView = null;
+
+    const navList = () => visible.some(p => current && p.project_id === current.project_id) ? visible : projects;
+    function updatePager(){
+      const listNow = navList(), i = listNow.findIndex(p => p.project_id === current.project_id);
+      $("#pagerPos").textContent = `${i + 1} / ${listNow.length}`;
+      $("#prev").disabled = listNow.length < 2; $("#next").disabled = listNow.length < 2;
+    }
+    function step(dir){
+      if (!current) return;
+      const listNow = navList(), i = listNow.findIndex(p => p.project_id === current.project_id);
+      const n = listNow[(i + dir + listNow.length) % listNow.length];
+      openDetail(n.project_id, {fly:true});
+    }
+    $("#prev").addEventListener("click", () => step(-1));
+    $("#next").addEventListener("click", () => step(1));
+
+    function satInfo(p, pair){
+      const s = p.sign_date, b = pair.before, a = pair.after;
+      const bPre = Boolean(b.capture_date && b.capture_date <= s), aPost = Boolean(a.capture_date && a.capture_date > s);
+      const meta = img => [img.provider, img.source, img.resolution_m ? `${Number(img.resolution_m).toFixed(1)} 米/像素` : ""].filter(Boolean).join("，") || "影像来源信息未返回";
+      return {
+        before:{title:bPre ? "签约前采集" : "较早影像", short:bPre ? "签约前" : "较早", date:b.capture_date, release:b.release_date, meta:meta(b), sha:b.tile_sha256},
+        after:{title:aPost ? "签约后采集" : "较新影像", short:aPost ? "签约后" : "较新", date:a.capture_date, release:a.release_date, meta:meta(a), sha:a.tile_sha256},
+        bPre, aPost
+      };
+    }
+    function pairStatus(p, pair, info){
+      const s = p.sign_date, prec = precisionLabel(p.geometry_precision);
+      switch (pair.comparison_type) {
+        case "acquisition_dates_bracket_signing":
+          return {gap:false, head:"采集日期跨过签约日", text:`实际采集日期跨过签约日 ${s}。地点精度：${prec}；这不是宗地级项目归因。`};
+        case "latest_distinct_image_no_verified_post_sign_capture":
+          return {gap:true, head:"没有核实的签约后影像", text:`截至影像检索范围，没有定位到签约日 ${s} 之后采集的影像。两图仍是不同影像版本，但不能称为签约前后变化。地点精度：${prec}。`};
+        case "post_sign_capture_before_capture_unknown":
+          return {gap:true, head:"左图采集日期未知", text:`影像采集日期未能完整跨越签约日 ${s}；左图仅能确认其Wayback版本早于签约。地点精度：${prec}。`};
+        default:
+          if (info.bPre && info.aPost) return {gap:false, head:"采集日期跨过签约日", text:`实际采集日期跨过签约日 ${s}。地点精度：${prec}；这不是宗地级项目归因。`};
+          return {gap:true, head:"影像未能跨越签约日", text:`影像采集日期未能完整跨越签约日 ${s}。地点精度：${prec}。`};
+      }
+    }
+    function timeline(p, pair){
+      const items = [];
+      const add = (lane, date, kind, label) => { if (date) items.push({lane, date, kind, label}); };
+      add("proj", p.sign_date, "sign", "签约");
+      add("proj", p.followup_date, "follow", "后续");
+      add("cap", pair.before.capture_date, "cap", "左");
+      add("cap", pair.after.capture_date, "cap", "右");
+      add("rel", pair.before.release_date, "rel", "左");
+      add("rel", pair.after.release_date, "rel", "右");
+      const cutoff = (DATA.imagery && DATA.imagery.cutoff_date) || "2025-12-31";
+      const t = d => Date.parse(d + "T00:00:00Z");
+      const all = items.map(i => t(i.date)).concat(t(cutoff));
+      const y0 = new Date(Math.min(...all)).getUTCFullYear(), y1 = new Date(Math.max(...all)).getUTCFullYear() + 1;
+      const A = Date.UTC(y0, 0, 1), B = Date.UTC(y1, 0, 1);
+      const X = d => (t(d) - A) / (B - A) * 100;
+      const lanes = [["proj","项目"],["cap","影像采集"],["rel","存档发布"]];
+      let html = '<div class="tl" role="img" aria-label="签约、后续证据、影像采集和Wayback发布日期的时间线">';
+      lanes.forEach(([lane, name], li) => {
+        const pts = items.filter(i => i.lane === lane).sort((a, b) => a.date.localeCompare(b.date));
+        html += `<div class="tl-name" style="grid-column:1;grid-row:${li + 1}">${name}</div><div class="tl-lane" style="grid-column:2;grid-row:${li + 1}">`;
+        if (lane === "cap" && !pair.before.capture_date) html += '<span class="tl-missing">左图采集日期未返回</span>';
+        pts.forEach((pt, i) => {
+          const x = X(pt.date);
+          let anchor = x < 14 ? "start" : x > 86 ? "end" : "";
+          const prev = pts[i - 1], next = pts[i + 1];
+          if (next && X(next.date) - x < 26) anchor = x > 22 ? "end" : "low start";
+          if (prev && x - X(prev.date) < 26) anchor = x < 78 ? "start" : "low end";
+          const style = pt.kind === "follow" ? `;--c:var(${statusMeta[p.followup_status].v})` : "";
+          html += `<span class="tl-pt ${pt.kind}" style="left:${x.toFixed(2)}%${style}" title="${esc(pt.date)}"><i></i><em class="${anchor}">${pt.label} ${esc(pt.date)}</em></span>`;
+        });
+        html += "</div>";
+      });
+      html += `<div class="tl-guides"><span class="tl-guide" style="left:${X(p.sign_date).toFixed(2)}%"></span><span class="tl-guide cut" style="left:${X(cutoff).toFixed(2)}%"></span></div>`;
+      const stepY = (y1 - y0) > 12 ? 4 : (y1 - y0) > 6 ? 2 : 1;
+      html += '<div class="tl-axis" style="grid-row:4">';
+      for (let y = y0; y <= y1; y += stepY) { const x = (Date.UTC(y, 0, 1) - A) / (B - A) * 100; if (x < 96) html += `<span style="left:${x.toFixed(2)}%">${y}</span>`; }
+      html += "</div></div>";
+      html += '<div class="tl-key"><span><i class="sign"></i>签约日（红色虚线）</span><span><i></i>影像实际采集</span><span><i class="rel"></i>Wayback存档发布，不是采集日期</span><span>灰色虚线为检索截止 ' + esc(cutoff) + "</span></div>";
+      return html;
+    }
+    function detailHTML(p){
+      const ev = eventMap[p.event_id] || {}, meta = statusMeta[p.followup_status], pair = DATA.wayback_pairs[p.project_id];
+      const amount = p.announced_investment_cny_100m ? p.announced_investment_cny_100m + "亿元" : "未公开可比金额";
+      const info = satInfo(p, pair), ps = pairStatus(p, pair, info);
+      const satPurpose = ps.gap
+        ? "这组图只证明同一地点存在两个不同历史影像版本。由于采集日期没有完整跨过签约日，不能把画面差异解释为项目签约后的变化。"
+        : "这组图把签约日前后的同一指示地点放在一起。请比较建筑轮廓、道路和硬化地表是否出现变化；影像只提供空间线索，不单独证明项目落地。";
+      const host = u => { try { return new URL(u).hostname; } catch (e) { return u; } };
+      const sources = [[p.source_sign,"纳入项目的原始官方报道"],[p.source_followup,"主要后续证据"],[p.source_followup_secondary,"交叉核对来源"]].filter(s => s[0]);
+      const card = (side, d) => `<div class="sat-card ${side}"><span class="t">${d.title}</span><b class="d${d.date ? "" : " miss"} num">${d.date ? esc(d.date) : "采集日期未返回"}</b><span class="r">Wayback 发布版本 <b class="num">${esc(d.release)}</b></span><span class="m">${esc(d.meta)}</span><span class="m num" title="中心瓦片 SHA-256：${esc(d.sha)}">中心瓦片 ${esc(String(d.sha).slice(0, 10))}…</span></div>`;
+      const frame = (cls, tag) => `<div class="sat-frame ${cls} loading"><div class="sat"></div><div class="sat-state">正在载入影像</div>${tag}</div>`;
+      return `
+        <div class="d-meta"><span class="num">${esc(p.project_id)}</span><span>${cohortLabel(p.cohort_role)}</span><span>${precisionLabel(p.geometry_precision)}</span></div>
+        <h2 class="d-title" id="dTitle" tabindex="-1">${esc(p.project_name)}</h2>
+        <div class="d-company">${esc(p.company_name || "签约报道未披露企业名")}</div>
+        <div class="d-tags">
+          <span class="chip status" style="--c:var(${meta.v})">${swatch(p.followup_status)}${meta.label}</span>
+          <span class="chip">${esc(p.county)}</span><span class="chip">${esc(p.industry)}</span>
+          <span class="grade-badge">证据等级<b>${esc(p.evidence_grade)}</b></span>
+        </div>
+        <div class="facts">
+          <div class="fact"><span>签约 / 纳入日期</span><b class="num">${esc(p.sign_date)}</b></div>
+          <div class="fact"><span>公开投资额</span><b>${esc(amount)}</b></div>
+          <div class="fact"><span>活动公布规模</span><b>${esc(p.event_announced_project_slots)}个项目名额</b></div>
+          <div class="fact"><span>企业信号</span><b title="${esc(p.company_signal)}">${esc(signalLabel[p.company_signal] || p.company_signal)}</b></div>
+          <div class="fact"><span>后续日期</span><b class="num">${esc(p.followup_date || "未定位")}</b></div>
+          <div class="fact"><span>核查层级</span><b>${cohortLabel(p.cohort_role)}</b></div>
+          <div class="fact wide"><span>活动名称</span><b>${esc(ev.event_title || p.event_id)}</b></div>
+        </div>
+        <h3 class="d-h">状态为什么这样判</h3>
+        <p class="reason" style="--c:var(${meta.v})">${esc(p.followup_reason)}</p>
+        <h3 class="d-h">日期放在一条线上</h3>
+        ${timeline(p, pair)}
+        <div class="sat-purpose"><span class="q">?</span><div><b>为什么放这两张图？</b><span>${esc(satPurpose)} <em>颜色只是帮助区分早晚，判断变化要看地物轮廓。</em></span></div></div>
+        <div class="sat-head">
+          <h3 class="d-h">同一地点，两期不同影像</h3>
+          <div class="seg" id="satSeg" role="radiogroup" aria-label="影像对比方式">
+            <span class="thumb" aria-hidden="true"></span>
+            <button type="button" role="radio" aria-checked="${satMode === "side"}" data-mode="side">并排</button>
+            <button type="button" role="radio" aria-checked="${satMode === "swipe"}" data-mode="swipe">卷帘</button>
+            <button type="button" role="radio" aria-checked="${satMode === "emphasis"}" data-mode="emphasis">变化强调</button>
+          </div>
+        </div>
+        <p class="note" id="satHint"></p>
+        <div class="sat-grid${satMode === "swipe" ? " swipe" : satMode === "emphasis" ? " emphasis" : ""}" id="satGrid">
+          ${card("b", info.before)}${card("a", info.after)}
+          ${frame("fb", `<span class="sat-tag">${info.before.short}</span><span class="visual-code">暖灰编码 · 较早一期</span>`)}
+          ${frame("fa", `<span class="sat-tag">${info.after.short}</span><span class="visual-code">真彩编码 · 较新一期</span>`)}
+          ${frame("fs", `<span class="sat-tag l">左：${info.before.short} ${esc(info.before.date || "采集日期未返回")}</span><span class="sat-tag r">右：${info.after.short} ${esc(info.after.date || "采集日期未返回")}</span><span class="swipe-line"></span><span class="swipe-handle" role="slider" tabindex="0" aria-label="卷帘分隔位置" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">${icon.swipe}</span>`)}
+        </div>
+        <div class="sat-tools"><span class="sat-code-note">视觉编码仅帮助区分时期，不代表检测到建设变化。</span><button type="button" class="text-btn" id="satReset">${icon.recenter}回到指示点</button></div>
+        <p class="pair-status${ps.gap ? " gap" : ""}"><b>${ps.head}</b>${esc(ps.text)}</p>
+        <p class="note">两幅图使用同一指示坐标、同一缩放级别；中心瓦片文件经SHA-256核对确实不同。图中优先标注影像采集日期，Wayback日期仅表示存档发布版本。广域坐标是县区中心，淅川坐标是园区或乡镇指示点，不是项目宗地；影像不参与状态判定。</p>
+        <h3 class="d-h">原始记录</h3>
+        <div class="sources">${sources.length ? sources.map(([u, label]) => `<a class="src" href="${esc(u)}" target="_blank" rel="noopener noreferrer"><span><b>${label}</b><small>${esc(host(u))}</small></span>${icon.ext}</a>`).join("") : '<p class="no-src">没有可链接的后续来源</p>'}</div>`;
+    }
+
+    function openDetail(id, opts = {}){
+      const p = byId[id]; if (!p) return;
+      const wasOpen = drawer.classList.contains("open");
+      if (!wasOpen) lastTrigger = opts.trigger || document.activeElement;
+      current = p;
+      satView = null;
+      destroySat();
+      body.innerHTML = detailHTML(p);
+      body.scrollTop = 0;
+      drawer.style.setProperty("--c", `var(${statusMeta[p.followup_status].v})`);
+      if (wasOpen && !reduced()) { body.classList.remove("swap"); void body.offsetWidth; body.classList.add("swap"); }
+      bindSeg($("#satSeg"), b => switchSatMode(b.dataset.mode));
+      $("#satReset").addEventListener("click", () => resetSat());
+      updateSatHint();
+      drawer.removeAttribute("inert");
+      drawer.classList.add("open");
+      if (!drawerSide()) { scrim.hidden = false; requestAnimationFrame(() => scrim.classList.add("show")); document.body.classList.add("lock"); }
+      updatePager(); markCurrent();
+      const row = list.querySelector(`[data-id="${id}"]`);
+      if (row && innerWidth > 900) {
+        const lr = list.getBoundingClientRect(), rr = row.getBoundingClientRect();
+        if (rr.top < lr.top || rr.bottom > lr.bottom) list.scrollTo({top:list.scrollTop + rr.top - lr.top - lr.height / 3, behavior:reduced() ? "auto" : "smooth"});
+      }
+      showPulse(p);
+      if (opts.fly) flyTo(p);
+      try { history.replaceState(null, "", "#" + id); } catch (e) {}
+      const token = ++satToken;
+      const go = () => { if (token === satToken) buildSat(); };
+      if (wasOpen || reduced()) requestAnimationFrame(go);
+      else {
+        let done = false;
+        const fin = () => { if (done) return; done = true; drawer.removeEventListener("transitionend", onEnd); go(); };
+        const onEnd = e => { if (e.target === drawer && e.propertyName === "transform") fin(); };
+        drawer.addEventListener("transitionend", onEnd);
+        setTimeout(fin, 700);
+      }
+      if (!wasOpen) setTimeout(() => { const h = $("#dTitle"); if (h) h.focus({preventScroll:true}); }, reduced() ? 0 : 80);
+    }
+    function closeDetail(){
+      if (!drawer.classList.contains("open")) return;
+      drawer.classList.remove("open");
+      drawer.setAttribute("inert", "");
+      scrim.classList.remove("show");
+      setTimeout(() => { if (!drawer.classList.contains("open")) scrim.hidden = true; }, 400);
+      document.body.classList.remove("lock");
+      satToken++;
+      setTimeout(() => { if (!drawer.classList.contains("open")) destroySat(); }, 650);
+      current = null; markCurrent();
+      if (pulse && map) map.removeLayer(pulse);
+      try { history.replaceState(null, "", location.pathname + location.search); } catch (e) {}
+      if (lastTrigger && document.contains(lastTrigger)) lastTrigger.focus({preventScroll:true});
+    }
+    $("#close").addEventListener("click", closeDetail);
+    scrim.addEventListener("click", closeDetail);
+    document.addEventListener("keydown", e => {
+      if (!drawer.classList.contains("open")) return;
+      if (e.key === "Escape") { closeDetail(); return; }
+      const t = e.target;
+      if (t.closest && (t.closest("input,select,textarea,.leaflet-container,[role=slider],[role=radiogroup]"))) return;
+      if (e.key === "ArrowLeft" && !e.altKey) { step(-1); e.preventDefault(); }
+      if (e.key === "ArrowRight" && !e.altKey) { step(1); e.preventDefault(); }
+    });
+    // Swipe down on the sheet handle to dismiss on phones
+    (() => {
+      const bar = $(".drawer-bar"); let y0 = null;
+      bar.addEventListener("touchstart", e => { y0 = e.touches[0].clientY; }, {passive:true});
+      bar.addEventListener("touchend", e => { if (y0 !== null && !drawerSide() && e.changedTouches[0].clientY - y0 > 70) closeDetail(); y0 = null; }, {passive:true});
+    })();
+
+    /* ---------- Satellite pair ---------- */
+    function destroySat(){ satMaps.forEach(m => { try { m.remove(); } catch (e) {} }); satMaps = []; }
+    function updateSatHint(){
+      const el = $("#satHint"); if (!el) return;
+      el.textContent = satMode === "side"
+        ? "原色并排：两幅图锁定同一中心和比例尺，拖动或缩放任一幅会同步另一幅。"
+        : satMode === "swipe"
+          ? "原色卷帘：拖动中间手柄比较两期影像，左侧较早、右侧较新；聚焦手柄后也可用方向键移动。"
+          : "变化强调：较早影像用暖灰编码，较新影像保留真彩，让时期区别一眼可见。请比较建筑、道路和地表轮廓，不要把色调差异当作建设证据。";
+    }
+    function currentSatView(){
+      if (satMaps.length) { const m = satMaps[0]; return {center:m.getCenter(), zoom:m.getZoom()}; }
+      return satView;
+    }
+    function switchSatMode(mode){
+      satView = currentSatView();
+      satMode = mode;
+      $("#satGrid").classList.toggle("swipe", mode === "swipe");
+      $("#satGrid").classList.toggle("emphasis", mode === "emphasis");
+      updateSatHint();
+      destroySat();
+      buildSat();
+    }
+    function resetSat(){
+      if (!current || !satMaps.length) return;
+      const pair = DATA.wayback_pairs[current.project_id];
+      satMaps[0].setView([+current.lat, +current.lon], pair.zoom, {animate:!reduced()});
+    }
+    function trackTiles(layer, frame){
+      let errs = 0, loaded = false;
+      frame.classList.add("loading"); frame.classList.remove("error");
+      layer.on("load", () => { loaded = true; frame.classList.remove("loading"); });
+      layer.on("tileload", () => { if (!loaded) frame.classList.remove("loading"); });
+      layer.on("tileerror", () => {
+        if (++errs >= 3 && !loaded) { frame.classList.remove("loading"); frame.classList.add("error"); frame.querySelector(".sat-state").textContent = "影像瓦片未能加载，请检查网络后重试"; }
+      });
+    }
+    const xhair = center => L.marker(center, {icon:L.divIcon({className:"xhair-icon", html:'<span class="xhair"></span>', iconSize:[26,26], iconAnchor:[13,13]}), interactive:false, keyboard:false});
+    async function buildSat(){
+      const p = current; if (!p) return;
+      const token = satToken;
+      const ok = await leafletReady;
+      if (token !== satToken || p !== current) return;
+      const grid = $("#satGrid"); if (!grid) return;
+      if (!ok) {
+        $$(".sat-frame", grid).forEach(f => { f.classList.remove("loading"); f.classList.add("error"); f.querySelector(".sat-state").textContent = "地图组件没有加载成功，无法显示影像"; });
+        return;
+      }
+      destroySat();
+      const pair = DATA.wayback_pairs[p.project_id];
+      const home = [+p.lat, +p.lon];
+      const center = satView ? satView.center : home, zoom = satView ? satView.zoom : pair.zoom;
+      const opts = {attributionControl:false, scrollWheelZoom:false, maxZoom:18, minZoom:10, zoomSnap:1};
+      if (satMode !== "swipe") {
+        const fb = $(".fb", grid), fa = $(".fa", grid);
+        const mb = L.map($(".sat", fb), {...opts, zoomControl:true}).setView(center, zoom);
+        const ma = L.map($(".sat", fa), {...opts, zoomControl:false}).setView(center, zoom);
+        const lb = L.tileLayer(pair.before.tile_url, {maxZoom:18}), la = L.tileLayer(pair.after.tile_url, {maxZoom:18});
+        trackTiles(lb, fb); trackTiles(la, fa);
+        lb.addTo(mb); la.addTo(ma);
+        xhair(home).addTo(mb); xhair(home).addTo(ma);
+        let lock = false;
+        const link = (src, dst) => src.on("move zoomend", () => {
+          if (lock) return; lock = true;
+          dst.setView(src.getCenter(), src.getZoom(), {animate:false});
+          lock = false;
+        });
+        link(mb, ma); link(ma, mb);
+        satMaps = [mb, ma];
+      } else {
+        const fs = $(".fs", grid);
+        const m = L.map($(".sat", fs), {...opts, zoomControl:true}).setView(center, zoom);
+        const pane = m.createPane("afterPane"); pane.style.zIndex = 250;
+        const lb = L.tileLayer(pair.before.tile_url, {maxZoom:18}), la = L.tileLayer(pair.after.tile_url, {maxZoom:18, pane:"afterPane"});
+        trackTiles(lb, fs);
+        lb.addTo(m); la.addTo(m);
+        xhair(home).addTo(m);
+        let ratio = .5;
+        const line = $(".swipe-line", fs), handle = $(".swipe-handle", fs);
+        const clip = () => {
+          const size = m.getSize(), nw = m.containerPointToLayerPoint([0,0]), se = m.containerPointToLayerPoint(size);
+          const cx = nw.x + size.x * ratio;
+          pane.style.clip = `rect(${nw.y}px, ${se.x}px, ${se.y}px, ${cx}px)`;
+          line.style.left = handle.style.left = (ratio * 100) + "%";
+          handle.setAttribute("aria-valuenow", Math.round(ratio * 100));
+        };
+        m.on("move zoom zoomend resize", clip);
+        clip();
+        const fromX = clientX => { const r = fs.getBoundingClientRect(); ratio = Math.max(0, Math.min(1, (clientX - r.left) / r.width)); clip(); };
+        handle.addEventListener("pointerdown", e => {
+          e.preventDefault(); e.stopPropagation();
+          handle.setPointerCapture(e.pointerId); handle.classList.add("drag"); m.dragging.disable();
+          const move = ev => fromX(ev.clientX);
+          const up = () => { handle.classList.remove("drag"); m.dragging.enable(); handle.removeEventListener("pointermove", move); handle.removeEventListener("pointerup", up); handle.removeEventListener("pointercancel", up); };
+          handle.addEventListener("pointermove", move); handle.addEventListener("pointerup", up); handle.addEventListener("pointercancel", up);
+        });
+        handle.addEventListener("keydown", e => {
+          const d = {ArrowLeft:-.05, ArrowRight:.05, Home:-1, End:1}[e.key];
+          if (d === undefined) return;
+          e.preventDefault(); e.stopPropagation();
+          ratio = Math.max(0, Math.min(1, ratio + d)); clip();
+        });
+        L.DomEvent.disableClickPropagation(handle);
+        // Gentle reveal so the reader sees there are two images
+        if (!reduced()) {
+          const t0 = performance.now();
+          const intro = now => {
+            if (handle.classList.contains("drag") || !satMaps.includes(m)) return;
+            const k = Math.min(1, (now - t0) / 1400);
+            ratio = .5 + Math.sin(k * Math.PI * 2) * .18 * (1 - k); clip();
+            if (k < 1) requestAnimationFrame(intro);
+          };
+          setTimeout(() => requestAnimationFrame(intro), 500);
+        }
+        satMaps = [m];
+      }
+      satMaps.forEach(m => setTimeout(() => m.invalidateSize(), 60));
+    }
+
+    /* ---------- Odds ratio plot ---------- */
+    function renderOdds(){
+      const rows = S.surface_signals.model, plot = $("#fPlot");
+      const lo = Math.log(1 / 8), hi = Math.log(8);
+      const pos = x => Math.max(0, Math.min(100, 100 * (Math.log(x) - lo) / (hi - lo)));
+      const zh = {recognizable_company:"企业名气信号（上市公司、央企或全国品牌）", log_event_slots_z:"活动规模（对数名额，每增加1个标准差）"};
+      const fmt = v => v.toFixed(2);
+      let html = '<span class="f-null"></span>';
+      rows.forEach((r, i) => {
+        const a = pos(r.ci95_low), b = pos(r.ci95_high), x = pos(r.odds_ratio);
+        html += `<div class="f-row"><div class="f-head"><span class="f-label" title="${esc(r.label)}">${esc(zh[r.term] || r.label)}</span><span class="f-val">OR <b>${fmt(r.odds_ratio)}</b>　95%区间 ${fmt(r.ci95_low)} 至 ${fmt(r.ci95_high)}　p = ${r.p_value.toFixed(2)}</span></div>
+          <div class="f-track"><span class="f-ci" style="left:${a}%;width:${b - a}%;--o:${((x - a) / (b - a) * 100).toFixed(1)}%;--dl:${i * .25}s"></span><span class="f-pt" style="left:${x}%;--dl:${i * .25}s"></span></div></div>`;
+      });
+      html += '<div class="f-axis">' + [0.125, 0.25, 0.5, 1, 2, 4, 8].map(v => `<span style="left:${pos(v)}%${v === 1 ? ";color:var(--ink);font-weight:700" : ""}">${v < 1 ? "1/" + (1 / v) : v}</span>`).join("") + "</div>";
+      plot.innerHTML = html;
+      once([$("#oddsPlot")], el => el.classList.add("on"), {threshold:.45});
     }
     renderOdds();
+
+    /* ---------- Boot ---------- */
+    apply();
+    const boot = () => startHero();
+    (document.fonts && document.fonts.ready ? Promise.race([document.fonts.ready, new Promise(r => setTimeout(r, 900))]) : Promise.resolve()).then(boot);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => syncSeg($("#baseSeg")));
+    leafletReady.then(ok => {
+      if (!ok) { $("#mapError").hidden = false; return; }
+      try { initMap(); } catch (err) { console.error(err); $("#mapError").hidden = false; }
+    });
+    const fromHash = decodeURIComponent((location.hash || "").slice(1));
+    addEventListener("hashchange", () => {
+      const id = decodeURIComponent(location.hash.slice(1));
+      if (byId[id] && (!current || current.project_id !== id)) openDetail(id, {fly:true});
+    });
+    if (byId[fromHash]) setTimeout(() => { document.getElementById("atlas").scrollIntoView({behavior:"auto"}); openDetail(fromHash, {fly:true}); }, 400);
+  })();
   </script>
 </body>
 </html>

@@ -55,7 +55,7 @@
 
 ## wayback_pairs.json
 
-每个项目包含`before`和`after`两张采集日期不同、中心瓦片文件哈希不同的本地影像。`release_date`是Wayback版本发布日期；`capture_date`是Esri元数据返回的影像采集日，二者不能互换。`provider`、`source`、`resolution_m`和`accuracy_m`来自影像元数据。`tile_sha256`记录中心瓦片文件哈希；两个哈希不同是进入前端配对的必要条件。`comparison_type`若为`latest_distinct_image_no_verified_post_sign_capture`，表示该点没有定位到签约后采集影像，不能把右图称作签约后影像；`post_sign_capture_before_capture_unknown`表示右图有签约后采集日期，但左图采集日期缺失。坐标精度仍由主项目表中的`geometry_precision`决定。
+每个项目包含`before`和`after`两张本地影像；同一指示坐标、同一缩放级别的中心瓦片文件哈希不同。`release_date`是Wayback版本发布日期；`capture_date`是Esri元数据返回的影像采集日，二者不能互换。`provider`、`source`、`resolution_m`和`accuracy_m`来自影像元数据。`tile_sha256`记录中心瓦片文件哈希；两个哈希不同是进入前端配对的必要条件。`comparison_type`若为`latest_distinct_image_no_verified_post_sign_capture`，表示该点没有定位到签约后采集影像，不能把右图称作签约后影像；`post_sign_capture_before_capture_unknown`表示右图有签约后采集日期，但左图采集日期缺失。坐标精度仍由主项目表中的`geometry_precision`决定。
 
 ## followup_search_results.csv
 

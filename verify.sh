@@ -121,7 +121,16 @@ test -s site/atlas-data.js
 test -s outputs/unbuilt-atlas-research-brief.pdf
 grep -q 'UNBUILT_ATLAS' site/atlas-data.js
 grep -q 'markerClusterGroup' site/index.html
-grep -q 'satBefore' site/index.html
+grep -q 'src="atlas-data.js"' site/index.html
+grep -q 'satMode = "emphasis"' site/index.html
+grep -q 'data-mode="swipe"' site/index.html
+grep -q 'data-mode="emphasis"' site/index.html
+grep -q 'DATA.wayback_pairs' site/index.html
+grep -q '视觉编码仅帮助区分时期' site/index.html
+if grep -q 'window.UNBUILT_ATLAS = {' site/index.html; then
+  echo 'site/index.html must load generated data from atlas-data.js, not embed a stale copy' >&2
+  exit 1
+fi
 grep -q 'oddsPlot' site/index.html
 "$PYTHON_BIN" - <<'PY'
 import pymupdf
